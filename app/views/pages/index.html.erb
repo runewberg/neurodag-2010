@@ -1,0 +1,35 @@
+<% title = "All Pages " %>
+<%= render :partial => '/shared/title_bar', :locals => {:title => title } %>
+
+<div class="myWrapper">
+	<table cellpadding="2" cellspacing="0" width="100%" style="border: 1px solid gray">
+
+
+  <tr>
+	<th width="200">Title</th>
+	<th>Belongs to</th>
+<% if is_admin?%>
+	<th>&nbsp;</th>
+	<th>&nbsp;</th>
+<% end %>
+  </tr>
+
+
+<% for page in @pages %>
+<tr class="<%= cycle('odd', 'even') %>">
+	<td><%= link_to page.title, page %></td>
+	<td><%= page.conference.title %></td>
+
+<% if is_admin?%>
+    <td><%= link_to 'Edit', edit_page_path(page) %></td>
+    <td><%= link_to 'Destroy', page, :confirm => 'Are you sure?', :method => :delete %></td>
+<%end%>
+  </tr>
+<% end %>
+</table>
+
+</div>
+
+<br />
+
+<%#= link_to 'New pages', new_pages_path %>

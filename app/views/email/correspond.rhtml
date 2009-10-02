@@ -1,0 +1,28 @@
+
+
+
+<div class="post">
+	<div class="post-bgtop">
+		<div class="post-bgbtm">
+			<h1 class="title"><a href="#"><%= @title %></a></h1>
+			<div class="entry">
+				<% form_for :message do |form| %>
+			
+
+				  <%= error_messages_for 'message' %>
+
+				  <div class="form_row">
+				    <label for="subject">Subject:</label>
+				    <%= form.text_field "subject", :size => 60 %>
+				  </div>
+				  <div class="form_row">
+				    <label for="subject">Body:</label>
+				    <%= form.text_area "body", :rows => 20, :cols => 60 %>
+				  </div>
+				  <%= submit_tag "Send", :class => "submit" %> 
+				<% end %>
+
+			</div>
+		</div>
+	</div>
+</div>

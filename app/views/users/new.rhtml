@@ -1,0 +1,21 @@
+<%= render :partial => '/shared/title_bar', :locals => {:title => @title} %>
+<%= render :partial => '/shared/notice' %>
+
+<div class="myWrapper">
+	
+<% form_for :user, :html => { :multipart => true } do |form| %>
+	<%= render :partial => 'form', :locals => {:form => form} %>
+  <p>
+		<%= submit_tag "OK", :class => "submit" %> 
+  </p>  
+	<div class="form_footer">
+		When you register you agree that we keep your information in our database and that some of this information will
+		be visible for other registered users. We guarantee that the information you enter will not be given to 3rd parties.
+
+		</p>
+	</div>
+<% end %>
+<script type="text/javascript">
+	$('user_screen_name').focus();
+</script>
+</div>

@@ -1,0 +1,36 @@
+<div class="faq_answer">
+    <table>
+      <tr>
+        <td class="label">Full name</td>
+        <td><%= @user.full_name %></td>
+      </tr>
+      <% if !@user.title.blank? %>
+      <tr>
+        <td class="label">Title</td>
+        <td><%= h @user.title %></td>
+      </tr>
+      <% end %>
+      <% if !@user.occupation.blank? %>
+      <tr>
+        <td class="label">Title</td>
+        <td><%= h @user.occupation %></td>
+      </tr>
+      <% end %>
+      <% if !@user.city.blank? %>
+      <tr>
+        <td class="label">Title</td>
+        <td><%= h @user.city %></td>
+      </tr>
+      <% end %>
+      <% if !@user.hide_contact_info %>
+      <tr>
+        <td class="label">E-mail</td>
+        <td><%= h @user.email %></td>
+      </tr>
+      <tr>
+        <td class="label">Phone</td>
+        <td><%= h @user.phone_no %></td>
+      </tr>
+      <% end %>
+    </table>	   
+</div>

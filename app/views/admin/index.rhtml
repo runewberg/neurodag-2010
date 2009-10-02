@@ -1,0 +1,128 @@
+<% title = "Admin dashboard :: #{@active_conference.title} :: #{current_user.full_name}" %>
+<%= render :partial => '/shared/title_bar', :locals => {:title => title } %>
+<%= render :partial => '/shared/notice' %>
+
+<% conf_title = @active_conference.title %>
+<div class="myWrapper">
+	<table cellpadding="2" cellspacing="0" width="100%" style="border: 1px solid gray">
+	  <thead>
+	  <tr>
+		  <th width="200" class="name">Neurodag function</th>
+		  <th>Units</th>
+	  </tr>
+    </thead>
+    <tbody>
+	  <tr class="<%= cycle('odd', 'even') %>">
+			<td>
+				<%= link_to "Users", users_path %> 
+			</td>
+			<td align="center">
+			<%= user_count%> 		</td>
+		</tr>
+	
+	  	<tr class="<%= cycle('odd', 'even') %>">
+			<td>
+				<%= link_to "Submitted talks", talks_path %> 
+			</td>
+			<td align="center">
+					<%= @active_conference.talk_count %>		</td>
+		</tr>
+
+	  	<tr class="<%= cycle('odd', 'even') %>">
+			<td>
+				<%= link_to "Pages", pages_path %>
+			</td>
+			<td align="center">
+				<%= page_count %></td>
+			</td>		
+		</tr>
+
+		<tr class="<%= cycle('odd', 'even') %>">
+			<td>
+				<%= link_to "Participants", registrations_path %>
+			</td>
+		
+			<td align="center">
+				<%= @active_conference.attendant_count %>		</td>
+			</td>
+		</tr>			
+		<tr class="<%= cycle('odd', 'even') %>">		
+			<td>
+				<%= link_to "Posters", posters_path %>
+			</td>
+			<td align="center">
+			<%= @active_conference.poster_count %>	</td>
+		</tr>
+
+		<tr class="<%= cycle('odd', 'even') %>">		
+			<td>
+				<%= link_to 'Conferences', conferences_path %><br>
+			</td>
+			<td align="center">
+				<% u=Conference.find(:all) %> <%=u.size%>		</td>	
+		</tr>
+		
+	 <tr class="<%= cycle('odd', 'even') %>">
+			<td align="left">
+				<%= link_to 'All talks book with index in pdf-format', formatted_talks_path(:pdf) %>
+			</td>
+			<td align="center">
+
+
+					<%= @active_conference.talk_count %>		</td>		
+		</tr>
+		
+		<tr class="<%= cycle('odd', 'even') %>">
+			<td align="left">
+				<%= link_to 'Submitted talks - pending rating by referees', referee_talks_path %>
+			</td>
+			<td align="center">
+					<%= @active_conference.talk_count %> 	</td>		
+		</tr>
+
+	  <tr class="<%= cycle('odd', 'even') %>">
+			<td align="left">
+				<%= link_to 'Submitted talks rated by all referees', referee_rated_talks_users_path %>
+			</td>
+			<td align="center">
+					<%= @active_conference.talk_count %>		</td>		
+		</tr>	
+	  <tr class="<%= cycle('odd', 'even') %>">
+			<td align="left">
+				<%= link_to 'Average ratings by all referees', referee_avg_rated_talks_users_path %>
+			</td>
+			<td align="center">
+					<%= @active_conference.talk_count %>		</td>		
+		</tr>	
+
+	  <tr class="<%= cycle('odd', 'even') %>">
+			<td align="left">
+				<%= link_to 'Picture admin', pictures_path %>
+			</td>
+			<td align="center">
+					<%= @pictures.size %>		
+			</td>		
+		</tr>	
+
+	  <!-- <tr class="<%#= cycle('odd', 'even') %>">
+			<td align="left">
+				<%#= link_to 'Video admin', videos_path %>
+			</td>
+			<td align="center">
+					<%#= @album.videos.size %>		
+			</td>		
+		</tr>	 -->
+
+	  <tr class="<%= cycle('odd', 'even') %>">
+			<td align="left">
+				<%= link_to 'Blog post admin', blog_posts_path %>
+			</td>
+			<td align="center">
+					<%= @blog_posts.size %>		
+			</td>		
+		</tr>	
+
+
+		</tbody>
+	</table>
+</div>

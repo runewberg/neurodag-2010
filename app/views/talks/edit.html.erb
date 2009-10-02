@@ -1,0 +1,10 @@
+<%= render :partial => '/shared/title_bar', :locals => {:title => "Edit Talk" } %>
+<%= render :partial => '/shared/notice' %>
+
+<%= error_messages_for :talk %>
+<div class="formWrapper short-label">
+<% form_for(@talk) do |form| %>
+  <%= render :partial => "form", :locals => { :form => form } %>
+  <%= submit_tag "OK", :class => "submit" %>
+<% end %>
+</div>

@@ -1,0 +1,79 @@
+<% title = "Referee dashboard :: #{current_user.full_name}"  %>
+<%= render :partial => '/shared/title_bar', :locals => {:title => title} %>
+<%= render :partial => '/shared/notice' %>
+
+<div class="myWrapper">
+<table cellpadding="2" cellspacing="0" width="100%" style="border: 1px solid gray">
+  <thead>
+  <tr>
+	  <th width="400" class="name">Neurodag Function</th>
+	  <th>Units</th>
+  </tr>
+  </thead>
+  
+  <tbody>
+  <tr class="<%= cycle('odd', 'even') %>">
+		<td align="left">
+			<%= link_to 'All Users', users_path %> 
+		</td>
+		<td align="center">
+		<% u=User.find(:all) %> <%=u.size%>		</td>
+	</tr>
+
+	<tr class="<%= cycle('odd', 'even') %>">
+		<td align="left">
+			<%= link_to 'Participants in conference', registrations_path %>
+		</td>		
+		<td align="center">
+			<%= @active_conference.attendant_count %>		</td>
+		</td>
+	</tr>
+	<tr class="<%= cycle('odd', 'even') %>">		
+		<td align="left">
+			<%= link_to 'Posters', posters_path %><br>
+		</td>
+		<td align="center">
+		<%= @active_conference.poster_count %>	</td>
+	</tr>
+	
+  <tr class="<%= cycle('odd', 'even') %>">
+		<td align="left">
+			<%= link_to 'All talks book with index in pdf-format', formatted_talks_path(:pdf) %>
+		</td>
+		<td align="center">
+		
+		  
+				<%= @active_conference.talk_count %>		</td>		
+	</tr>
+
+  <tr class="<%= cycle('odd', 'even') %>">
+		<td align="left">
+			<%= link_to 'Submitted talks - pending your rating', referee_talks_path %>
+		</td>
+		<td align="center">
+
+
+				<%= @active_conference.talk_count %>		</td>		
+	</tr>
+
+  <tr class="<%= cycle('odd', 'even') %>">
+		<td align="left">
+			<%= link_to 'Submitted talks rated by all referees', referee_rated_talks_users_path %>
+		</td>
+		<td align="center">
+				<%= @active_conference.talk_count %>		</td>		
+	</tr>	
+  <tr class="<%= cycle('odd', 'even') %>">
+		<td align="left">
+			<%= link_to 'Submitted talks average ratings by all referees', referee_avg_rated_talks_users_path %>
+		</td>
+		<td align="center">
+				<%= @active_conference.talk_count %>		</td>		
+	</tr>	
+  </tbody>	
+</table>
+</div>
+
+
+
+

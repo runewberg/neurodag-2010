@@ -1,0 +1,18 @@
+<fieldset>
+	<legend>Conference</legend>
+  <div class="form_row">
+    <label for="title">Title:</label> 
+  	<%= form.text_field :title %>
+  </div>
+  <div class="form_row">
+    <label for="year">Year:</label> 
+  	<%= date_select :conference, :year %>
+  </div>
+<br/>
+<%= text_field_for form, "venue", 69 %>
+<br/>
+<div class="form_row">
+  <label for="description">Body:</label>
+  <%= form.text_area :description, :rows => 20, :cols => 60, :class => "mce-editor" %>
+</div>
+</fieldset>

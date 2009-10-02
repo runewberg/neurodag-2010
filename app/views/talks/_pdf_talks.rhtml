@@ -1,0 +1,36 @@
+<% logger.debug("#{app_root}/img/neuro_logo_pet.jpg") %>
+<img src="<%= app_root %>/img/neuro_logo_pet.jpg" width="530"/>
+<p></p>
+<p></p>
+<indent/><h1>Neurodag 2009 Submitted talks</h1>
+
+
+<% most_recent_talk =  Talk.most_recent[0] %> 
+
+<indent_h2/>Last update on <%= most_recent_talk.created_at.to_s(:vshort) %> 
+
+
+<p>Talk abstract list (sorted by last name)</p>
+
+<table width="530">
+	<tr>
+		<th>No.</th>
+		<th>Owner</th>
+		<th>Title</th>
+	</tr>				
+	<% @talks_all.each_with_index do |talk,index| %>
+	<tr>
+		<td><%= index+1 %></td>
+		<td><%= h(CGI.escapeHTML(talk.user.full_name)) %></td>
+		<td><%= h(CGI.escapeHTML(talk.title)) %> </td>
+	</tr>
+	<%end%>
+</table>
+<hr/>
+<% @talks_all.each_with_index do |talk,index| %>
+  <h2><indent_h2/> <%= index+1 %>. </h2><p>		
+	<%= render :partial => 'talk_content', :locals => {:talk => talk } %>	
+	<% if index < @talks_all.size-1 %>
+	<hr/>
+	<% end %>
+<%end%>

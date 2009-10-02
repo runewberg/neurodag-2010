@@ -1,0 +1,26 @@
+<fieldset>
+	<legend>Poster</legend>
+	<p>
+	  <label for="abstract">Title</label>
+	<%= form.text_field :title %>
+</p>
+<p>
+  <label for="abstract">Authors</label>
+	<%= form.text_field :authors %>
+</p>
+<p>
+  <label for="affiliations">Affiliations (enumerate)</label>
+	<%= form.text_field :affiliations %>
+</p>
+<p>
+  <label for="abstract">Abstracts</label>
+ <!-- # <% use_tinymce -%> -->
+	<%#= form.text_area :abstract, :rows => 20, :cols => 60, :class => "mce-editor", :style => "width: 300px !important" %>
+	<%= form.text_area :abstract, :rows => 20, :cols => 60, :class => 'mceNoEditor', :style => "width: 300px !important" %>
+</p>
+
+
+<p>
+  <label for="corresponding_author">Corresponding Author with affiliation address and email.</label>
+	<%= form.text_area :corresponding_author, :rows => 20, :cols => 20, :class => 'mceNoEditor', :style => "width: 300px !important" %>
+</p>

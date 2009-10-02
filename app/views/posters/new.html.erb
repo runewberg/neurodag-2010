@@ -1,0 +1,14 @@
+<% title = "New poster abstract #{@active_conference.title}" %>
+<%= render :partial => '/shared/title_bar', :locals => {:title => title } %>
+<%= render :partial => '/shared/notice' %>
+
+<%= error_messages_for :poster %>
+<div class="myWrapper">
+		<% form_for(@poster) do |form| %>
+			<%= render :partial => "form", :locals => { :form => form } %>
+		  <p>	
+		    <%= form.submit "OK" %>
+		  </p>
+		<% end %>
+		<%= link_to 'To list of posters', posters_path %>
+</div>

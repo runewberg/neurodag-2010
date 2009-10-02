@@ -1,0 +1,56 @@
+<%= render :partial => '/shared/title_bar', :locals => {:title => @title} %>
+<%= render :partial => '/shared/notice' %>
+
+<div class="myWrapper">
+  
+  <div class="title">Talk ratings :: research</div>
+    <table cellpadding="2" cellspacing="0" width="100%" style="border: 1px solid gray">
+        <tr>         
+            <th class="name">Title</th>
+            <th>Author</th>
+            <th class="name">Research</th>
+        </tr>
+    <% @ref_talks_research.each do |talk| %>
+      <% stars = talk.rate_average(false, :research) %>
+        <tr class="<%= cycle('odd', 'even') %>">           
+            <td width="40%" align="left"><%= talk.title %></td>
+            <td width="30%" align="center"><%= talk.owner_name %></td>
+            <td width="30%" align="center"><%= static_stars(stars) %></td>                   
+        </tr>
+    <% end %>
+    </table>
+
+    <div class="title after-first">Talk ratings :: Presentational style</div>
+    <table cellpadding="2" cellspacing="0" width="100%" style="border: 1px solid gray">
+        <tr>
+            <th class="name">Title</th>
+            <th>Author</th>
+            <th class="name">Presentational style</th>
+        </tr>
+    <% @ref_talks_presentation_style.each do |talk| %>
+      <% stars = talk.rate_average(false, :presentation_style) %>
+      <tr class="<%= cycle('odd', 'even') %>">           
+        <td width="40%" align="left"><%= talk.title %></td>
+        <td width="30%" align="center"><%= talk.owner_name %></td>
+        <td width="30%" align="center"><%= static_stars(stars) %></div></td>                   
+      </tr>
+    <% end %>
+    </table>
+    
+    <div class="title after-first">Talk ratings :: Organization</div>
+    <table cellpadding="2" cellspacing="0" width="100%" style="border: 1px solid gray">
+        <tr>
+            <th class="name">Title</th>
+            <th>Author</th>
+            <th class="name">Organization</th>
+        </tr>
+    <% @ref_talks_organization.each do |talk| %>
+      <% stars = talk.rate_average(false, :organization) %>
+      <tr class="<%= cycle('odd', 'even') %>">
+        <td width="40%" align="left"><%= talk.title %></td>
+        <td width="30%" align="center"><%= talk.owner_name %></td>
+        <td width="30%" align="center"><%= static_stars(stars) %></div></td>                   
+      </tr>
+    <% end %>
+    </table>
+</div>

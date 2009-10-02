@@ -1,0 +1,41 @@
+<li>
+   <div class="contentHeadlineSmallBlue170">
+   		<span class="collumTopText">Recent activity</span>
+   </div>		  
+   <ul>
+	<!-- random 1-3 -->
+	<% poster1=Poster.most_recent.first %>
+		<li>
+			<%= link_to poster1.user.full_name, profile_for(poster1.user) %>
+			<span>
+			Added a <%= link_to "poster", poster_path(poster1) %>  <%= poster1.created_at.to_s(:vshort) %>
+			</span>
+		</li>  
+	<% if Poster.most_recent.second %>
+  		<% poster2=Poster.most_recent.second %>
+		<% if poster2.user %>
+		<li>
+			<%= link_to poster2.user.full_name, profile_for(poster2.user) %>
+			<span>
+			Added a <%= link_to "poster", poster_path(poster2) %> <%=poster2.created_at.to_s(:vshort) %>
+			</span>
+		</li>  
+		<%end%>
+	<%end%>
+	<% user=User.most_recent.second %>
+		<li>
+			<%= link_to user.full_name, profile_for(user) %>
+			<span>New member <%= user.created_at.to_s(:vshort) %></span>
+		</li>  
+	<% reg=Registration.most_recent.first %>
+		<li>
+			<%= link_to reg.user.full_name, profile_for(reg.user) %>
+			<span>Is coming to Neurodag!</span>
+		</li>             
+			<% user=User.most_recent.first %>
+		<li>
+			<%= link_to user.full_name, profile_for(user) %>
+			<span>New member <%= user.created_at.to_s(:vshort) %></span>
+		</li>  
+	</ul>
+</li>

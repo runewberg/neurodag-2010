@@ -1,0 +1,44 @@
+<% title = "Blog posts for :: #{@active_conference.title}" %>
+<%= render :partial => '/shared/title_bar', :locals => {:title => title } %>
+<%= render :partial => '/shared/notice' %>
+
+<div class="myWrapper">
+	<table cellpadding="2" cellspacing="0" width="100%" style="border: 1px solid gray; font-size: 10px !important">
+  	<tr>
+  		<th>Title</th>
+  		<th>Author</th>
+  		<th>Date</th>
+  		<th>Edit</th>
+  		<th>Delete</th>
+  	</tr>	
+	<% @blog_posts.each do |post| %>
+  	<tr class="<%= cycle('odd', 'even') %>">
+  		<td>
+  		    <%= link_to truncate(post.title, 20), post %>
+  		</td>
+  		<td>
+  			<%= h truncate(post.author_name, 20) %>
+  		</td>	
+  		<td>
+  			<%= h post.updated_at.to_s(:vshort) %>
+  		</td>	
+  	<% if (current_user && (post.author == current_user) || is_admin?) %>
+  		<td>
+  		  <%= link_to 'Edit', edit_blog_post_path(post) %>
+  		</td>
+  		<td>
+  		  <%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %>
+  		</td>
+  	<% else %>
+  	<td></td><td></td>
+  	<% end %>
+  	</tr>
+	<% end %>
+	</table>
+	<div class="digg_pagination">
+      <div clas="page_info">
+        <%= page_entries_info @blog_posts %>
+      </div>
+	  <%= will_paginate @blog_posts, :container => false %>
+  </div>   
+</div>

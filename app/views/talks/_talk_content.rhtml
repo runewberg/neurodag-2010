@@ -1,0 +1,22 @@
+<%if talk %>
+<p>
+<h1><%= talk.title %></h1>
+</p>
+	<p>
+<%if talk.owner %>	
+	By: <%= link_to talk.owner.full_name, profile_path(talk.owner.screen_name) %>, <%= talk.owner.title %> 
+<%end%>
+	</p>
+	<p> 		
+	  Submitted on	<%= h talk.updated_at.to_s(:article) %> for participation in the presentation competition.
+	</p>
+	<br>
+	<p> 		
+	  <h3>Abstract</h3>
+	</p>
+	<%= talk.abstract %>
+<br>
+<br>
+<%else%>
+	<h1>Empty talk</h1>
+<%end%>

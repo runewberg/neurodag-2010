@@ -1,0 +1,38 @@
+<% title = "Poster abstracts submitted by #{full_name} :: #{@active_conference.title}"  %>
+<%= render :partial => '/shared/title_bar', :locals => {:title => title} %>
+<%= render :partial => '/shared/notice' %>
+
+<div class="myWrapper">
+  <% if @posters && @posters.size > 0 %>
+	<table cellpadding="2" cellspacing="0" width="100%" style="border: 1px solid gray">
+	  <tr>
+		<th>Title</th>
+		<th>Authers</th>
+		<th>Last update</th>
+		<th></th>
+		<th></th>
+		<th></th>
+	  </tr>
+
+	<% for poster in @posters %>
+	  <tr>
+		<td>
+			<%= h truncate(poster.title, 30) %>
+		</td>
+
+		<td>
+			<%= h truncate(poster.authors,30) %>
+		</td>
+		<td>
+			<%= h poster.updated_at.to_s(:short) %>
+		</td>		
+	    <td><%= link_to 'Show', poster %></td>
+	    <td><%= link_to 'Edit', edit_poster_path(poster) %></td>
+	    <td><%= link_to 'Destroy', poster, :confirm => 'Are you sure?', :method => :delete %></td>
+	  </tr>
+	<% end %>
+	</table>
+  <% end %>
+
+	<%= link_to 'Add new poster abstract', new_poster_path %>
+</div>

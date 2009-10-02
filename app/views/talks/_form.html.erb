@@ -1,0 +1,13 @@
+<%= error_messages_for :talk %>
+<fieldset>
+	<legend>Talk</legend>
+<p>
+  <label for="title">Title</label>
+	<%= form.text_field :title %>
+</p>
+<p>
+  <label for="abstract">Abstract</label>
+  <% use_tinymce -%>
+	<%= form.text_area :abstract, :rows => 20, :cols => 60, :class => "mce-editor", :style => "width: 300px !important" %>
+</p>
+</fieldset>

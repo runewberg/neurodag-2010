@@ -1,0 +1,40 @@
+<div class="post">
+
+  <div class="post_title">
+    <%= sanitize post.title  %>
+    <% unless hide_edit_links? %>
+      <span style="float:right">
+      <%= link_to_unless_current 'Show', blog_post_path(post.blog, post) %> |
+      <%= link_to_unless_current 'Edit', edit_blog_post_path(post.blog, post) %> |
+      <%= link_to 'Destroy', blog_post_path(post.blog, post), 
+                  :confirm => 'Are you sure?', :method => :delete %> 
+      </span>
+    <% end %>
+  </div>
+
+  <div class="post_body"><%= sanitize post.body %></div>
+
+  <div class="post_creation_date">
+    Posted <%= time_ago_in_words post.created_at %> ago
+    <% if post.updated_at != post.created_at %>
+      <br /> Modified <%= time_ago_in_words post.updated_at %> ago  
+    <% end %>
+  </div>
+
+  <div id="comments_for_post_<%= post.id %>"> 
+    <%= render :partial => "comments/comment", :collection => post.comments %> 
+  </div> 
+
+  <% if logged_in? %> 
+  <div id="add_comment_link_for_post_<%= post.id %>"> 
+    <%= link_to_remote "Add a comment", 
+                       { :url => new_blog_post_comment_path(post.blog, post), 
+                         :method => :get }, 
+                       :href => new_blog_post_comment_path(post.blog, post) %> 
+    </div>
+  
+  <div id="new_comment_form_for_post_<%= post.id %>"> 
+  </div> 
+  <% end %> 
+
+</div>

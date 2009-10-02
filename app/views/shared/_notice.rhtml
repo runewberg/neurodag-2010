@@ -1,0 +1,6 @@
+<%if flash[:notice] %>
+<div class="myWrapper" id="notice">
+<%= flash[:notice]%>
+</div>
+<% flash[:notice] = nil%>
+<%end%>

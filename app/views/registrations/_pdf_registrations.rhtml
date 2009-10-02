@@ -1,0 +1,37 @@
+<% logger.debug("#{app_root}/img/neuro_logo_pet.jpg") %>
+<img src="<%= app_root %>/img/neuro_logo_pet.jpg" width="530"/>
+
+<p></p>
+<p></p>
+<indent/><h1>Neurodag 2009 Attendees</h1>
+<p></p>
+<% most_recent_registration =  Registration.most_recent[0] %>
+<indent_h2/>Last update on: <%=  most_recent_registration.created_at.to_s(:vshort) if most_recent_registration %>
+
+
+<p>List of attendees sorted by surname</p>
+
+<table width="530">
+	<tr>
+		<th>No.</th>
+		<th>Name</th>
+		<th>Title</th>
+		<th>Job</th>
+		<th>location</th>
+		<th>email</th>
+		<th>poster</th>
+		<th>PS</th>
+	</tr>				
+	<% @attendees_all.each_with_index do |attendee,index| %>
+	<tr>
+		<td><%= index+1 %></td>
+		<td><%= h(CGI.escapeHTML(attendee.user.full_name)) %></td>
+		<td><%= h(CGI.escapeHTML(attendee.user.title)) %></td>
+		<td><%= h(CGI.escapeHTML(attendee.user.occupation)) %></td>
+		<td><%= h(CGI.escapeHTML(attendee.user.city)) %></td>
+		<td><%= h attendee.user.email %></td>
+		<td><%= h attendee.bringing_poster %></td>
+		<td><%= h attendee.payment_status_txt %></td>
+	</tr>
+	<%end%>
+</table>

@@ -1,0 +1,18 @@
+development:
+  bucket: neurodag_dev2
+  access_key_id: AKIAISMQONLYAJ5DWE2Q
+  secret_access_key: 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
+  max_file_size: 10485760
+
+test:
+  bucket: neurodag_dev2
+  access_key_id: AKIAISMQONLYAJ5DWE2Q
+  secret_access_key: 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
+  max_file_size: 10485760
+
+production:
+  bucket: neurodag_dev2
+  access_key_id: AKIAISMQONLYAJ5DWE2Q
+  secret_access_key: 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
+  max_file_size: 10485760
+  

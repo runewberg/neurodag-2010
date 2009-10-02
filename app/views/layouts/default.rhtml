@@ -1,0 +1,70 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="da" xmlns="http://www.w3.org/1999/xhtml" xml:lang="da">
+  <head>
+    <meta http-equiv="content-type" content="text/xhtml; charset=utf-8" />
+  	<title><%= @title %></title>
+  	<%= stylesheet_link_tag "default" %>
+  	<%#= stylesheet_link_tag "pagination" %>	 
+  	<%#= stylesheet_link_tag "extra" %>
+  	<%= render :partial => 'shared/javascripts' %>
+  	<%= ajaxful_rating_style %>
+  </head>
+  <body>
+    <div class="topBorder"></div>
+    <div class="containerBg">
+      <div class="container2">
+        <div class="top"></div>
+        <div class="menuWrapper">
+			<%= render :partial => 'shared/topmenu' %>		          
+        </div>
+		<!-- end #content -->
+		<%= render :partial => 'shared/sidebar' %>        
+        <div class="contentLarge">
+          <div class="content">
+          	<!-- end #menu -->
+          	<div id="page">
+      				<div id="content">
+      					<% if flash[:notify] %>
+      					<div id="notify">
+      					   <%= flash[:notify] %>
+      					</div>			
+      					<% end %>
+      					<%= yield %>
+      				</div>
+          	</div>	
+          </div>
+  				<!-- end #content -->
+  		  <%= render :partial => 'shared/sidebar_right' %>                  
+          <div style="clear: both;">&nbsp;</div>          
+          <div class="bund">
+            <div class="bundText">
+              <p>
+                © Neurodag.dk - University of Copenhagen 
+              </p>
+            </div>
+            <ul class="bundMenu">
+              <li>
+                <%= link_to "About Neurodag.dk", about_path %>
+              </li>
+              <li>
+                <%= link_to "Contact", contact_path %>
+              </li>
+              <li>
+                <%= link_to "Organizers", organizers_path %>
+              </li>
+              <li>
+                <%= link_to "How to register", how_path %>
+              </li>              
+              <li>
+                <%= link_to "Home", home_path %>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="clear"></div>
+      </div>
+    </div>
+    <div class="bottomBorder"></div>
+  </body>
+</html>

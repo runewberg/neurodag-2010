@@ -1,0 +1,38 @@
+<p>
+  <label for="body">Title</label>
+  <%= form.text_field :title, :size => 70 %>
+</p>
+<p>
+  <label for="body">Body</label>
+  <br>  
+	<% use_tinymce -%>
+  	<%= form.text_area :body, :rows => 20, :cols => 60, :class => "mce-editor", :style => "width: 300px !important" %>
+  	<br>
+  	<br>
+</p>
+<p>
+  <label for="video_name">Video title</label>
+  <%= form.text_field :v_title %>
+</p>
+<p>
+  <label for="video_name">Video description</label>
+<%= form.text_field :v_description, :size => 40 %>
+</p>
+<p>
+  <label for="video_url">Video url from youtube.com</label>
+<%= form.text_field :v_url, :size => 30 %>
+</p>
+<p>
+  <label for="video_width">Width</label>
+  <%= form.text_field :v_width, :size => 4 %>
+  &nbsp;&nbsp;
+  <label for="video_width">Height</label>
+  <%= form.text_field :v_height, :size => 4 %>
+</p>
+
+<!-- <p>
+  <label for="embedded_video_html">Embedded video</label>
+  <br>
+  	<%#= form.text_area :embedded_video_html, :rows => 8, :cols => 60, :class => 'mceNoEditor', :style => "width: 300px !important"  %>
+</p> -->
+

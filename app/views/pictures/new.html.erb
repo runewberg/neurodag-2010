@@ -1,0 +1,10 @@
+<%= render :partial => '/shared/title_bar', :locals => {:title => "Upload new picture" } %>
+<%= render :partial => '/shared/notice' %>
+
+<%= error_messages_for :picture %>
+<div class="formWrapper">
+  <% form_for @picture, :html => { :multipart => true } do |form| %>
+  	<%= render :partial => 'form', :locals => {:form => form} %>
+  	<%= submit_tag "OK", :class => "submit" %>
+  <% end %>
+</div>

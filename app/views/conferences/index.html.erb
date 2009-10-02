@@ -1,0 +1,52 @@
+
+<div class="wrapper">    
+    <div class="contentHeadline">
+    	<span class="collumTopText">
+         Archive of Conferences
+    	</span>
+    </div>
+</div>
+
+
+<div class="myWrapper">
+	<table cellpadding="2" cellspacing="0" width="100%" style="border: 1px solid gray; font-size:10px !important;">
+	
+	  <tr>
+		<th class="name" style="padding-left: 6px !important">Title</th>
+		<th>Date</th>
+		<th>Venue</th>
+		<th>Active</th><th></th><th></th>
+	  </tr>
+
+	<% @conferences.each do |conference| %>
+	<tr class="<%= cycle('odd', 'even') %>">
+		<td width="180">
+			<%= h truncate(conference.title, 20) %>
+		</td>
+		<td>
+			<%= conference.date %>
+		</td>
+		<td>
+			<%= conference.venue %>
+		</td>
+		<td>
+			<%= active_conference == conference %>
+			</td>
+		<% if logged_in? && current_user.admin? %>
+			<td><%= link_to 'Edit', edit_conference_path(conference) %></td>
+			<td><%= link_to 'Destroy', conference, :confirm => 'Are you sure you want to delete this conference and all associated data?', :method => :delete %></td>
+			<%else %>
+			<td> </td>			<td> </td>
+		<% end %>
+	  </tr>
+
+	<% end %>
+	</table>
+	<br>
+		<%= link_to 'List of all conference pages', pages_path %>
+	<% if logged_in? && current_user.admin? %>
+		<br>
+
+		<%= link_to 'Create new conference', new_conference_path %>
+	<%end%>
+</div>

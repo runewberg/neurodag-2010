@@ -1,0 +1,16 @@
+<% title = "Edit conference" %>
+<%= render :partial => '/shared/title_bar', :locals => {:title => title } %>
+<%= render :partial => '/shared/notice' %>
+
+<%= error_messages_for :conferences %>
+<div class="myWrapper">
+<% use_tinymce -%>
+
+<% form_for(@conference) do |form| %>
+	  <%= render :partial => "form", :locals => { :form => form } %>
+	  <%= submit_tag "OK", :class => "submit" %> 
+<% end %>
+
+<%= link_to 'Show', @conference %> |
+<%= link_to 'Back', conferences_path %>
+</div>

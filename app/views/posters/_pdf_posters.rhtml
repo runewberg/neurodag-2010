@@ -1,0 +1,35 @@
+<% logger.debug("#{app_root}/img/neuro_logo_pet.jpg") %>
+<img src="<%= app_root %>/img/neuro_logo_pet.jpg" width="530"/><p></p>
+<p></p>
+<indent/><h1>Neurodag 2009 Abstract book</h1>
+
+
+<% most_recent_poster =  Poster.most_recent[0] %> 
+
+<indent_h2/>Last update on <%= most_recent_poster.created_at.to_s(:vshort) %> 
+
+
+<p>Poster abstract list (sorted by poster Owner's surname)</p>
+
+<table width="530">
+	<tr>
+		<th>No.</th>
+		<th>Owner</th>
+		<th>Title</th>
+	</tr>				
+	<% @posters_all.each_with_index do |poster,index| %>
+	<tr>
+		<td><%= index+1 %></td>
+		<td><%= h (poster.user.full_name) %></td>
+		<td><%= h(poster.title) %> </td>
+	</tr>
+	<%end%>
+</table>
+<hr/>
+<% @posters_all.each_with_index do |poster,index| %>
+  <h2><indent_h2/><%= index+1 %>.</h2><p>		
+	<%= render :partial => 'poster_content', :locals => {:poster => poster } %>	
+	<% if index < @posters_all.size-1 %>
+	<hr/>
+	<% end %>
+<%end%>

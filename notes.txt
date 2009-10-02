@@ -1,0 +1,35 @@
+http://github.com/thoughtbot/paperclip
+
+<%= render :partial => '/shared/notice' %>
+
+
+the first time make sure you clean the database
+rake db:migrate OR rake db:schema:load
+rake bootstrap:all
+
+
+
+for clean up:
+rm -rf .git  
+git init
+
+interacting with heroku.com:
+git add .
+
+git commit -a -m "new app"
+
+If no existing homepage:
+heroku create neurodag  
+git push heroku master
+
+
+heroku console 2+2
+
+
+
+
+
+
+
+
+

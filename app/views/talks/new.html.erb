@@ -1,0 +1,12 @@
+<%= render :partial => '/shared/title_bar', :locals => {:title => "New talk" } %>
+<%= render :partial => '/shared/notice' %>
+
+<%= error_messages_for :talk %>
+<% form_for(@talk) do |form| %>
+	<%= render :partial => "form", :locals => { :form => form } %>
+  <p>	
+    <%= form.submit "OK" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', talks_path %>

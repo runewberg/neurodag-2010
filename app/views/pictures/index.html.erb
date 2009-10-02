@@ -1,0 +1,38 @@
+<% title = "Pictures for :: #{@active_conference.title}" %>
+<%= render :partial => '/shared/title_bar', :locals => {:title => title } %>
+<%= render :partial => '/shared/notice' %>
+
+<div class="myWrapper">
+	<table cellpadding="2" cellspacing="0" width="100%" style="border: 1px solid gray; font-size: 10px !important">
+  	<tr>
+  		<th>Title</th>
+  		<th>Author</th>
+  		<th>Date</th>
+  		<th>Publish</th>
+  		<th>Edit</th>
+  		<th>Delete</th>
+  	</tr>	
+	<% @pictures.each do |picture| %>
+  	<tr class="<%= cycle('odd', 'even') %>">
+  <tr>
+    <td><%=link_to h(picture.title), picture %></td>
+    <td><%=link_to h(picture.owner_name), picture.owner %></td>
+    <td><%= picture.created_at.to_s(:vshort) %></td>
+    <% if is_admin? %>
+		<% if picture.status == 'published' %>
+			<td>published</td>
+		<% else %>
+	      <td><%= link_to 'Publish', publish_picture_path(picture) %></td>
+		<% end %>
+    <% end %>
+    <% if current_user && (picture.owner == current_user) || is_admin?  %>    
+      <td><%= link_to 'Edit', edit_picture_path(picture) %></td>
+      <td><%= link_to 'Destroy', picture, :confirm => 'Are you sure?', :method => :delete %></td>
+    <% end %>
+  </tr>
+<% end %>
+</table>
+</div>
+<br />
+
+<%= link_to 'New picture', new_picture_path %>

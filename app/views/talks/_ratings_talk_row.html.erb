@@ -1,0 +1,61 @@
+ <tr class="<%= cycle('odd', 'even') %>">
+	<td id="<%= talk.id %>">
+		<%= link_to truncate(talk.title, 20), talk_path(talk) %>
+	</td>
+
+	<td>
+		<%#= h truncate(talk.authors,20) %>
+	</td>	
+	<td>
+		<%if talk.owner %><%= h talk.owner.full_name %> <%else%> Talk has no owner! <%end%>
+	</td>	
+
+	<% if  is_admin? %>
+		<td> 
+			<%= ratings_for talk, :static, :dimension => :research, :small_stars => true %> 
+			<span id="talk-<%= talk.id %>-research_avg">
+				<%= talk.rate_average(true, :research) %>	</td>
+			</span>
+		<td> 
+			<%= ratings_for talk, :static, :dimension => :presentation_style, :small_stars => true%> 
+			<span id="talk-<%= talk.id %>-presentation_style_avg">
+				<%= talk.rate_average(true, :presentation_style) %>
+			</span>
+		</td>
+		<td> 
+			<%= ratings_for talk, :static, :dimension => :organization, :small_stars => true %> 
+			<span id="talk-<%= talk.id %>-organization_avg">
+				<%= talk.rate_average(true, :organization) %>
+			</span>
+
+		</td>
+	    <td><%= link_to 'Edit', edit_talk_path(talk) %></td>
+	    <td><%= link_to 'Destroy', talk_path(talk), :confirm => 'Are you sure?', :method => :delete %></td>
+
+	<%else%>
+		<td> 
+			<%= ratings_for talk, :dimension => :research, :small_stars => true %> 
+			<span id="talk-<%= talk.id %>-research_avg">
+				<%= talk.rate_average(true, :research) %>	</td>
+			</span>
+		<td> 
+			<%= ratings_for talk, :dimension => :presentation_style, :small_stars => true%> 
+			<span id="talk-<%= talk.id %>-presentation_style_avg">
+				<%= talk.rate_average(true, :presentation_style) %>
+			</span>
+		</td>
+		<td> 
+			<%= ratings_for talk, :dimension => :organization, :small_stars => true %> 
+			<span id="talk-<%= talk.id %>-organization_avg">
+				<%= talk.rate_average(true, :organization) %>
+			</span>
+		</td>
+	<% end %>
+	<% if talk.owner == current_user %>
+		<%if !is_admin? %>
+		    <td><%= link_to 'Edit', edit_talk_path(talk) %></td>
+		    <td><%= link_to 'Destroy', talk_path(talk), :confirm => 'Are you sure?', :method => :delete %></td>
+		<% end %>
+	<% end %>
+
+</tr>

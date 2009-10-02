@@ -1,0 +1,36 @@
+<%= render :partial => '/shared/title_bar', :locals => {:title => h(@poster.owner.full_name) } %>
+<%= render :partial => '/shared/notice' %>
+
+<% if @poster %>
+<div class="myWrapper">
+
+	<%= render :partial => 'poster_content', :locals => {:poster => @poster } %>
+
+
+	<br>
+	<% if @poster.owner != current_user %>
+	<p>
+	<b>Rate this poster:</b>
+	</p>		
+	<div class="rating" style="width:52px; margin-top: 6px">
+		<%= ratings_for @poster, :dimension => :research, :small_stars => true %> 
+	</div>
+	<br>
+	<span id="poster-<%= @poster.id %>-research_avg">
+		Average: <%= @poster.rate_average(true, :research) %>
+	</span>
+	<% end%>
+	<br>
+	<br>	
+</div>
+<% end %>
+
+<% if (current_user && (@poster.owner == current_user)) != (is_admin?) %>
+		<%= link_to 'Destroy', @poster, :confirm => 'Are you sure?', :method => :delete %> |
+		<%= link_to 'Edit', edit_poster_path(@poster) %> |
+		<%= link_to 'All your posters', your_posters_path %>
+<% else %>
+	  <%= link_to 'Back to all posters', posters_path %>
+<% end %>
+
+

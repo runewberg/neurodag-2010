@@ -1,0 +1,25 @@
+<% title = "Blog of :: #{@user.full_name}" %>
+<%= render :partial => '/shared/title_bar', :locals => {:title => title } %>
+<%= render :partial => '/shared/notice' %>
+<div class="myWrapper">
+  <% @blog_posts.each do |post| %>
+    <h2><%= link_to truncate(post.title, 30), post %></h2>
+    <div class="author">
+      <%= h post.updated_at.to_s(:article) %>
+    </div>  
+    <br>
+    <p>
+      <%= sanitize post.body %>
+    </p>  
+    <br>
+    <% if (current_user && (post.author == current_user)) %>
+    	<%= link_to 'Edit', edit_blog_post_path(post) %> | <%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %>
+    <% end %>
+  <% end %>
+  <div class="digg_pagination">
+    <div clas="page_info">
+      <%= page_entries_info @blog_posts %>
+    </div>
+    <%= will_paginate @blog_posts, :container => false %>
+  </div>   
+</div>

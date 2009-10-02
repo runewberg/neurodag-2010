@@ -1,0 +1,14 @@
+<%= render :partial => '/shared/title_bar', :locals => {:title => "Edit poster" } %>
+<%= render :partial => '/shared/notice' %>
+
+<%= error_messages_for :poster %>
+
+<% form_for(@poster) do |form| %>
+  <%= render :partial => "form", :locals => { :form => form } %>
+  <p>
+    <%= form.submit "OK" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @poster %> |
+<%= link_to 'Back', posters_path %>

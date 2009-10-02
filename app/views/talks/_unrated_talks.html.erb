@@ -1,0 +1,23 @@
+<table cellpadding="1" cellspacing="0" width="100%" style="border: 1px solid gray">
+  	<tr class="<%= cycle('odd', 'even') %>">
+		<th>Title</th>
+		<th>Authors</th>
+		<th>Owner</th>
+		<th>Research rating</th>
+		<th>Presentation rating</th>
+		<th>Organization rating</th>	
+
+		<% if  is_admin? %>
+				<th>	&nbsp;</th><th>	&nbsp;</th>
+		<%end%>
+	</tr>
+
+  <% @talks.each do |talk| %>
+  <% if !talk.any_rating?(current_user) %>
+	<%= render :partial => 'ratings_talk_row', :locals => {:talk => talk} %>
+	<% end %>
+
+  <% end %>
+</table>
+		
+

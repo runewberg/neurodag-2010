@@ -1,0 +1,9 @@
+<%= render :partial => '/shared/title_bar', :locals => {:title => @title} %>
+<%= render :partial => '/shared/notice' %>
+<div class="formWrapper">
+<% form_for @user, :html => { :multipart => true } do |form| %>
+	<%= render :partial => 'form', :locals => {:form => form, :new_pwd => true} %>
+	<%= hidden_field_tag "attribute", "password", :id => nil %> 
+	<%= submit_tag "OK", :class => "submit" %>
+<% end %>
+</div>

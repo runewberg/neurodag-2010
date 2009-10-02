@@ -1,0 +1,29 @@
+<% if @users and not @users.empty? %>
+	<%= render :partial => '/shared/title_bar', :locals => {:title => @title} %>
+	<%= render :partial => '/shared/notice' %>
+	<div class="myWrapper">
+		<% if is_admin? %>		
+			<% form_tag('/users/delete_selected', :method => :put) do %>
+			<%= render :partial => 'user_table' %>
+		  	<div class="digg_pagination">
+		    	<div clas="page_info">
+		      	<%= page_entries_info @users %>
+		    	</div>
+		  		<%= will_paginate @users, :container => false %>
+		  	</div>
+			<br>
+			<%= submit_tag "Delete selected users", :confirm => "Are you sure you want to delete the selected users?" %>
+			<%end%>
+		<%else%>
+		<%= render :partial => 'user_table' %>
+	  	<div class="digg_pagination">
+	    	<div clas="page_info">
+	      	<%= page_entries_info @users %>
+	    	</div>
+	  		<%= will_paginate @users, :container => false %>
+	  	</div>
+		<br>		
+		<%end%>
+		<%= link_to "Neurodag community blogs", blogs_users_path %>
+	</div>
+<% end %>

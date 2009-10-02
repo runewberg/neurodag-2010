@@ -1,0 +1,61 @@
+<%= render :partial => '/shared/title_bar', :locals => {:title => h(@title) } %>
+<%= render :partial => '/shared/notice' %>
+
+<div class="myWrapper">
+		<p>
+		  By <%= link_to @owner.full_name, profile_path(@owner.screen_name) %><%= @owner.title %><br>
+		  <%= h @talk.updated_at.to_s(:article) %> for participation in the presentation competition.
+		</p>
+		<p> 
+		  <b>Abstract</b><br>
+			<%= @abstract %>
+		</p>
+	<br>
+	<p> 
+	  <b>Ratings<br><br>
+	</p>
+	<table cellpadding="1" cellspacing="0">
+	  	<tr class="<%= cycle('odd', 'even') %>">
+			<th  align="center"><% if  is_admin? %>
+			 	<th  align="center">Research</th>
+					<%= ratings_for @talk, :static, :dimension => :research, :small_stars => true %>	</th>
+			<th  align="center"><%=	@talk.rate_average(true, :research) %>	</th>
+		 	<th  align="center">Research</th>
+				<% elsif  is_referee? %>
+				<%= ratings_for @talk, :dimension => :research, :small_stars => true %>	</th>
+				<th  align="center"><%= 		@talk.rate_average(true, :research) %>	</th>
+				<%end%>
+		</tr>
+
+	  <tr class="<%= cycle('odd', 'even') %>">
+		 	<th>Presentation Style</th>
+			<th  align="center"><% if  is_admin? %>
+					<%= ratings_for @talk, :static, :dimension => :presentation_style, :small_stars => true %>	</th>
+			<th  align="center"><%=	@talk.rate_average(true, :presentation_style) %>	</th>
+				<% elsif  is_referee? %>
+					<%= ratings_for @talk, :dimension => :presentation_style, :small_stars => true %>	</th>
+			<th  align="center"><%=	@talk.rate_average(true, :presentation_style) %>	</th>
+				<%end%>
+		</tr>
+
+	  	<tr class="<%= cycle('odd', 'even') %>">
+		 	<th>Organization</th>
+			<th align="center"><% if  is_admin? %>
+					<%= ratings_for @talk, :static, :dimension => :organization, :small_stars => true %>	</th>
+			<th  align="center"><%=	@talk.rate_average(true, :organization) %>	</th>
+				<% elsif  is_referee? %>
+					<%= ratings_for @talk, :dimension => :organization, :small_stars => true %>	</th>
+			<th  align="center"><%=	@talk.rate_average(true, :organization) %>	</th>
+				<%end%>
+		</tr>
+	</table>
+	<br />
+	<% if is_admin? %>
+			<%= link_to 'Back to list of talks', talks_path %>
+	<% end %>
+	<% if @talk.owner == current_user %>
+			<%= link_to 'Destroy', @talk, :confirm => 'Are you sure?', :method => :delete %> |
+			<%= link_to 'Edit', edit_talk_path(@talk) %>
+	<% end %>
+</div>
+

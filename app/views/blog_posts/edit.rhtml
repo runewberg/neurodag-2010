@@ -1,0 +1,12 @@
+<%= render :partial => '/shared/title_bar', :locals => {:title => "Edit blog post" } %>
+<%= render :partial => '/shared/notice' %>
+
+<%= error_messages_for :blog_post %>
+<% form_for @blog_post do |form| %>
+  <%= render :partial => "form", :locals => { :form => form } %>
+  <p>	
+    <%= form.submit "OK", :class => 'submit' %>
+  </p>  
+<% end %>
+<%= link_to 'Show', @blog_post %> |
+<%= link_to 'Back', blog_posts_path %>

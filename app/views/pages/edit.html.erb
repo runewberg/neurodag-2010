@@ -1,0 +1,15 @@
+<% title = "New page" %>
+<%= render :partial => '/shared/title_bar', :locals => {:title => title } %>
+<%= render :partial => '/shared/notice' %>
+
+<%= error_messages_for :pages %>
+<div class="myWrapper">
+<% use_tinymce -%>
+
+<% form_for(@page) do |form| %>
+	<%= render :partial => "form", :locals => { :form => form } %>
+	<%= submit_tag "OK", :class => "submit" %> 
+<% end %>
+</div>
+<%= link_to 'Show', @page %> |
+<%= link_to 'Back', pages_path %>

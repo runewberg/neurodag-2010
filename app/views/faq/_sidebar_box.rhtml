@@ -1,0 +1,16 @@
+<% content = @faq[sidebar_box] %>
+<% unless hide_edit_links? && content.blank? %>
+<div class="sidebar_box">
+    <span class="header"><%= sidebar_box.humanize %></span>
+    <% unless hide_edit_links? %>
+      <span class="edit_link">
+        <%= link_to "(edit)", :controller => "faq", :action => "edit" %>
+      </span>
+    <% end %>
+    <br clear="all">
+  <div class="faq_answer">
+    <%#= strip(content, 300) %>
+	<%= sanitize content %>
+  </div>
+</div>
+<% end %>

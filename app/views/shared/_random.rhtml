@@ -1,0 +1,34 @@
+<li>
+	<ul>
+   <div class="contentHeadlineSmallBlue170">
+   	<span class="collumTopText">News</span>
+   </div>		  
+   <ul>
+	<!-- random 1-3 -->
+	<% random = rand(3) +1 %>
+	<% if random == 1 %>
+		<% User.most_recent.each do |user| %>
+			<li>
+				<%= link_to user.full_name, profile_for(user) %>
+				<span>New member <%= user.created_at.to_s(:vshort) %></span>
+			</li>  
+		<% end%>           
+	<% elsif random == 2 %>
+		<% Registration.most_recent.each do |reg| %>
+			<li>
+				<%= link_to reg.user.full_name, profile_for(reg.user) %>
+				<span>Is coming to Neurodag!</span>
+			</li>  
+		<% end%>           	
+	<% else %>
+		<% Poster.most_recent.each do |poster| %>
+			<li>
+				<%= link_to poster.user.full_name, profile_for(poster.user) %>
+				<span>Added a <%= link_to "poster", poster_path(poster) %>  <%= poster.created_at.to_s(:vshort) %></span>
+			</li>  
+		<% end%>           
+	
+	<% end %>
+   </ul>			
+	</ul>
+</li>

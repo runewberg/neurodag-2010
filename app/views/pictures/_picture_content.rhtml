@@ -1,0 +1,17 @@
+<% if picture.title %>
+<h2><%= h picture.title %></h2>
+<%end%>
+Picture submitted by 
+<%= link_to(picture.owner_name, picture) if picture.owner %> 
+	on <%= h picture.updated_at.to_s(:article) %>
+</p>
+<p> 
+  <h3>Description</h3>
+</p>
+<p>
+  <%= sanitize picture.description if picture.description %>
+</p>
+<p>
+  <%= image_tag @picture.pic.url(:medium) %>
+</p>
+<br>

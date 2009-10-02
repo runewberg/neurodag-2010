@@ -1,0 +1,19 @@
+<li>
+	<div class="contentHeadlineSmallBlue170">
+   		<span class="collumTopText">Blog posts</span>
+   	</div>		  
+ 	<ul>
+		<% @recent_blog_entries.each do |post| %>
+      	<li>
+		    <%= link_to post.title, blog_post_path(post)%>
+			<span><%= h post.updated_at.to_s(:vshort) || 'unknown date' %></span>
+		</li>
+		<% end %>
+		<li>
+		    <%= link_to 'All blog posts', blog_posts_path%>
+		</li>
+		<li>
+		    <%= link_to 'Your blog posts', your_blog_posts_path%>
+		</li>
+	</ul>
+</li>				

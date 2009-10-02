@@ -1,0 +1,9 @@
+<div class="faq">
+	<h2><%= answer_text_area.humanize %></h2>
+  <br />
+  <%= form.text_area answer_text_area, :rows => Faq::TEXT_ROWS, 
+                                       :cols => Faq::TEXT_COLS,
+									   :class => "mce-editor" %>
+  <br>									
+</div>
+<br>

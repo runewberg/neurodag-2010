@@ -1,0 +1,25 @@
+<h1> Neurodag 2009 Abstract book </h1>
+<h3>List of abstracts listed in alphabetical order after Corresponding Author’s last name. <h3>
+	<br>
+Poster abstract list (sorted by poster Owner's surname)
+<br>
+<table>
+	<tr>
+		<th>No.</th>
+		<th>Owner</th>
+		<th>Title</th>
+	</tr>				
+	<% @posters_all.each_with_index do |poster,index| %>
+	<tr>
+		<td><%= index+1 %></td>
+		<td><%= h poster.user.full_name %></td>
+		<td><%= h poster.title %> </td>
+	</tr>
+	<%end%>
+</table>
+<hr class="break">
+<% @posters_all.each_with_index do |poster,index| %>
+	<%= index+1 %> 		
+	<%= render :partial => 'poster_content', :locals => {:poster => poster } %>
+	<hr class="break">	
+<%end%>

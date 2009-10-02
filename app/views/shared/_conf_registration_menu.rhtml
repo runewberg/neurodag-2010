@@ -1,0 +1,41 @@
+<li>
+	<% if current_user %>
+   		<div class="contentHeadlineSmallBlue170">
+   			<span class="collumTopText">Registration</span>
+   		</div>		  			
+		<ul>
+		<!-- if no registra.. for current user show new link, otherwise ...-->
+		<% if !@my_registration %>
+			<li>
+				<%= link_to "Register for neurodag", registrations_path, :method => 'post' %>
+			</li>
+		<% else %>
+			<li>
+				<%= link_to "Cancel registration", registration_path(attend_active_conference?), 
+					:method => 'delete', :confirm => "Are you sure you want to cancel your registration" %> 
+				<span>Please let us know!</span>
+			</li>					
+			<li>
+				<%= link_to 'Manage registration', registration_path(@my_registration) %> 
+				<span>Until  <%=conferenceregistration_deadline%>. </span>
+			</li>																						
+			<li><%= link_to 'Upload pictures to gallery', new_picture_path %></li>																						
+		<% end %>
+		
+		<% if bringing_posters? %>
+			<li>
+				<%= link_to 'Manage posters', your_posters_path %> 
+				<span>Until  <%=conferenceregistration_deadline%>. </span>
+			</li>																													
+		<% end %>
+
+	<% if compete_in_active_conference? %>
+		<% if @my_talk %>
+			<li><%= link_to 'Manage talk', talk_path(@my_talk) %> <span>Util October 15th </span></li>																													
+		<% else %>
+			<li><%= link_to 'Add talk', new_talk_path %> <span>Until <%=competition_deadline%>. </span></li>																																					
+		<% end %>
+	<% end %>
+		</ul>
+	<% end %>								
+</li>

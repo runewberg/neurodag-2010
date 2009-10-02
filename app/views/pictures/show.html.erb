@@ -1,0 +1,12 @@
+<%= render :partial => '/shared/title_bar', :locals => {:title => h(@picture.owner_name) } %>
+<%= render :partial => '/shared/notice' %>
+
+<% if @picture %>
+<div class="myWrapper">
+	<%= render :partial => 'picture_content', :locals => {:picture => @picture } %>
+</div>
+<% end %>
+<% if current_user && (@picture.owner == current_user) %>
+		<%= link_to 'Destroy', @picture, :confirm => 'Are you sure?', :method => :delete %> |
+		<%= link_to 'Edit', picture_path(@picture) %> |
+<% end %>

@@ -1,0 +1,12 @@
+<div class="post">
+	<div class="post-bgtop">
+		<div class="post-bgbtm">
+			<h1 class="title"><a href="#"><%= @title %></a></h1>
+			<p class="meta">Posted by <a href="#"><%= @author %></a> on <%= @date_published %>
+				&nbsp;&bull;&nbsp; <a href="#" class="permalink">Full article</a></p>
+			<div class="entry">
+				<%= yield :content %>
+			</div>
+		</div>
+	</div>
+</div>>

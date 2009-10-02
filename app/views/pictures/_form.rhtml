@@ -1,0 +1,23 @@
+<fieldset>
+	<legend>Picture</legend>
+	<p>
+	  <label for="title">Title</label>
+	<%= form.text_field :title %>
+</p>
+<p>
+  <label for="description">Description</label>
+	<%= form.text_area :description, :rows => 20, :cols => 20, :style => "width: 300px !important" %>
+</p>
+ <p>     
+   <label for="data">Upload picture</label>
+   <%= form.file_field :pic %>
+ </p>
+ <p>
+   <br>
+   Upload a picture to the community gallery for neurodag
+</p>
+
+</fieldset>
+
+
+

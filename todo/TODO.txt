@@ -1,0 +1,8 @@
+http://github.com/thoughtbot/paperclip
+
+*) liste over ratede talks - inddelt efter højest rating
+
+*) email til at virke
+
+
+

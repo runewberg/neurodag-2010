@@ -1,0 +1,21 @@
+<% title =  "#{@user.full_name} :: #{@user.title}" %>
+<%= render :partial => '/shared/title_bar', :locals => {:title => title} %>
+<%= render :partial => '/shared/notice' %>
+<div class="myWrapper">
+  <div id="primary_info_wrapper" style="float:left">
+  			<%= render :partial => 'shared/basic_user_info' , :locals => {:allow_edit => true }  %>
+  			<%= render :partial => 'shared/main_content' %>
+  </div>
+  <div id="secondary_info_wrapper" style="float:left">								
+  			<%= render :partial => 'avatar/sidebar_box' %>
+  			<%= render :partial => 'faq/sidebar_box', :collection => Faq::FAVORITES %>
+  </div>
+  <div id="blogs_wrapper" style="clear:both">
+  </div>
+
+  <%= link_to "Delete profile of #{@user.full_name}", user_path(@user), :confirm => 'Are you sure you want to delete your user account?', :method => :delete %>
+
+</div>
+
+
+<!-- show with links to Edit profile fil -->

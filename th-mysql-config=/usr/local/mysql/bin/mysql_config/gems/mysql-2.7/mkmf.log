@@ -1,0 +1,422 @@
+find_library: checking for mysql_query() in -lmysqlclient... -------------------- no
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I. -I/usr/local/include   -Os -arch x86_64 -fno-common -Os -pipe -fno-common conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/local/lib -L. -Os -arch x86_64 -fno-common     -lruby -lmysqlclient  -lpthread -ldl -lm  "
+conftest.c: In function ‘t’:
+conftest.c:3: error: ‘mysql_query’ undeclared (first use in this function)
+conftest.c:3: error: (Each undeclared identifier is reported only once
+conftest.c:3: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))mysql_query; return 0; }
+/* end */
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I. -I/usr/local/include   -Os -arch x86_64 -fno-common -Os -pipe -fno-common conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/local/lib -L. -Os -arch x86_64 -fno-common     -lruby -lmysqlclient  -lpthread -ldl -lm  "
+ld: library not found for -lmysqlclient
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { mysql_query(); return 0; }
+/* end */
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I. -I/usr/local/include   -Os -arch x86_64 -fno-common -Os -pipe -fno-common conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/local/lib -L. -Os -arch x86_64 -fno-common     -lruby -lmysqlclient  -lpthread -ldl -lm  "
+conftest.c: In function ‘t’:
+conftest.c:3: error: ‘mysql_query’ undeclared (first use in this function)
+conftest.c:3: error: (Each undeclared identifier is reported only once
+conftest.c:3: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))mysql_query; return 0; }
+/* end */
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I. -I/usr/local/include   -Os -arch x86_64 -fno-common -Os -pipe -fno-common conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/local/lib -L. -Os -arch x86_64 -fno-common     -lruby -lmysqlclient  -lpthread -ldl -lm  "
+ld: library not found for -lmysqlclient
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { mysql_query(); return 0; }
+/* end */
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I. -I/usr/local/include   -Os -arch x86_64 -fno-common -Os -pipe -fno-common conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/local/lib -L/usr/local/lib/mysql -L. -Os -arch x86_64 -fno-common     -lruby -lmysqlclient  -lpthread -ldl -lm  "
+conftest.c: In function ‘t’:
+conftest.c:3: error: ‘mysql_query’ undeclared (first use in this function)
+conftest.c:3: error: (Each undeclared identifier is reported only once
+conftest.c:3: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))mysql_query; return 0; }
+/* end */
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I. -I/usr/local/include   -Os -arch x86_64 -fno-common -Os -pipe -fno-common conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/local/lib -L/usr/local/lib/mysql -L. -Os -arch x86_64 -fno-common     -lruby -lmysqlclient  -lpthread -ldl -lm  "
+ld: library not found for -lmysqlclient
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { mysql_query(); return 0; }
+/* end */
+
+--------------------
+
+have_library: checking for main() in -lm... -------------------- yes
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I. -I/usr/local/include   -Os -arch x86_64 -fno-common -Os -pipe -fno-common conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/local/lib -L. -Os -arch x86_64 -fno-common     -lruby -lm  -lpthread -ldl -lm  "
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+/* end */
+
+--------------------
+
+find_library: checking for mysql_query() in -lmysqlclient... -------------------- no
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I. -I/usr/local/include   -Os -arch x86_64 -fno-common -Os -pipe -fno-common conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/local/lib -L. -Os -arch x86_64 -fno-common    -lm  -lruby -lmysqlclient -lm  -lpthread -ldl -lm  "
+conftest.c: In function ‘t’:
+conftest.c:3: error: ‘mysql_query’ undeclared (first use in this function)
+conftest.c:3: error: (Each undeclared identifier is reported only once
+conftest.c:3: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))mysql_query; return 0; }
+/* end */
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I. -I/usr/local/include   -Os -arch x86_64 -fno-common -Os -pipe -fno-common conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/local/lib -L. -Os -arch x86_64 -fno-common    -lm  -lruby -lmysqlclient -lm  -lpthread -ldl -lm  "
+ld: library not found for -lmysqlclient
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { mysql_query(); return 0; }
+/* end */
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I. -I/usr/local/include   -Os -arch x86_64 -fno-common -Os -pipe -fno-common conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/local/lib -L. -Os -arch x86_64 -fno-common    -lm  -lruby -lmysqlclient -lm  -lpthread -ldl -lm  "
+conftest.c: In function ‘t’:
+conftest.c:3: error: ‘mysql_query’ undeclared (first use in this function)
+conftest.c:3: error: (Each undeclared identifier is reported only once
+conftest.c:3: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))mysql_query; return 0; }
+/* end */
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I. -I/usr/local/include   -Os -arch x86_64 -fno-common -Os -pipe -fno-common conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/local/lib -L. -Os -arch x86_64 -fno-common    -lm  -lruby -lmysqlclient -lm  -lpthread -ldl -lm  "
+ld: library not found for -lmysqlclient
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { mysql_query(); return 0; }
+/* end */
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I. -I/usr/local/include   -Os -arch x86_64 -fno-common -Os -pipe -fno-common conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/local/lib -L/usr/local/lib/mysql -L. -Os -arch x86_64 -fno-common    -lm  -lruby -lmysqlclient -lm  -lpthread -ldl -lm  "
+conftest.c: In function ‘t’:
+conftest.c:3: error: ‘mysql_query’ undeclared (first use in this function)
+conftest.c:3: error: (Each undeclared identifier is reported only once
+conftest.c:3: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))mysql_query; return 0; }
+/* end */
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I. -I/usr/local/include   -Os -arch x86_64 -fno-common -Os -pipe -fno-common conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/local/lib -L/usr/local/lib/mysql -L. -Os -arch x86_64 -fno-common    -lm  -lruby -lmysqlclient -lm  -lpthread -ldl -lm  "
+ld: library not found for -lmysqlclient
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { mysql_query(); return 0; }
+/* end */
+
+--------------------
+
+have_library: checking for main() in -lz... -------------------- yes
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I. -I/usr/local/include   -Os -arch x86_64 -fno-common -Os -pipe -fno-common conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/local/lib -L. -Os -arch x86_64 -fno-common    -lm  -lruby -lz -lm  -lpthread -ldl -lm  "
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+/* end */
+
+--------------------
+
+find_library: checking for mysql_query() in -lmysqlclient... -------------------- no
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I. -I/usr/local/include   -Os -arch x86_64 -fno-common -Os -pipe -fno-common conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/local/lib -L. -Os -arch x86_64 -fno-common    -lz -lm  -lruby -lmysqlclient -lz -lm  -lpthread -ldl -lm  "
+conftest.c: In function ‘t’:
+conftest.c:3: error: ‘mysql_query’ undeclared (first use in this function)
+conftest.c:3: error: (Each undeclared identifier is reported only once
+conftest.c:3: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))mysql_query; return 0; }
+/* end */
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I. -I/usr/local/include   -Os -arch x86_64 -fno-common -Os -pipe -fno-common conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/local/lib -L. -Os -arch x86_64 -fno-common    -lz -lm  -lruby -lmysqlclient -lz -lm  -lpthread -ldl -lm  "
+ld: library not found for -lmysqlclient
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { mysql_query(); return 0; }
+/* end */
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I. -I/usr/local/include   -Os -arch x86_64 -fno-common -Os -pipe -fno-common conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/local/lib -L. -Os -arch x86_64 -fno-common    -lz -lm  -lruby -lmysqlclient -lz -lm  -lpthread -ldl -lm  "
+conftest.c: In function ‘t’:
+conftest.c:3: error: ‘mysql_query’ undeclared (first use in this function)
+conftest.c:3: error: (Each undeclared identifier is reported only once
+conftest.c:3: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))mysql_query; return 0; }
+/* end */
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I. -I/usr/local/include   -Os -arch x86_64 -fno-common -Os -pipe -fno-common conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/local/lib -L. -Os -arch x86_64 -fno-common    -lz -lm  -lruby -lmysqlclient -lz -lm  -lpthread -ldl -lm  "
+ld: library not found for -lmysqlclient
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { mysql_query(); return 0; }
+/* end */
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I. -I/usr/local/include   -Os -arch x86_64 -fno-common -Os -pipe -fno-common conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/local/lib -L/usr/local/lib/mysql -L. -Os -arch x86_64 -fno-common    -lz -lm  -lruby -lmysqlclient -lz -lm  -lpthread -ldl -lm  "
+conftest.c: In function ‘t’:
+conftest.c:3: error: ‘mysql_query’ undeclared (first use in this function)
+conftest.c:3: error: (Each undeclared identifier is reported only once
+conftest.c:3: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))mysql_query; return 0; }
+/* end */
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I. -I/usr/local/include   -Os -arch x86_64 -fno-common -Os -pipe -fno-common conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/local/lib -L/usr/local/lib/mysql -L. -Os -arch x86_64 -fno-common    -lz -lm  -lruby -lmysqlclient -lz -lm  -lpthread -ldl -lm  "
+ld: library not found for -lmysqlclient
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { mysql_query(); return 0; }
+/* end */
+
+--------------------
+
+have_library: checking for main() in -lsocket... -------------------- no
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I. -I/usr/local/include   -Os -arch x86_64 -fno-common -Os -pipe -fno-common conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/local/lib -L. -Os -arch x86_64 -fno-common    -lz -lm  -lruby -lsocket -lz -lm  -lpthread -ldl -lm  "
+ld: library not found for -lsocket
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+/* end */
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I. -I/usr/local/include   -Os -arch x86_64 -fno-common -Os -pipe -fno-common conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/local/lib -L. -Os -arch x86_64 -fno-common    -lz -lm  -lruby -lsocket -lz -lm  -lpthread -ldl -lm  "
+ld: library not found for -lsocket
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { main(); return 0; }
+/* end */
+
+--------------------
+
+find_library: checking for mysql_query() in -lmysqlclient... -------------------- no
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I. -I/usr/local/include   -Os -arch x86_64 -fno-common -Os -pipe -fno-common conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/local/lib -L. -Os -arch x86_64 -fno-common    -lz -lm  -lruby -lmysqlclient -lz -lm  -lpthread -ldl -lm  "
+conftest.c: In function ‘t’:
+conftest.c:3: error: ‘mysql_query’ undeclared (first use in this function)
+conftest.c:3: error: (Each undeclared identifier is reported only once
+conftest.c:3: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))mysql_query; return 0; }
+/* end */
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I. -I/usr/local/include   -Os -arch x86_64 -fno-common -Os -pipe -fno-common conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/local/lib -L. -Os -arch x86_64 -fno-common    -lz -lm  -lruby -lmysqlclient -lz -lm  -lpthread -ldl -lm  "
+ld: library not found for -lmysqlclient
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { mysql_query(); return 0; }
+/* end */
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I. -I/usr/local/include   -Os -arch x86_64 -fno-common -Os -pipe -fno-common conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/local/lib -L. -Os -arch x86_64 -fno-common    -lz -lm  -lruby -lmysqlclient -lz -lm  -lpthread -ldl -lm  "
+conftest.c: In function ‘t’:
+conftest.c:3: error: ‘mysql_query’ undeclared (first use in this function)
+conftest.c:3: error: (Each undeclared identifier is reported only once
+conftest.c:3: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))mysql_query; return 0; }
+/* end */
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I. -I/usr/local/include   -Os -arch x86_64 -fno-common -Os -pipe -fno-common conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/local/lib -L. -Os -arch x86_64 -fno-common    -lz -lm  -lruby -lmysqlclient -lz -lm  -lpthread -ldl -lm  "
+ld: library not found for -lmysqlclient
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { mysql_query(); return 0; }
+/* end */
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I. -I/usr/local/include   -Os -arch x86_64 -fno-common -Os -pipe -fno-common conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/local/lib -L/usr/local/lib/mysql -L. -Os -arch x86_64 -fno-common    -lz -lm  -lruby -lmysqlclient -lz -lm  -lpthread -ldl -lm  "
+conftest.c: In function ‘t’:
+conftest.c:3: error: ‘mysql_query’ undeclared (first use in this function)
+conftest.c:3: error: (Each undeclared identifier is reported only once
+conftest.c:3: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))mysql_query; return 0; }
+/* end */
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I. -I/usr/local/include   -Os -arch x86_64 -fno-common -Os -pipe -fno-common conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/local/lib -L/usr/local/lib/mysql -L. -Os -arch x86_64 -fno-common    -lz -lm  -lruby -lmysqlclient -lz -lm  -lpthread -ldl -lm  "
+ld: library not found for -lmysqlclient
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { mysql_query(); return 0; }
+/* end */
+
+--------------------
+
+have_library: checking for main() in -lnsl... -------------------- no
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I. -I/usr/local/include   -Os -arch x86_64 -fno-common -Os -pipe -fno-common conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/local/lib -L. -Os -arch x86_64 -fno-common    -lz -lm  -lruby -lnsl -lz -lm  -lpthread -ldl -lm  "
+ld: library not found for -lnsl
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))main; return 0; }
+/* end */
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I. -I/usr/local/include   -Os -arch x86_64 -fno-common -Os -pipe -fno-common conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/local/lib -L. -Os -arch x86_64 -fno-common    -lz -lm  -lruby -lnsl -lz -lm  -lpthread -ldl -lm  "
+ld: library not found for -lnsl
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { main(); return 0; }
+/* end */
+
+--------------------
+
+find_library: checking for mysql_query() in -lmysqlclient... -------------------- no
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I. -I/usr/local/include   -Os -arch x86_64 -fno-common -Os -pipe -fno-common conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/local/lib -L. -Os -arch x86_64 -fno-common    -lz -lm  -lruby -lmysqlclient -lz -lm  -lpthread -ldl -lm  "
+conftest.c: In function ‘t’:
+conftest.c:3: error: ‘mysql_query’ undeclared (first use in this function)
+conftest.c:3: error: (Each undeclared identifier is reported only once
+conftest.c:3: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))mysql_query; return 0; }
+/* end */
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I. -I/usr/local/include   -Os -arch x86_64 -fno-common -Os -pipe -fno-common conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/local/lib -L. -Os -arch x86_64 -fno-common    -lz -lm  -lruby -lmysqlclient -lz -lm  -lpthread -ldl -lm  "
+ld: library not found for -lmysqlclient
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { mysql_query(); return 0; }
+/* end */
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I. -I/usr/local/include   -Os -arch x86_64 -fno-common -Os -pipe -fno-common conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/local/lib -L. -Os -arch x86_64 -fno-common    -lz -lm  -lruby -lmysqlclient -lz -lm  -lpthread -ldl -lm  "
+conftest.c: In function ‘t’:
+conftest.c:3: error: ‘mysql_query’ undeclared (first use in this function)
+conftest.c:3: error: (Each undeclared identifier is reported only once
+conftest.c:3: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))mysql_query; return 0; }
+/* end */
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I. -I/usr/local/include   -Os -arch x86_64 -fno-common -Os -pipe -fno-common conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/local/lib -L. -Os -arch x86_64 -fno-common    -lz -lm  -lruby -lmysqlclient -lz -lm  -lpthread -ldl -lm  "
+ld: library not found for -lmysqlclient
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { mysql_query(); return 0; }
+/* end */
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I. -I/usr/local/include   -Os -arch x86_64 -fno-common -Os -pipe -fno-common conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/local/lib -L/usr/local/lib/mysql -L. -Os -arch x86_64 -fno-common    -lz -lm  -lruby -lmysqlclient -lz -lm  -lpthread -ldl -lm  "
+conftest.c: In function ‘t’:
+conftest.c:3: error: ‘mysql_query’ undeclared (first use in this function)
+conftest.c:3: error: (Each undeclared identifier is reported only once
+conftest.c:3: error: for each function it appears in.)
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { void ((*volatile p)()); p = (void ((*)()))mysql_query; return 0; }
+/* end */
+
+"gcc -o conftest -I. -I/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/universal-darwin9.0 -I. -I/usr/local/include   -Os -arch x86_64 -fno-common -Os -pipe -fno-common conftest.c  -L. -L/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib -L/usr/local/lib -L/usr/local/lib/mysql -L. -Os -arch x86_64 -fno-common    -lz -lm  -lruby -lmysqlclient -lz -lm  -lpthread -ldl -lm  "
+ld: library not found for -lmysqlclient
+collect2: ld returned 1 exit status
+checked program was:
+/* begin */
+1: /*top*/
+2: int main() { return 0; }
+3: int t() { mysql_query(); return 0; }
+/* end */
+
+--------------------
+

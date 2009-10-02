@@ -1,0 +1,52 @@
+<% if @active_conference %>
+<% title = "#{current_user.full_name} :: " if current_user.full_name %> 
+<%= render :partial => '/shared/title_bar', :locals => {:title => (title + "Registration") } %>
+<%= render :partial => '/shared/notice' %>
+<div class="myWrapper">
+	 Your registration status for the <%= @active_conference.title%> meeting is listed below.<br>			
+			<table cellpadding="2" cellspacing="0" width="100%" style="border: 1px solid gray; font-size: 10px">	
+				<tr class="<%= cycle('odd', 'even') %>">
+					<td>Attending:</td>
+					<td><%= @attend %></td> <td> </td>					
+				</tr>
+				<tr class="<%= cycle('odd', 'even') %>">
+					<td>Bring posters: </td>
+					<td><%= @bringing_posters %> </td> <td><i> <%= link_to('Edit', edit_registration_path(@my_registration)) if @my_registration %></i> </td>
+				</tr>
+
+				<tr class="<%= cycle('odd', 'even') %>">
+					<td>	Participating in the presentation competition </td>
+					<td> <%=  @is_in_competition   %></td> <td> <i> <%= link_to('Edit', edit_registration_path(@my_registration)) if @my_registration %></i> </td>
+				</tr>
+				
+				<tr class="<%= cycle('odd', 'even') %>">
+					<td>	Your payment has been registred</td>
+					<td> <%=  @payment_received.humanize   %> </td>
+				</tr>
+
+			</table>
+			<br>
+			
+			<%= link_to('Edit your registration', edit_registration_path(@my_registration)) if @my_registration %> | <i> Last edit on <%= h @registration.updated_at.to_s(:article) %>  <br> </i>
+			<br>			
+
+			<p style="font-size: 11px "> <i> For submitting information about posters and presentation competition, please see the links under "Registration" on the sidebar.</i> </p>
+			<br>
+			<h2>Registration fee payment: </h2>
+			<p style="font-size: 11px "> 
+				The Participation fee is <b> DKK 250,- </b>, students <b> DKK: 150,- </b>
+				<br> 
+				Please pay the fee by bank transfer to Danske Bank: <br>
+				<b> Reg. no: 3001 account no: 4115212125 </b> <br>
+				
+				Please refer to: 3140-002 + your name(s).<br>
+<br>
+				PLEASE NOTE: If payment is made later than<b> October 30th</b> , please bring a receipt, or check if the your payment has been registered above. For questions or information please contact Lisbeth Causse by email (lcausse@sund.ku.dk) or by phone: +45 35 32 73 14 
+																						
+<% end %>
+</div>
+
+
+
+
+

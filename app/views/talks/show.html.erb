@@ -1,0 +1,17 @@
+<%= render :partial => '/shared/title_bar', :locals => {:title => h(@owner.full_name) } %>
+<%= render :partial => '/shared/notice' %>
+
+<div class="myWrapper">
+
+<%= render :partial => 'talk_content', :locals => {:talk => @talk} %>
+</div>
+
+<% if is_special_role? %>
+		<%= link_to 'Back to list of talks', referee_talks_path %>
+<% end %>
+
+<% if @talk.owner == current_user %>
+		<%= link_to 'Destroy', @talk, :confirm => 'Are you sure?', :method => :delete %> |
+		<%= link_to 'Edit', edit_talk_path(@talk) %>
+<% end %>
+

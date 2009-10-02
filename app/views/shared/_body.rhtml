@@ -1,0 +1,12 @@
+<div class="yui-t2">
+	<div id="_sidebar" class="yui-b">
+	  <%= yield :sidebar %>
+	</div>
+	<div id="_content" class="yui-main"> 
+	  <% if flash[:notice] -%> 
+	    <div id="notice"><%= flash[:notice] %></div> 
+	  <% end -%> 
+	  <%= yield %>
+	  <br clear="all" />
+	</div> 
+</div>

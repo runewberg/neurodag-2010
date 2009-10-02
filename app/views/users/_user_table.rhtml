@@ -1,0 +1,38 @@
+<table cellpadding="2" cellspacing="0" width="100%" style="border: 1px solid gray">	
+	<tr class="header">
+	  	<th>Name</th> 
+		<th>Title</th> 
+		<th>Occupation</th> 
+		<th>Location</th> 
+		<th>Member since</th> 
+		<th>Role</th>
+		<% if  logged_in? && is_admin? %>
+			<th>Id</th>
+			<th>Delete</th>
+		<%else%>
+			<th>Id</th>
+			<th></th>			
+		<%end%>
+	</tr>
+	<% @users.each_with_index do |user, index| %>
+	<tr class="<%= cycle('odd', 'even') %>">
+		  <td ><%= link_to user.full_name, profile_for(user) %>
+		  </td>
+		  <td align ="center"><%= user.title  %></td>
+		  <td align ="center"><%= user.occupation %></td>
+		  <td align ="center"><%= user.city %></td>
+		  <td align ="center"><%= user.created_at.to_s(:vshort) %></td>
+		<% if logged_in? && is_admin? && current_user != user %>
+			<td align ="center" >
+			<%= select_tag 'user[role]', options_for_select( %w{user referee admin}, user.role), 
+			{ :onchange => remote_function( :url => user_path(user), :method => 'put', :with => 'Form.Element.serialize(this)') } %></td>
+			<td align ="center" id="user_role_<%= user.id %>" style="display:none"></td> 
+			<td align ="center"> <%= user.id  %></td>	
+			<td align ="center"><%= check_box_tag 'del_user[]', user.id %></td>
+		<% else %>
+			<td align ="center" id="user_role_<%= user.id %>"><%= user.role%></td> 
+			<td align ="center"> <%= user.id  %></td><td></td>
+		<% end %>
+	</tr>
+	<% end %>
+</table>

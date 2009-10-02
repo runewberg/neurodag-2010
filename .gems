@@ -1,0 +1,8 @@
+cldwalker-hirb  --source gems.github.com
+ambethia-smtp-tls --source gems.github.com
+rmagick
+scrapi
+sentry
+nokogiri
+prawn
+aws-s3

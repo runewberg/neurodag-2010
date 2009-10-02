@@ -1,0 +1,11 @@
+<div id="sidebar_right" class="sidebar_right sidebar">
+	<ul class="sidebar">
+		<%#= render :partial => '/shared/news' %>
+    <% if logged_in? %>
+  		<%= render :partial => '/shared/nonrandom' %>		
+  		<%= render :partial => '/shared/blogs' %>		
+    <% end %>
+		<%= render :partial => '/shared/archives' %>					
+	</ul>
+</div>
+

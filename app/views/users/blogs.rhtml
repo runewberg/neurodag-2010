@@ -1,0 +1,34 @@
+<% title = "Member blogs for :: #{@active_conference.title}" %>
+<%= render :partial => '/shared/title_bar', :locals => {:title => title } %>
+<%= render :partial => '/shared/notice' %>
+
+<div class="myWrapper">
+	<table cellpadding="2" cellspacing="0" width="100%" style="border: 1px solid gray; font-size: 10px !important">
+  	<tr>
+  		<th></th>
+  		<th>Member</th>
+  		<th>Posts</th>  		
+  	</tr>	
+	<% @blog_users.each do |blog_user| %>
+  	<tr class="<%= cycle('odd', 'even') %>">
+  		<td>
+  		  <% if blog_user.avatar %>
+  		  <%= link_to image_tag(blog_user.avatar.url(:thumb)), blog_of_user_path(blog_user) %>
+  		  <% end %>
+  		</td>
+  		<td>
+  			<%= link_to h(truncate(blog_user.full_name, 30)), blog_of_user_path(blog_user)  %>
+  		</td>	
+  		<td>
+  			<%= blog_user.blog_posts.size %>
+  		</td>	
+  	</tr>
+	<% end %>
+	</table>
+	<div class="digg_pagination">
+      <div clas="page_info">
+        <%= page_entries_info @blog_users %>
+      </div>
+	  <%= will_paginate @blog_users, :container => false %>
+  </div>   
+</div>

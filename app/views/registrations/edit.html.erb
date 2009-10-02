@@ -1,0 +1,28 @@
+<% title = "Edit Registration for #{@active_conference.title}"  %>
+<%= render :partial => '/shared/title_bar', :locals => {:title => title} %>
+<%= render :partial => '/shared/notice' %>
+
+<div class="wrapper">    
+    <div class="contentHeadline">
+    	<span class="collumTopText">
+
+    	</span>
+    </div>
+</div>
+
+<div class="myWrapper">
+	<span class="header"> Registration closes on November 6th, 2009</span>
+	<br>
+	<% if @registration %>
+		<% form_for(@registration) do |form| %>
+			<%= render :partial => "form", :locals => {:form => form} %>
+			<br>
+			<%= submit_tag "OK"%>
+		<% end %>
+	<% end %>
+
+</div>
+
+
+
+

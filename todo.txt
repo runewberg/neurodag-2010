@@ -1,0 +1,35 @@
+DONE
+- blogs model
+ - BlogPost
+ - Comment
+- views: blog
+ - new
+ - edit
+ - show
+ - index
+ - your
+
+- sidebar
+ - show recent BlogPosts
+
+TODO:
+- Index should show all blogs from most recent to oldes in truncated/full form
+- First 3 show in full length, remaining entries, show first 300 chars (stripped HTML).
+
+your_blogs
+- At the top, enable creation of new BlogPost (partial -> New) if user is owner of 
+- Edit blogPost -> go to Edit blogPost page
+
+user_blogs (other user)
+- show all blogPosts belonging to a user
+- for each post show comments in truncated form (first 100 chars (stripped HTML)), with link (Javascript toggle) to show the full comment
+
+COMMENTS:
+
+
+TODO
+- all conferences list. 
+-  Create a link showing all the pages belonging to that conference, so that it is possible to navigate to any conference page.
+
+
+

@@ -1,0 +1,23 @@
+<%= error_messages_for :registration %>
+<br>
+<%= current_user.full_name || 'Hello' %> please review your registration status for the <%= @active_conference.title%> meeting below.<br>
+<br>	
+<table cellpadding="2" cellspacing="0" width="100%" style="border: 1px solid gray">
+		<tr class="<%= cycle('odd', 'even') %>">	
+			<td>	I'm bringing one or more posters </td>
+			<td> <%= form.check_box :bringing_posters %> </td>
+		</tr>
+
+		<tr class="<%= cycle('odd', 'even') %>">	
+			<td>	I'm participating in the presentation competition </td>
+				<% if is_referee? %>
+			<td> No </td>
+			<% else%>
+				<td> <%= form.check_box :participate_competition  %> </td>
+			<%end%>
+		</tr>
+</table>
+
+<% if @registered_with_posters %>
+	<% link_to posters_path "Administrate your posters"%>
+<% end %>	

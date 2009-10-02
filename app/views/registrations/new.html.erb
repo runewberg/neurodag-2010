@@ -1,0 +1,13 @@
+<%= render :partial => '/shared/title_bar', :locals => {:title => @title} %>
+<%= render :partial => '/shared/notice' %>
+
+<%= error_messages_for :registration %>
+
+<% if @registration %>
+	<h3><%= current_user.full_name || 'Hello'%>, would you like to attend the <%= @active_conference.title%> meeting?</h3>
+	<% form_for(@registration) do |form| %>
+		<%= render :partial => "form", :locals => { :form => form }   %>
+
+		<%= submit_tag "OK"%>
+	<% end %>
+<% end %>

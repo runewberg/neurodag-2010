@@ -1,0 +1,12 @@
+<div class="sidebar_box">
+    <span class="header"><%= h title %></span>
+    <% unless hide_edit_links? %>
+      <span class="edit_link">
+        <%= link_to "(edit)", link_path %>
+      </span>
+    <% end %>
+    <br clear="all">
+  <div class="faq_answer">
+    <%= sanitize content %>
+  </div>
+</div>

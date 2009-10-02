@@ -1,0 +1,15 @@
+<fieldset>
+	<legend>Blog post</legend>
+	<p>
+	  <label for="abstract">Title</label>
+	<%= form.text_field :title, :size => 30, :style => "width: 200px !important" %>
+</p>
+<p>
+  <label for="body">Body</label>
+  <% use_tinymce -%>
+	<%= form.text_area :body, :rows => 10, :cols => 20, :style => "width: 200px !important" %>
+</p>
+</fieldset>
+
+
+

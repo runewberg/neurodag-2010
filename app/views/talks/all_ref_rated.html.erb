@@ -1,0 +1,7 @@
+<% title = "Talks rated by all referees :: #{@active_conference.title}"%>
+<%= render :partial => '/shared/title_bar', :locals => {:title => title } %>
+<%= render :partial => '/shared/notice' %>
+
+<div class="myWrapper">
+<%= render :partial => 'rated_talks' %>
+</div>

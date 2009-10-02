@@ -1,0 +1,77 @@
+<%= render :partial => '/shared/title_bar', :locals => {:title => @title} %>
+<%= render :partial => '/shared/notice' %>
+
+<div class="myWrapper">
+	
+	Ordered alphabetically by last name
+<table cellpadding="2" cellspacing="0" width="100%" style="border: 1px solid gray">
+  <tr>
+	<th>Name</th>
+	<th>Title</th>
+	<th>Bring poster</th>
+	<th>Talk</th>
+	<th>Competition</th>
+		<% if is_admin? %><th>Payed reg.</th> <th>ID</th><%end%>
+		<th> &nbsp; </th>	<th> &nbsp; </th>
+
+  </tr>
+
+<% @attendees.each_with_index do |attendee, index| %>
+
+  <tr class="<%= cycle('odd', 'even') %>">
+	<% if attendee.user %>
+ 	<td>
+		<%= link_to  h(attendee.user.full_name), profile_path(attendee.user.screen_name) %>
+	</td>
+	<td align="center">
+		<%= h attendee.user_title %>
+	</td>
+	<% else%>
+	<td style="color:red">Attendee has no user!</td><td></td>
+	<% end %>
+	<td align="center">
+		<%= h attendee.bringing_poster %>
+	</td>		
+	<td align="center">
+		<%= h attendee.participate_competition %>
+	</td>
+	<td align="center">
+		<%= h attendee.giving_talk %>
+	</td>
+		<% if is_admin? %>
+	<td align="center">
+	<%= select_tag 'registration[payment_status]', options_for_select( %w{no yes}, attendee.payment_status_txt), 
+	{ :onchange => remote_function( :updates => 'notify', :url => registration_path(attendee), :method => 'put', :with => 'Form.Element.serialize(this)') } %>
+	</td>
+	<td align="center">
+		<%= h attendee.id %>
+	</td>
+	
+	<%end%>			
+    <td align="center">
+		<% if (attendee.user == current_user) || is_admin?  %>
+			<%= link_to 'Edit', edit_registration_path(attendee.id), :class => 'button' %>
+		<% end %>
+	</td>	
+    <td align="center">
+		<% if attendee.user == current_user || is_admin? %>
+			<%= link_to 'Unregister', registration_path(attendee), :confirm => 'Are you sure you want to unregister?', 
+			:method => :delete, :class => 'button' %>						
+		<% end %>	
+	</td>
+  </tr>
+<% end %>
+</table>
+
+	<div class="digg_pagination">
+	  <div clas="page_info">
+	    <%= page_entries_info @attendees %>
+	  </div>
+	  <%= will_paginate  @attendees, :container => false %>
+	</div>
+</div>
+
+<h2> <p><%= link_to 'List of attendees 2009 in alphabetical order (pdf)', formatted_registrations_path(:pdf) %></p> </h2 >
+
+
+

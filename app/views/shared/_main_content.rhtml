@@ -1,0 +1,7 @@
+<%= render :partial => "shared/sidebar_box_basic", 
+           :locals => {:title => 'Short CV', :link_path => "/faq/edit", :content => @faq.short_cv} %>				 
+
+<% friends_content = render(:partial => "friendship/friends") %>  
+<%#= render :partial => "shared/sidebar_box_noedit", 
+           :locals => {:title => 'Associates', :content => friends_content} %>				 
+

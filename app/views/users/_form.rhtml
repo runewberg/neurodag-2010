@@ -1,0 +1,99 @@
+<%= error_messages_for 'user' %>
+
+<fieldset>
+   <legend>User name</legend>			
+   <p>
+     <label for="screen_name">User name</label> 
+     <%= form.text_field :screen_name,
+                         :size => User::SCREEN_NAME_SIZE,
+                         :maxlength => User::SCREEN_NAME_MAX_LENGTH %>
+required
+   </p>
+</fieldset>			
+<fieldset>
+   <legend>Name</legend>
+   <p>
+     <label for="first_name">First name</label> 
+     <%= form.text_field :first_name, :size => 20,
+                                 :maxlength => 25 %>
+required
+   </p>
+   <p>
+     <label for="middle_name">Middle name</label> 
+     <%= form.text_field :middle_name, :size => 20,
+                                 :maxlength => 425 %>
+   </p>   
+   <p>
+     <label for="last_name">Last name</label> 
+     <%= form.text_field :last_name, :size => 20,
+                                 :maxlength => 425 %>
+required
+   </p>
+   
+   <p>
+     <label for="title">Title</label> 
+     <%= form.text_field :title, :size => 20,
+                                 :maxlength => 425 %>
+   </p>
+   <p>
+     <label for="occupation">Occupation</label> 
+     <%= form.text_field :occupation, :size => 20,
+                                 :maxlength => 425 %>
+   </p>
+   <p>
+     <label for="city">Workplace</label> 
+     <%= form.text_field :city, :size => 20,
+                                 :maxlength => 425 %>
+   </p>
+   
+</fieldset
+<fieldset>
+   <legend>Contact info</legend>					
+   <p>
+     <label for="email">E-mail</label> 
+     <%= form.text_field :email, :size => User::EMAIL_SIZE,
+                                 :maxlength => User::EMAIL_MAX_LENGTH %>
+required
+   </p>
+   <p>
+     <label for="phone_no">Phone number</label> 
+     <%= form.text_field :phone_no, :size => User::EMAIL_SIZE,
+                                 :maxlength => User::EMAIL_MAX_LENGTH %>
+   </p>
+   <p>
+     <label for="hide_contact_info">Hide contact info:</label> 
+     <%= form.check_box :hide_contact_info %>
+   </p>
+
+</fieldset>
+<fieldset>
+   <legend>Avatar</legend>					
+   <p>     
+     <label for="avatar">Profile picture</label>
+     <%= form.file_field :avatar %>
+   </p>
+   <p>
+     <br>
+     Upload your picture, if you want community members better identify you.
+  </p>
+</fieldset>  
+<fieldset>
+		
+   	<legend>Password <%= "(Optional)" if @new_pwd %></legend>			
+   <p>
+ 	<label for="password"><%= "New " if @new_pwd %>Password</label> 
+
+     <%= form.password_field :password, 
+                             :size =>      User::PASSWORD_SIZE,
+                             :maxlength => User::PASSWORD_MAX_LENGTH %>
+   </p>
+  <p>
+    <label for="password">Confirm</label> 
+    <%= form.password_field :password_confirmation, 
+                            :size =>      User::PASSWORD_SIZE,
+                            :maxlength => User::PASSWORD_MAX_LENGTH %>
+  </p>
+</fieldset>
+<p>
+  <%= show_simple_captcha(:object => "user", :image_style => "random" ) %>
+</p>

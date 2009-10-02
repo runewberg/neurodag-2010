@@ -1,0 +1,13 @@
+<div class="sidebar_box">
+    <span class="header">Avatar</span>
+    <br clear="all" />
+  <div class="sidebar_box_contents">
+    <% if @user.avatar_file_name %>
+    	<%= image_tag @user.avatar.url(:medium) %>  
+    <% elsif not hide_edit_links? %>
+    <%= image_tag '/images/photo1.png'%>
+    <% else %>
+     <%= image_tag '/images/photo1.png'%>
+    <% end %>
+  </div>
+</div>

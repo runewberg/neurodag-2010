@@ -1,0 +1,13 @@
+<p>
+  <b>Title:</b>
+  <%=h @album.title %>
+</p>
+
+<p>
+  <b>Decription:</b>
+  <%=h @album.decription %>
+</p>
+
+
+<%= link_to 'Edit', edit_album_path(@album) %> |
+<%= link_to 'Back', albums_path %>

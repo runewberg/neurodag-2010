@@ -1,0 +1,82 @@
+<%= render :partial => '/shared/title_bar', :locals => {:title => "Optional user information"} %>
+<%= render :partial => '/shared/notice' %>
+
+<% use_tinymce -%>
+<% form_for :faq do |form| %>
+
+  <%= error_messages_for 'faq' %>
+
+  <div class="wrapper">    
+      <div class="contentHeadline accordion" onclick="$('cv').toggle()">
+      	<span class="collumTopText">
+          <%= "CV" %>
+      	</span>
+      </div>
+      <div id="cv">
+        <%= form.text_area :short_cv, :rows => 12, :cols => Faq::TEXT_COLS, :class => "mce-editor" %>
+      </div>
+  </div>
+  <p>
+  <div class="wrapper">    
+      <div class="contentHeadline accordion" onclick="$('selected_papers').toggle()">
+      	<span class="collumTopText">
+          <%= "Selected papers" %>
+      	</span>
+      </div>
+      <div id="selected_papers">
+        <%= form.text_area :selected_papers, :rows => 12, :cols => Faq::TEXT_COLS, :class => "mce-editor" %>
+      </div>
+  </div>
+  <p>
+  <div class="wrapper">    
+      <div class="contentHeadline accordion" onclick="$('schools').toggle()">
+      	<span class="collumTopText">
+          <%= "Schools" %>
+      	</span>
+      </div>
+      <div id="schools">
+        <%= form.text_area :schools, :rows => 12, :cols => 50, :class => "mce-editor" %>
+      </div>
+  </div>
+  <p>
+  <div class="wrapper">    
+      <div class="contentHeadline accordion" onclick="$('companies').toggle()">
+      	<span class="collumTopText">
+          <%= "Companies" %>
+      	</span>
+      </div>
+      <div id="companies">
+        <%= form.text_area :companies, :rows => 12, :cols => 50, :class => "mce-editor" %>
+      </div>
+  </div>
+  <p>    
+  <div class="wrapper">    
+      <div class="contentHeadline accordion" onclick="$('work_experience').toggle()">
+      	<span class="collumTopText">
+          <%= "Work experience" %>
+      	</span>
+      </div>
+      <div id="work_experience">
+        <%= form.text_area :work_experience, :rows => 12, :cols => 50, :class => "mce-editor" %>
+      </div>
+  </div>
+  <p>   
+  <div class="wrapper">    
+      <div class="contentHeadline accordion" onclick="$('job_advertisement').toggle()">
+      	<span class="collumTopText">
+          <%= "Job advertisement" %>
+      	</span>
+      </div>
+      <div id="companies">
+        <%= form.text_area :job_advertisement, :rows => 12, :cols => 50, :class => "mce-editor" %>
+      </div>
+  </div>
+  <script>          
+  // document.observe("dom:loaded", function() {    
+  document.observe("dom:loaded", function() {        
+      ['job_advertisement', 'work_experience', 'companies', 'schools', 'selected_papers'].each(Element.toggle);              
+    });    
+  </script>
+  
+  <%= submit_tag "OK", :class => "submit" %> 
+<% end %>

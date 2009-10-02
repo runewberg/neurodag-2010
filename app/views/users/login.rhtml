@@ -1,0 +1,35 @@
+<%= render :partial => '/shared/title_bar', :locals => {:title => "Neurodag :: login"} %>
+<%= render :partial => '/shared/notice' %>
+
+<div class="formWrapper">
+<% form_for :user do |form| %>
+
+<fieldset>
+   <legend>Login</legend>
+	<p>
+  <label for="remember_me">Username</label>
+  <%= form.text_field :screen_name %>
+  </p>
+	<p>
+  <label for="password">Password</label>
+  <%= form.password_field :password %>
+  </p>
+	<p>
+  <label for="remember_me">Remember me</label>
+  <%= form.check_box :remember_me %>
+  </p>
+</fieldset>	
+<%= submit_tag "OK", :class => "submit" %>  
+
+<div class="form_footer">
+	  Forgot your screen name or password? 
+	  <%= link_to "Remind Me!", :controller => "email", :action => "remind" %>
+	<p>  
+	  Not a member?  <%= link_to "Register now!", :action => "register" %> It's free.
+	</p>
+</div>
+<script type="text/javascript">
+	$('user_screen_name').focus();
+</script>
+</div>
+<% end %>

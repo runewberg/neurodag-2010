@@ -1,0 +1,53 @@
+/* Hack to get IE to display fieldset/legend correctly */ 
+html fieldset { 
+  position: relative; 
+} 
+
+html legend { 
+  position:absolute; 
+  top: -1em; 
+  left: .5em; 
+} 
+
+html fieldset { 
+  position: relative; 
+  margin-top:0.5em; 
+  margin-bottom:0.5em; 
+  padding-top:1em; 
+  padding-bottom: 1em; 
+} 
+
+/* Form Styles */ 
+fieldset { 
+  background: #E0F0FF; 	
+} 
+
+legend { 
+  color: white;
+  width: 3em;
+  padding: .2em 1em;
+  border: 1px gray solid; 
+  background: white; 	 	
+}
+
+.form_footer {
+	padding: 1em;
+}
+
+/*
+legend { 
+  color: white; 
+  background: gray; 
+  padding: .4em 1em;
+  border: 1px black solid; 
+} 
+
+*/
+
+label { 
+  width: 10em; 
+  float: left; 
+  text-align: right; 
+  margin-right: 0.2em; 
+  display: block; 
+}

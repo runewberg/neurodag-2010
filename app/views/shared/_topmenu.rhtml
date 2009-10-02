@@ -1,0 +1,29 @@
+<div id="menu" class="menu">
+	<ul id="top_menu" class="menu">
+      <%= menu_item "Home", home_path %>
+      <%= menu_item "Members", users_path%>
+    <% if current_user -%>
+      <%= menu_item full_name_role || "your details", user_path(current_user) %>
+      <%= menu_item "Logout", logout_path %> 	
+    <% else -%>
+        <%= menu_item "New User", new_user_path %>	
+	    <%= menu_item "Login", login_path %>	
+    <% end -%>
+	
+	<% if logged_in? && !@my_registration -%>
+		<li><%= link_to "Register for neurodag", registrations_path, :method => 'post' %></li>
+	<% end %>
+	
+	<% if logged_in? && is_admin? %>
+		<%= menu_item "Admin dashboard", admin_path %> 		
+     <% end -%>			
+
+	<% if logged_in? %>
+		<%= menu_item "Your blogs", your_blog_posts_path %> 		
+    <% end -%>			
+
+	<% if logged_in? && is_referee? %>
+		<%= menu_item "Referee dashboard", referee_path %> 		
+    <% end -%>			
+	</ul>
+</div>	

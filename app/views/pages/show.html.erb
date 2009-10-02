@@ -1,0 +1,43 @@
+<%= render :partial => '/shared/title_bar', :locals => {:title => @title } %>
+<%= render :partial => '/shared/notice' %>
+<p>
+<%= @page.body %>
+</p>
+<br>
+<br>
+<!-- http://www.youtube.com/v/PDET_TrS4_Y&hl=en&fs=1&
+http://www.youtube.com/watch?v=PDET_TrS4_Y -->
+
+<% if @page.embedded_video_html && @page.embedded_video_html.include?('<object>') %>
+	  <%= @page.embedded_video_html  %>
+<% 
+   elsif @page.v_url
+     if @page.v_url.include?('http://www.youtube.com/watch?v=')
+       url = @page.v_url.gsub(/http:\/\/www.youtube.com\/watch\?v=/, '') 
+%>
+	<h3><%= @page.v_title%></h3>
+	<center>
+		<object width="<%= @page.v_width || 300 %>" height="<%= @page.v_height || 400 %>">
+			<param name="movie" value="<%= @page.v_url %>"></param>
+			<param name="allowFullScreen" value="true"></param>
+			<param name="allowscriptaccess" value="always"></param>
+			<embed src="http://www.youtube.com/v/<%= url %>" type="application/x-shockwave-flash" allowscriptaccess="always" allowfullscreen="true" width="<%= @page.v_width || 400 %>" height="<%= @page.v_height || 300%>"</embed>
+		</object>
+	</center>
+	<p>
+		<%= @page.v_description %>
+	</p>
+<%  
+	  end
+  else 
+end 
+%>
+
+<% if logged_in? && current_user.admin? %>
+<p>
+	<br>
+	<%= link_to 'Edit', edit_page_path(@page) %>
+	<%= link_to 'Destroy', @page, :confirm => 'Are you sure?', :method => :delete %>
+	<%= link_to 'New page', new_page_path %>
+</p>
+<% end %>

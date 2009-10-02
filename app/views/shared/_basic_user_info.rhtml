@@ -1,0 +1,42 @@
+<div class="sidebar_box">
+    <span class="header">Basic User Info</span>
+	<% if allow_edit %>    
+		<span class="edit_link"><%= link_to "(edit)", edit_user_path(current_user) %></span>	    
+	<%end%>
+    <br clear="all">
+  <div class="faq_answer">
+      <table>
+        <tr>
+          <td class="label">Full name</td>
+          <td><%= @user.full_name %></td>
+        </tr>
+        <tr>
+          <td class="label">Screen name</td>
+          <td><%= @user.screen_name %></td>
+        </tr>
+         <tr>
+          <td class="label">Occupation</td>
+          <td><%= @user.occupation %></td>
+        </tr>
+        <tr>
+          <td class="label">Workplace</td>
+          <td><%= @user.city %></td>
+        </tr>
+        <tr>
+          <td class="label">Email</td>
+          <td></td>
+        </tr>
+		<tr> <td colspan=2><%= @user.email %><%= " (hidden)" if @user.hide_contact_info %></td> </tr>
+        <tr>
+          <td class="label">Phone</td>
+          <td><%= @user.phone_no %><%= " (hidden)" if @user.hide_contact_info %></td>
+        </tr>
+<% if @user == current_user%>
+        <tr>
+          <td class="label">Password:</td>
+          <td> ********* (encrypted) </td>
+        </tr>
+<% end%>
+      </table>  
+  </div>
+</div>

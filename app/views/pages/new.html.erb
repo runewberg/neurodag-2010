@@ -1,0 +1,16 @@
+<% title = "New page" %>
+<%= render :partial => '/shared/title_bar', :locals => {:title => title } %>
+<%= render :partial => '/shared/notice' %>
+<%= error_messages_for :page %>
+
+<div class="myWrapper">
+<% form_for @page do |form| %>
+  <p>
+	  <%= render :partial => "form", :locals => { :form => form } %>
+	  <%= hidden_field_tag "parent_id", @parent_page_id %>
+	  <%= hidden_field_tag "conference_id", @conference_id %>
+	  <%= submit_tag "OK", :class => "submit" %> 
+  </p>
+<% end %>
+</div>
+<%= link_to 'Back', pages_path %>

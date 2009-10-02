@@ -1,0 +1,29 @@
+<% if active_conference %>
+	<li class="first">
+		<div class="contentHeadlineSmallBlue170">
+			<span class="collumTopText"><%= active_conference.title unless active_conference == nil %></span>
+		</div>
+		<ul>		  			
+		<% if active_conference.pages %>
+			<% active_conference.pages.each do |page| %>
+			<li>
+				<%= link_to page.title, page %>				 
+			</li>
+			<% end %>
+		<% end %>			
+			<li>
+				<%= link_to "Participants", registrations_path %> (<%= @active_conference.attendant_count %>) 
+				<span> List of participants so far</span>
+			</li>
+			<li>
+				<%= link_to "Poster list", posters_path %> (<%= @active_conference.poster_count %>)  
+				<span> List gets updated currently</span>
+			</li>				
+			<!-- <li>
+				<%#= link_to "Gallery", gallery_path %> (<%#= @active_conference.published_pictures.count %>)  
+				<span> List gets updated currently</span>
+			</li>				 -->
+		</ul>
+	</li>
+<% end %>	
+
