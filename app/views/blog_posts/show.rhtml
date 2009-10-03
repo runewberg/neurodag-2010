@@ -7,9 +7,9 @@
 </div>
 <% end %>
 
-<% if current_user && (@post.author == current_user) %>
-		<%= link_to 'Destroy', @post, :confirm => 'Are you sure?', :method => :delete %> |
-		<%= link_to 'Edit', edit_blog_post_path(@post) %> |
+<% if current_user && (@blog_post.author == current_user) %>
+		<%= link_to 'Destroy', @blog_post, :confirm => 'Are you sure?', :method => :delete %> |
+		<%= link_to 'Edit', edit_blog_post_path(@blog_post) %> |
 		<%= link_to 'All your blog posts', your_blog_posts_path %>
 <% else %>
 	  <%= link_to 'Back to all posters', blog_posts_path %>

@@ -16,7 +16,7 @@ class BlogPostsController < ApplicationController
     @blog_post = BlogPost.new    
     @title = "Your blog posts"
     @blog_posts = BlogPost.paginate :page => params[:page], :per_page => 10, :order => 'created_at DESC', 
-                  :conditions => ['user_id = ? AND conference_id = ?', current_user, active_conference], :include => :comments
+                  :conditions => ['user_id = ? AND conference_id = ?', current_user, active_conference] #, :include => :comments
     respond_to do |format|
       format.html # index.rhtml
       format.xml  { render :xml => @blog_posts.to_xml }
@@ -73,7 +73,7 @@ class BlogPostsController < ApplicationController
       end
       if error
         @blog_posts = BlogPost.paginate :page => params[:page], :per_page => 10, :order => 'created_at DESC', 
-                      :conditions => ['user_id = ? AND conference_id = ?', current_user, active_conference], :include => :comments        
+                      :conditions => ['user_id = ? AND conference_id = ?', current_user, active_conference] #, :include => :comments        
         format.html { render :action => "your" }
         format.xml  { render :xml => @blog_post.errors.to_xml }
       end

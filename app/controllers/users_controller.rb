@@ -69,7 +69,7 @@ class UsersController < ApplicationController
     if @user
       @title = "Blog posts of #{@user.full_name}"    
       @blog_posts = BlogPost.paginate :page => params[:page], :per_page => 10, :order => 'created_at DESC', 
-                    :conditions => ['user_id = ? AND conference_id = ?', @user.id, active_conference], :include => :comments
+                    :conditions => ['user_id = ? AND conference_id = ?', @user.id, active_conference] #, :include => :comments
     else
         redirect_to blog_posts_path
     end 
