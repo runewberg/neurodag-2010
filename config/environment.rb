@@ -74,7 +74,9 @@ DB_STRING_MAX_LENGTH = 255
 DB_TEXT_MAX_LENGTH = 4000
 HTML_TEXT_FIELD_SIZE = 15
 
-Time::DATE_FORMATS[:vshort] = "%d. %b, %y"
+Time::DATE_FORMATS[:vshort] = "%b/%y"
+
+Time::DATE_FORMATS[:short] = "%d. %b, %y"
 
 Time::DATE_FORMATS[:article] = "%A, %B %d, %Y"
 

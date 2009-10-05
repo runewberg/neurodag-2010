@@ -1,4 +1,4 @@
-<table cellpadding="2" cellspacing="0" width="100%" style="border: 1px solid gray">	
+<table width="100%" cellpadding="2" cellspacing="0" class="index">	
 	<tr class="header">
 	  	<th>Name</th> 
 		<th>Title</th> 
@@ -18,9 +18,9 @@
 	<tr class="<%= cycle('odd', 'even') %>">
 		  <td ><%= link_to user.full_name, profile_for(user) %>
 		  </td>
-		  <td align ="center"><%= user.title  %></td>
-		  <td align ="center"><%= user.occupation %></td>
-		  <td align ="center"><%= user.city %></td>
+		  <td align ="center"><%= truncate_spec(user.title)  %></td>
+		  <td align ="center"><%= truncate_spec(user.occupation) %></td>
+		  <td align ="center"><%= truncate_spec(user.city) %></td>
 		  <td align ="center"><%= user.created_at.to_s(:vshort) %></td>
 		<% if logged_in? && is_admin? && current_user != user %>
 			<td align ="center" >

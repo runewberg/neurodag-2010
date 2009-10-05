@@ -23,8 +23,17 @@
 }
 
 table {
-	padding: 2px;
+	padding: 0px;
 	margin: 2px;
+}
+
+table.index {
+	border: 1px solid gray; 
+	font-size: 9px !important
+}
+
+.index td {
+  border-spacing:0px; 	
 }
 
 tr.odd {

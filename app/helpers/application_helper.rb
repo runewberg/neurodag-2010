@@ -11,6 +11,27 @@ module ApplicationHelper
     "http://" + APP_CONFIG['app_root']
   end
 
+  def truncate_spec(loc)
+    loc.gsub!(/science/i, "sci.")
+    loc.gsub!(/\sfor\s/i, " ")
+    loc.gsub!(/hospital/i, "Hosp.")
+    loc.gsub!(/institute/i, "Inst.")
+    loc.gsub!(/research/i, "Res.")
+    loc.gsub!(/laboratory/i, "Lab.")
+    loc.gsub!(/København/i, "KBH.")
+    loc.gsub!(/department/i, "Dep.")
+    loc.gsub!(/psychology/i, "Psych.")
+    loc.gsub!(/associate/i, "Ass.")
+    loc.gsub!(/university/i, "U.")
+    loc.gsub!(/copenhagen/i, "Cph.")
+    loc.gsub!(/student/i, "stud.")
+    loc.gsub!(/studerende/i, "stud.")
+    loc.gsub!(/professor/i, "prof.")
+    loc.gsub!(/technician/i, "tech.")
+    truncate(loc,19)
+  end
+
+
   def full_name
     if current_user 
       current_user.full_name
