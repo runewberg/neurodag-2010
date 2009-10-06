@@ -1,6 +1,7 @@
 <% title = "Referee dashboard :: #{current_user.full_name}"  %>
 <%= render :partial => '/shared/title_bar', :locals => {:title => title} %>
 <%= render :partial => '/shared/notice' %>
+<% if is_special_role? %>
 
 <div class="myWrapper">
 <table cellpadding="2" cellspacing="0" width="100%" style="border: 1px solid gray">
@@ -74,6 +75,9 @@
 </table>
 </div>
 
+<%else%>
+	insufficient privilege - please go back
+<%end%>
 
 
 

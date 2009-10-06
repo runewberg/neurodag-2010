@@ -1,8 +1,10 @@
 <%= render :partial => '/shared/title_bar', :locals => {:title => "Edit poster" } %>
 <%= render :partial => '/shared/notice' %>
 
-<%= error_messages_for :poster %>
+<% if is_admin? || (@poster.owner && (@poster.owner == current_user)) %>
 
+
+<%= error_messages_for :poster %>
 <% form_for(@poster) do |form| %>
   <%= render :partial => "form", :locals => { :form => form } %>
   <p>
@@ -12,3 +14,9 @@
 
 <%= link_to 'Show', @poster %> |
 <%= link_to 'Back', posters_path %>
+<%else%>
+	insufficient privilege - please go back
+<%end%>
+
+
+

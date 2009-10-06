@@ -1,5 +1,6 @@
 <%= render :partial => '/shared/title_bar', :locals => {:title => @title} %>
 <%= render :partial => '/shared/notice' %>
+<% if is_special_role? || @user == current_user %>
 <div class="formWrapper">
 <% form_for @user, :html => { :multipart => true } do |form| %>
 	<%= render :partial => 'form', :locals => {:form => form, :new_pwd => true} %>
@@ -7,3 +8,8 @@
 	<%= submit_tag "OK", :class => "submit" %>
 <% end %>
 </div>
+
+<%else%>
+	insufficient privilege - please go back
+<%end%>
+

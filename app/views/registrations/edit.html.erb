@@ -1,6 +1,7 @@
 <% title = "Edit Registration for #{@active_conference.title}"  %>
 <%= render :partial => '/shared/title_bar', :locals => {:title => title} %>
 <%= render :partial => '/shared/notice' %>
+<% if is_admin? || (@registration.user && (@registration.user == current_user)) %>
 
 <div class="wrapper">    
     <div class="contentHeadline">
@@ -22,6 +23,9 @@
 	<% end %>
 
 </div>
+<%else%>
+	insufficient privilege - please go back
+<%end%>
 
 
 

@@ -2,6 +2,7 @@
 <%= render :partial => '/shared/title_bar', :locals => {:title => title } %>
 <%= render :partial => '/shared/notice' %>
 <%= error_messages_for :page %>
+<% if is_admin? %>
 
 <div class="myWrapper">
 <% form_for @page do |form| %>
@@ -14,3 +15,6 @@
 <% end %>
 </div>
 <%= link_to 'Back', pages_path %>
+<%else%>
+	insufficient privilege - please go back
+<%end%>

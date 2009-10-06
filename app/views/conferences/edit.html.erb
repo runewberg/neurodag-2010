@@ -1,6 +1,7 @@
 <% title = "Edit conference" %>
 <%= render :partial => '/shared/title_bar', :locals => {:title => title } %>
 <%= render :partial => '/shared/notice' %>
+<% if is_admin? %>
 
 <%= error_messages_for :conferences %>
 <div class="myWrapper">
@@ -14,3 +15,8 @@
 <%= link_to 'Show', @conference %> |
 <%= link_to 'Back', conferences_path %>
 </div>
+
+
+<%else%>
+	insufficient privilege - please go back
+<%end%>

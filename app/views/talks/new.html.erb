@@ -4,9 +4,16 @@
 <%= error_messages_for :talk %>
 <% form_for(@talk) do |form| %>
 	<%= render :partial => "form", :locals => { :form => form } %>
+
   <p>	
-    <%= form.submit "OK" %>
+    <%= form.submit "OK" %>  
+
   </p>
+<%= link_to  "Information about presentation competition", competitioninfo_path %>
 <% end %>
 
+
+<% if  is_special_role? %>
+
 <%= link_to 'Back', talks_path %>
+<%end%>

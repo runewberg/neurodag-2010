@@ -1,80 +1,83 @@
 <% title = "Talks :: #{@active_conference.title}" %>
 <%= render :partial => '/shared/title_bar', :locals => {:title => title } %>
 <%= render :partial => '/shared/notice' %>
+<% if is_special_role? %>
+	<div class="myWrapper">
+		<table width="100%" class="index">
+	  	<tr class="<%= cycle('odd', 'even') %>">
+			<th>Title</th>
+			<th>Authors</th>
+			<th>Owner</th>
+			<th>Research rating</th>
+			<th>Presentation rating</th>
+			<th>Organization rating</th>	
+			<th>	&nbsp;</th><th>	&nbsp;</th><th>	&nbsp;</th>			
+		</tr>
 
-<div class="myWrapper">
-	<table width="100%" class="index">
-  	<tr class="<%= cycle('odd', 'even') %>">
-		<th>Title</th>
-		<th>Authors</th>
-		<th>Owner</th>
-		<th>Research rating</th>
-		<th>Presentation rating</th>
-		<th>Organization rating</th>	
-		<th>	&nbsp;</th><th>	&nbsp;</th><th>	&nbsp;</th>			
-	</tr>
+		<% @talks.each do |talk| %>
+	  	<tr class="<%= cycle('odd', 'even') %>">
+			<td id="<%= talk.id %>">
+				<%= link_to truncate(talk.title, 20) , talk_path(talk)%>
+			</td>
 
-	<% @talks.each do |talk| %>
-  	<tr class="<%= cycle('odd', 'even') %>">
-		<td id="<%= talk.id %>">
-			<%= link_to truncate(talk.title, 20) , talk_path(talk)%>
-		</td>
-
-		<td>
-			<%#= h truncate(talk.authors,20) %>
-		</td>	
-	<td><%= h talk.owner.name %></td>	
+			<td>
+				<%#= h truncate(talk.authors,20) %>
+			</td>	
+		<td><%= h talk.owner.name %></td>	
 	
-	<% if  is_admin? %>
-		<td> 
-			<%= ratings_for talk, :static, :dimension => :research, :small_stars => true %> 
-			<span id="talk-<%= talk.id %>-research_avg">
-				<%= talk.rate_average(true, :research) %>	
-			</span>
-		</td>
-		<td> 
-			<%= ratings_for talk, :static, :dimension => :presentation_style, :small_stars => true%> 
-			<span id="talk-<%= talk.id %>-presentation_style_avg">
-				<%= talk.rate_average(true, :presentation_style) %>
-			</span>
-		</td>
-		<td> 
-			<%= ratings_for talk, :static, :dimension => :organization, :small_stars => true %> 
-			<span id="talk-<%= talk.id %>-organization_avg">
-				<%= talk.rate_average(true, :organization) %>
-			</span>		
-		</td>
-	<%else%>
-		<td> 
-			<%= ratings_for talk, :dimension => :research, :small_stars => true %> 
-			<span id="talk-<%= talk.id %>-research_avg">
-				<%= talk.rate_average(true, :research) %>	
-			</span>
-		</td>
-		<td> 
-			<%= ratings_for talk, :dimension => :presentation_style, :small_stars => true%> 
-			<span id="talk-<%= talk.id %>-presentation_style_avg">
-				<%= talk.rate_average(true, :presentation_style) %>
-			</span>
-		</td>
-		<td> 
-			<%= ratings_for talk, :dimension => :organization, :small_stars => true %> 
-			<span id="talk-<%= talk.id %>-organization_avg">
-				<%= talk.rate_average(true, :organization) %>
-			</span>
-		</td>
-	<% end%>
+		<% if  is_admin? %>
+			<td> 
+				<%= ratings_for talk, :static, :dimension => :research, :small_stars => true %> 
+				<span id="talk-<%= talk.id %>-research_avg">
+					<%= talk.rate_average(true, :research) %>	
+				</span>
+			</td>
+			<td> 
+				<%= ratings_for talk, :static, :dimension => :presentation_style, :small_stars => true%> 
+				<span id="talk-<%= talk.id %>-presentation_style_avg">
+					<%= talk.rate_average(true, :presentation_style) %>
+				</span>
+			</td>
+			<td> 
+				<%= ratings_for talk, :static, :dimension => :organization, :small_stars => true %> 
+				<span id="talk-<%= talk.id %>-organization_avg">
+					<%= talk.rate_average(true, :organization) %>
+				</span>		
+			</td>
+		<%else%>
+			<td> 
+				<%= ratings_for talk, :dimension => :research, :small_stars => true %> 
+				<span id="talk-<%= talk.id %>-research_avg">
+					<%= talk.rate_average(true, :research) %>	
+				</span>
+			</td>
+			<td> 
+				<%= ratings_for talk, :dimension => :presentation_style, :small_stars => true%> 
+				<span id="talk-<%= talk.id %>-presentation_style_avg">
+					<%= talk.rate_average(true, :presentation_style) %>
+				</span>
+			</td>
+			<td> 
+				<%= ratings_for talk, :dimension => :organization, :small_stars => true %> 
+				<span id="talk-<%= talk.id %>-organization_avg">
+					<%= talk.rate_average(true, :organization) %>
+				</span>
+			</td>
+		<% end%>
 
-	<% if talk.owner == current_user %>
-	    <td><%= link_to 'Edit', edit_talk_path(talk) %></td>
-	    <td><%= link_to 'Destroy', talk_path(talk), :confirm => 'Are you sure?', :method => :delete %></td>	
-	<% elsif is_admin? %>
-	    <td><%= link_to 'Edit', edit_talk_path(talk) %></td>
-	    <td><%= link_to 'Destroy', talk_path(talk), :confirm => 'Are you sure?', :method => :delete %></td>
+		<% if talk.owner == current_user %>
+		    <td><%= link_to 'Edit', edit_talk_path(talk) %></td>
+		    <td><%= link_to 'Destroy', talk_path(talk), :confirm => 'Are you sure?', :method => :delete %></td>	
+		<% elsif is_admin? %>
+		    <td><%= link_to 'Edit', edit_talk_path(talk) %></td>
+		    <td><%= link_to 'Destroy', talk_path(talk), :confirm => 'Are you sure?', :method => :delete %></td>
+		<% end %>
+	</tr>
 	<% end %>
-</tr>
-<% end %>
-</table>
-</div>
+	</table>
+	</div>
 
-<h2> <p><%= link_to 'Talk abstract book 2009 (pdf)', formatted_talks_path(:pdf) %></p> </h2 >
+	<h2> <p><%= link_to 'Talk abstract book 2009 (pdf)', formatted_talks_path(:pdf) %></p> </h2 >
+<%else%>
+	insufficient privilege - please go back
+<%end%>

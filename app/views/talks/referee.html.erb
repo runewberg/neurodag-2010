@@ -1,6 +1,7 @@
 <% title = "Talks pending rating by #{current_user.full_name}" %>
 <%= render :partial => '/shared/title_bar', :locals => {:title => title } %>
 <%= render :partial => '/shared/notice' %>
+<% if is_special_role? %>
 
 <div class="myWrapper">
 	<%= render :partial => 'unrated_talks' %>
@@ -14,5 +15,8 @@
 <div class="myWrapper">
 <%= render :partial => 'rated_talks' %>
 </div>
+<%else%>
+	insufficient privilege - please go back
+<%end%>
 
 
