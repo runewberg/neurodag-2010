@@ -20,7 +20,7 @@
 		  <td align ="center"><%= truncate_spec(user.title)  %></td>
 		  <td align ="center"><%= truncate_spec(user.occupation) %></td>
 		  <td align ="center"><%= truncate_spec(user.city) %></td>
-		  <td align ="center"><%= user.created_at.to_s(:vshort) %></td>
+		  <td align ="center"><%= user.created_at.to_s(:short) %></td>
 		<% if logged_in? && is_admin? && current_user != user %>
 			<td align ="center" >
 			<%= select_tag 'user[role]', options_for_select( %w{user referee admin}, user.role), 

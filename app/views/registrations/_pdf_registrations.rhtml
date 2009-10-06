@@ -6,7 +6,7 @@
 <indent/><h1>Neurodag 2009 Attendees</h1>
 <p></p>
 <% most_recent_registration =  Registration.most_recent[0] %>
-<indent_h2/>Last update on: <%=  most_recent_registration.created_at.to_s(:vshort) if most_recent_registration %>
+<indent_h2/>Last update on: <%=  most_recent_registration.created_at.to_s(:short) if most_recent_registration %>
 
 
 <p>List of attendees sorted by surname</p>

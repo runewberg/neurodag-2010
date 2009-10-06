@@ -28485,3 +28485,498 @@ Rendered shared/_blogs (0.1ms)
 Rendered shared/_archives (0.1ms)
 Rendered shared/_sidebar_right (11.3ms)
 Completed in 187ms (View: 50, DB: 28) | 200 OK [http://0.0.0.0/users]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostersController#index (for 127.0.0.1 at 2009-10-06 14:26:27) [GET]
+  [4;36;1mUser Columns (2.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mBlogPost Load (0.5ms)[0m   [0mSELECT * FROM `blog_posts` ORDER BY updated_at DESC LIMIT 3[0m
+  [4;36;1mConference Load (0.6ms)[0m   [0;1mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;36;1mConference Load (0.6ms)[0m   [0;1mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 1[0m
+  [4;35;1mRegistration Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `registrations`[0m
+  [4;36;1mConference Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `conferences`[0m
+  [4;35;1mRegistration Load (0.7ms)[0m   [0mSELECT * FROM `registrations` WHERE (`registrations`.`user_id` = 38 AND `registrations`.`conference_id` = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mTalk Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `talks`[0m
+  [4;36;1mTalk Load (0.5ms)[0m   [0;1mSELECT * FROM `talks` WHERE (`talks`.`user_id` = 38 AND `talks`.`conference_id` = 1) LIMIT 1[0m
+PROTECT
+LOGGED IN
+  [4;35;1mPoster Load (0.7ms)[0m   [0mSELECT * FROM `posters` ORDER BY id DESC LIMIT 0, 10[0m
+  [4;36;1mPoster Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `posters`[0m
+  [4;35;1mPoster Load Including Associations (17.0ms)[0m   [0mSELECT `posters`.`id` AS t0_r0, `posters`.`title` AS t0_r1, `posters`.`abstract` AS t0_r2, `posters`.`authors` AS t0_r3, `posters`.`affiliations` AS t0_r4, `posters`.`corresponding_author` AS t0_r5, `posters`.`created_at` AS t0_r6, `posters`.`updated_at` AS t0_r7, `posters`.`registration_id` AS t0_r8, `posters`.`user_id` AS t0_r9, `posters`.`conference_id` AS t0_r10, `users`.`id` AS t1_r0, `users`.`screen_name` AS t1_r1, `users`.`email` AS t1_r2, `users`.`created_at` AS t1_r3, `users`.`updated_at` AS t1_r4, `users`.`authorization_token` AS t1_r5, `users`.`role` AS t1_r6, `users`.`first_name` AS t1_r7, `users`.`middle_name` AS t1_r8, `users`.`last_name` AS t1_r9, `users`.`occupation` AS t1_r10, `users`.`phone_no` AS t1_r11, `users`.`title` AS t1_r12, `users`.`city` AS t1_r13, `users`.`hide_contact_info` AS t1_r14, `users`.`crypted_password` AS t1_r15, `users`.`avatar_file_name` AS t1_r16, `users`.`avatar_content_type` AS t1_r17, `users`.`avatar_file_size` AS t1_r18, `users`.`avatar_updated_at` AS t1_r19 FROM `posters` LEFT OUTER JOIN `users` ON `users`.id = `posters`.user_id WHERE (posters.conference_id = 1 AND posters.user_id = users.id) ORDER BY users.last_name ASC[0m
+  [4;36;1mPoster Load (0.6ms)[0m   [0;1mSELECT * FROM `posters` ORDER BY updated_at DESC LIMIT 3[0m
+Rendering template within layouts/default
+Rendering posters/index
+Rendered shared/_title_bar (0.5ms)
+Rendered shared/_notice (0.4ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47posters47index46html46erb at /Users/runebergO/Documents/rails-apps/neurodag7/app/views/posters/index.html.erb:27)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47posters47index46html46erb at /Users/runebergO/Documents/rails-apps/neurodag7/app/views/posters/index.html.erb:31)
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 16) [0m
+  [4;35;1mRate Columns (35.0ms)[0m   [0mSHOW FIELDS FROM `rates`[0m
+  [4;36;1mSQL (19.4ms)[0m   [0;1mSELECT sum(`rates`.stars) AS sum_stars FROM `rates` WHERE (`rates`.rateable_id = 6 AND `rates`.rateable_type = 'Poster' AND (`rates`.`dimension` = 'research')) [0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSELECT count(*) AS count_all FROM `rates` WHERE (`rates`.rateable_id = 6 AND `rates`.rateable_type = 'Poster' AND (`rates`.`dimension` = 'research')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum(`rates`.stars) AS sum_stars FROM `rates` WHERE (`rates`.rateable_id = 6 AND `rates`.rateable_type = 'Poster' AND (`rates`.`dimension` = 'research')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum(`rates`.stars) AS sum_stars FROM `rates` WHERE (`rates`.rateable_id = 6 AND `rates`.rateable_type = 'Poster' AND (`rates`.`dimension` = 'research')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum(`rates`.stars) AS sum_stars FROM `rates` WHERE (`rates`.rateable_id = 6 AND `rates`.rateable_type = 'Poster' AND (`rates`.`dimension` = 'research')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum(`rates`.stars) AS sum_stars FROM `rates` WHERE (`rates`.rateable_id = 6 AND `rates`.rateable_type = 'Poster' AND (`rates`.`dimension` = 'research')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum(`rates`.stars) AS sum_stars FROM `rates` WHERE (`rates`.rateable_id = 6 AND `rates`.rateable_type = 'Poster' AND (`rates`.`dimension` = 'research')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum(`rates`.stars) AS sum_stars FROM `rates` WHERE (`rates`.rateable_id = 6 AND `rates`.rateable_type = 'Poster' AND (`rates`.`dimension` = 'research')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum(`rates`.stars) AS sum_stars FROM `rates` WHERE (`rates`.rateable_id = 6 AND `rates`.rateable_type = 'Poster' AND (`rates`.`dimension` = 'research')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47posters47index46html46erb at /Users/runebergO/Documents/rails-apps/neurodag7/app/views/posters/index.html.erb:27)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from _run_erb_app47views47posters47index46html46erb at /Users/runebergO/Documents/rails-apps/neurodag7/app/views/posters/index.html.erb:31)
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT sum(`rates`.stars) AS sum_stars FROM `rates` WHERE (`rates`.rateable_id = 5 AND `rates`.rateable_type = 'Poster' AND (`rates`.`dimension` = 'research')) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `rates` WHERE (`rates`.rateable_id = 5 AND `rates`.rateable_type = 'Poster' AND (`rates`.`dimension` = 'research')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum(`rates`.stars) AS sum_stars FROM `rates` WHERE (`rates`.rateable_id = 5 AND `rates`.rateable_type = 'Poster' AND (`rates`.`dimension` = 'research')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum(`rates`.stars) AS sum_stars FROM `rates` WHERE (`rates`.rateable_id = 5 AND `rates`.rateable_type = 'Poster' AND (`rates`.`dimension` = 'research')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum(`rates`.stars) AS sum_stars FROM `rates` WHERE (`rates`.rateable_id = 5 AND `rates`.rateable_type = 'Poster' AND (`rates`.`dimension` = 'research')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum(`rates`.stars) AS sum_stars FROM `rates` WHERE (`rates`.rateable_id = 5 AND `rates`.rateable_type = 'Poster' AND (`rates`.`dimension` = 'research')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum(`rates`.stars) AS sum_stars FROM `rates` WHERE (`rates`.rateable_id = 5 AND `rates`.rateable_type = 'Poster' AND (`rates`.`dimension` = 'research')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT sum(`rates`.stars) AS sum_stars FROM `rates` WHERE (`rates`.rateable_id = 5 AND `rates`.rateable_type = 'Poster' AND (`rates`.`dimension` = 'research')) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT sum(`rates`.stars) AS sum_stars FROM `rates` WHERE (`rates`.rateable_id = 5 AND `rates`.rateable_type = 'Poster' AND (`rates`.`dimension` = 'research')) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+DEPRECATION WARNING: formatted_posters_path() has been deprecated. Please pass format to the standard posters_path method instead.. (called from _run_erb_app47views47posters47index46html46erb at /Users/runebergO/Documents/rails-apps/neurodag7/app/views/posters/index.html.erb:64)
+Rendered shared/_javascripts (0.9ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+Rendered shared/_topmenu (4.6ms)
+  [4;35;1mPage Load (1.2ms)[0m   [0mSELECT * FROM `pages` WHERE (`pages`.conference_id = 1) [0m
+  [4;36;1mPage Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `pages`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT count(*) AS count_all FROM `users` INNER JOIN `registrations` ON `users`.id = `registrations`.user_id WHERE ((`registrations`.conference_id = 1)) [0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM `posters` WHERE (`posters`.conference_id = 1) [0m
+Rendered shared/_active_conf_menu (15.9ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `registrations` WHERE (`registrations`.`user_id` = 38 AND `registrations`.`conference_id` = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `registrations` WHERE (`registrations`.`user_id` = 38 AND `registrations`.`conference_id` = 1) LIMIT 1[0m
+Rendered shared/_conf_registration_menu (3.6ms)
+Rendered shared/_sidebar (25.8ms)
+  [4;36;1mPoster Load (0.8ms)[0m   [0;1mSELECT * FROM `posters` ORDER BY updated_at DESC LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 16) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `posters` ORDER BY updated_at DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `posters` ORDER BY updated_at DESC LIMIT 3[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM `users` ORDER BY created_at DESC LIMIT 3[0m
+  [4;36;1mRegistration Load (0.5ms)[0m   [0;1mSELECT * FROM `registrations` ORDER BY updated_at DESC LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 11) [0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` ORDER BY created_at DESC LIMIT 1[0m
+Rendered shared/_nonrandom (9.2ms)
+Rendered shared/_blogs (1.0ms)
+Rendered shared/_archives (0.8ms)
+Rendered shared/_sidebar_right (20.2ms)
+Completed in 336ms (View: 101, DB: 100) | 200 OK [http://0.0.0.0/posters]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostersController#index to pdf (for 127.0.0.1 at 2009-10-06 14:26:33) [GET]
+  [4;35;1mUser Columns (2.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;36;1mBlogPost Load (1.5ms)[0m   [0;1mSELECT * FROM `blog_posts` ORDER BY updated_at DESC LIMIT 3[0m
+  [4;35;1mConference Load (0.6ms)[0m   [0mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 3[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mConference Load (0.7ms)[0m   [0mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 1[0m
+  [4;36;1mRegistration Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `registrations`[0m
+  [4;35;1mConference Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `conferences`[0m
+  [4;36;1mRegistration Load (0.5ms)[0m   [0;1mSELECT * FROM `registrations` WHERE (`registrations`.`user_id` = 38 AND `registrations`.`conference_id` = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;36;1mTalk Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `talks`[0m
+  [4;35;1mTalk Load (0.8ms)[0m   [0mSELECT * FROM `talks` WHERE (`talks`.`user_id` = 38 AND `talks`.`conference_id` = 1) LIMIT 1[0m
+PROTECT
+LOGGED IN
+  [4;36;1mPoster Load (0.6ms)[0m   [0;1mSELECT * FROM `posters` ORDER BY id DESC LIMIT 0, 10[0m
+  [4;35;1mPoster Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `posters`[0m
+  [4;36;1mPoster Load Including Associations (4.7ms)[0m   [0;1mSELECT `posters`.`id` AS t0_r0, `posters`.`title` AS t0_r1, `posters`.`abstract` AS t0_r2, `posters`.`authors` AS t0_r3, `posters`.`affiliations` AS t0_r4, `posters`.`corresponding_author` AS t0_r5, `posters`.`created_at` AS t0_r6, `posters`.`updated_at` AS t0_r7, `posters`.`registration_id` AS t0_r8, `posters`.`user_id` AS t0_r9, `posters`.`conference_id` AS t0_r10, `users`.`id` AS t1_r0, `users`.`screen_name` AS t1_r1, `users`.`email` AS t1_r2, `users`.`created_at` AS t1_r3, `users`.`updated_at` AS t1_r4, `users`.`authorization_token` AS t1_r5, `users`.`role` AS t1_r6, `users`.`first_name` AS t1_r7, `users`.`middle_name` AS t1_r8, `users`.`last_name` AS t1_r9, `users`.`occupation` AS t1_r10, `users`.`phone_no` AS t1_r11, `users`.`title` AS t1_r12, `users`.`city` AS t1_r13, `users`.`hide_contact_info` AS t1_r14, `users`.`crypted_password` AS t1_r15, `users`.`avatar_file_name` AS t1_r16, `users`.`avatar_content_type` AS t1_r17, `users`.`avatar_file_size` AS t1_r18, `users`.`avatar_updated_at` AS t1_r19 FROM `posters` LEFT OUTER JOIN `users` ON `users`.id = `posters`.user_id WHERE (posters.conference_id = 1 AND posters.user_id = users.id) ORDER BY users.last_name ASC[0m
+  [4;35;1mPoster Load (0.5ms)[0m   [0mSELECT * FROM `posters` ORDER BY updated_at DESC LIMIT 3[0m
+Rendering posters/index
+http://neurodag.heroku.com/img/neuro_logo_pet.jpg
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `posters` ORDER BY updated_at DESC LIMIT 3[0m
+Rendered posters/_poster_content (1.4ms)
+Rendered posters/_poster_content (0.2ms)
+Rendered posters/_pdf_posters (7.2ms)
+Completed in 1166ms (View: 1093, DB: 23) | 200 OK [http://0.0.0.0/posters.pdf]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing PostersController#index to pdf (for 127.0.0.1 at 2009-10-06 14:27:51) [GET]
+  [4;35;1mUser Columns (2.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;36;1mBlogPost Load (1.2ms)[0m   [0;1mSELECT * FROM `blog_posts` ORDER BY updated_at DESC LIMIT 3[0m
+  [4;35;1mConference Load (0.7ms)[0m   [0mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 3[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mConference Load (0.6ms)[0m   [0mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 1[0m
+  [4;36;1mRegistration Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `registrations`[0m
+  [4;35;1mConference Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `conferences`[0m
+  [4;36;1mRegistration Load (0.5ms)[0m   [0;1mSELECT * FROM `registrations` WHERE (`registrations`.`user_id` = 38 AND `registrations`.`conference_id` = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;36;1mTalk Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `talks`[0m
+  [4;35;1mTalk Load (0.4ms)[0m   [0mSELECT * FROM `talks` WHERE (`talks`.`user_id` = 38 AND `talks`.`conference_id` = 1) LIMIT 1[0m
+PROTECT
+LOGGED IN
+  [4;36;1mPoster Load (0.7ms)[0m   [0;1mSELECT * FROM `posters` ORDER BY id DESC LIMIT 0, 10[0m
+  [4;35;1mPoster Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `posters`[0m
+  [4;36;1mPoster Load Including Associations (3.5ms)[0m   [0;1mSELECT `posters`.`id` AS t0_r0, `posters`.`title` AS t0_r1, `posters`.`abstract` AS t0_r2, `posters`.`authors` AS t0_r3, `posters`.`affiliations` AS t0_r4, `posters`.`corresponding_author` AS t0_r5, `posters`.`created_at` AS t0_r6, `posters`.`updated_at` AS t0_r7, `posters`.`registration_id` AS t0_r8, `posters`.`user_id` AS t0_r9, `posters`.`conference_id` AS t0_r10, `users`.`id` AS t1_r0, `users`.`screen_name` AS t1_r1, `users`.`email` AS t1_r2, `users`.`created_at` AS t1_r3, `users`.`updated_at` AS t1_r4, `users`.`authorization_token` AS t1_r5, `users`.`role` AS t1_r6, `users`.`first_name` AS t1_r7, `users`.`middle_name` AS t1_r8, `users`.`last_name` AS t1_r9, `users`.`occupation` AS t1_r10, `users`.`phone_no` AS t1_r11, `users`.`title` AS t1_r12, `users`.`city` AS t1_r13, `users`.`hide_contact_info` AS t1_r14, `users`.`crypted_password` AS t1_r15, `users`.`avatar_file_name` AS t1_r16, `users`.`avatar_content_type` AS t1_r17, `users`.`avatar_file_size` AS t1_r18, `users`.`avatar_updated_at` AS t1_r19 FROM `posters` LEFT OUTER JOIN `users` ON `users`.id = `posters`.user_id WHERE (posters.conference_id = 1 AND posters.user_id = users.id) ORDER BY users.last_name ASC[0m
+  [4;35;1mPoster Load (0.5ms)[0m   [0mSELECT * FROM `posters` ORDER BY updated_at DESC LIMIT 3[0m
+Rendering posters/index
+http://neurodag.heroku.com/img/neuro_logo_pet.jpg
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `posters` ORDER BY updated_at DESC LIMIT 3[0m
+Rendered posters/_poster_content (0.3ms)
+Rendered posters/_poster_content (0.2ms)
+Rendered posters/_pdf_posters (4.3ms)
+Completed in 980ms (View: 908, DB: 22) | 200 OK [http://0.0.0.0/posters.pdf]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RegistrationsController#index (for 127.0.0.1 at 2009-10-06 14:27:59) [GET]
+  [4;35;1mUser Columns (3.1ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;36;1mBlogPost Load (0.6ms)[0m   [0;1mSELECT * FROM `blog_posts` ORDER BY updated_at DESC LIMIT 3[0m
+  [4;35;1mConference Load (0.5ms)[0m   [0mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 3[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mConference Load (0.4ms)[0m   [0mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 1[0m
+  [4;36;1mRegistration Columns (25.5ms)[0m   [0;1mSHOW FIELDS FROM `registrations`[0m
+  [4;35;1mConference Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `conferences`[0m
+  [4;36;1mRegistration Load (0.5ms)[0m   [0;1mSELECT * FROM `registrations` WHERE (`registrations`.`user_id` = 38 AND `registrations`.`conference_id` = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;36;1mTalk Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `talks`[0m
+  [4;35;1mTalk Load (0.5ms)[0m   [0mSELECT * FROM `talks` WHERE (`talks`.`user_id` = 38 AND `talks`.`conference_id` = 1) LIMIT 1[0m
+PROTECT
+LOGGED IN
+  [4;36;1mRegistration Load Including Associations (28.1ms)[0m   [0;1mSELECT `registrations`.`id` AS t0_r0, `registrations`.`type` AS t0_r1, `registrations`.`user_id` AS t0_r2, `registrations`.`conference_id` AS t0_r3, `registrations`.`created_at` AS t0_r4, `registrations`.`updated_at` AS t0_r5, `registrations`.`participate_competition` AS t0_r6, `registrations`.`selected_for_competition` AS t0_r7, `registrations`.`bringing_posters` AS t0_r8, `registrations`.`plenary_speaker` AS t0_r9, `registrations`.`payment_status` AS t0_r10, `users`.`id` AS t1_r0, `users`.`screen_name` AS t1_r1, `users`.`email` AS t1_r2, `users`.`created_at` AS t1_r3, `users`.`updated_at` AS t1_r4, `users`.`authorization_token` AS t1_r5, `users`.`role` AS t1_r6, `users`.`first_name` AS t1_r7, `users`.`middle_name` AS t1_r8, `users`.`last_name` AS t1_r9, `users`.`occupation` AS t1_r10, `users`.`phone_no` AS t1_r11, `users`.`title` AS t1_r12, `users`.`city` AS t1_r13, `users`.`hide_contact_info` AS t1_r14, `users`.`crypted_password` AS t1_r15, `users`.`avatar_file_name` AS t1_r16, `users`.`avatar_content_type` AS t1_r17, `users`.`avatar_file_size` AS t1_r18, `users`.`avatar_updated_at` AS t1_r19 FROM `registrations` LEFT OUTER JOIN `users` ON `users`.id = `registrations`.user_id WHERE (user_id IS NOT NULL) AND (`registrations`.`conference_id` = 1) ORDER BY users.last_name ASC LIMIT 0, 8[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM `registrations` WHERE (user_id IS NOT NULL) AND (`registrations`.`conference_id` = 1) [0m
+  [4;36;1mRegistration Load Including Associations (2.5ms)[0m   [0;1mSELECT `registrations`.`id` AS t0_r0, `registrations`.`type` AS t0_r1, `registrations`.`user_id` AS t0_r2, `registrations`.`conference_id` AS t0_r3, `registrations`.`created_at` AS t0_r4, `registrations`.`updated_at` AS t0_r5, `registrations`.`participate_competition` AS t0_r6, `registrations`.`selected_for_competition` AS t0_r7, `registrations`.`bringing_posters` AS t0_r8, `registrations`.`plenary_speaker` AS t0_r9, `registrations`.`payment_status` AS t0_r10, `users`.`id` AS t1_r0, `users`.`screen_name` AS t1_r1, `users`.`email` AS t1_r2, `users`.`created_at` AS t1_r3, `users`.`updated_at` AS t1_r4, `users`.`authorization_token` AS t1_r5, `users`.`role` AS t1_r6, `users`.`first_name` AS t1_r7, `users`.`middle_name` AS t1_r8, `users`.`last_name` AS t1_r9, `users`.`occupation` AS t1_r10, `users`.`phone_no` AS t1_r11, `users`.`title` AS t1_r12, `users`.`city` AS t1_r13, `users`.`hide_contact_info` AS t1_r14, `users`.`crypted_password` AS t1_r15, `users`.`avatar_file_name` AS t1_r16, `users`.`avatar_content_type` AS t1_r17, `users`.`avatar_file_size` AS t1_r18, `users`.`avatar_updated_at` AS t1_r19 FROM `registrations` LEFT OUTER JOIN `users` ON `users`.id = `registrations`.user_id WHERE (registrations.conference_id = 1 AND registrations.user_id = users.id) ORDER BY users.last_name ASC[0m
+  [4;35;1mRegistration Load (24.3ms)[0m   [0mSELECT * FROM `registrations` ORDER BY updated_at DESC LIMIT 3[0m
+Rendering template within layouts/default
+Rendering registrations/index
+Rendered shared/_title_bar (0.1ms)
+Rendered shared/_notice (0.1ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from truncate_spec at /Users/runebergO/Documents/rails-apps/neurodag7/app/helpers/application_helper.rb:36)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from truncate_spec at /Users/runebergO/Documents/rails-apps/neurodag7/app/helpers/application_helper.rb:36)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from truncate_spec at /Users/runebergO/Documents/rails-apps/neurodag7/app/helpers/application_helper.rb:36)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from truncate_spec at /Users/runebergO/Documents/rails-apps/neurodag7/app/helpers/application_helper.rb:36)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from truncate_spec at /Users/runebergO/Documents/rails-apps/neurodag7/app/helpers/application_helper.rb:36)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from truncate_spec at /Users/runebergO/Documents/rails-apps/neurodag7/app/helpers/application_helper.rb:36)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from truncate_spec at /Users/runebergO/Documents/rails-apps/neurodag7/app/helpers/application_helper.rb:36)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from truncate_spec at /Users/runebergO/Documents/rails-apps/neurodag7/app/helpers/application_helper.rb:36)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+DEPRECATION WARNING: formatted_registrations_path() has been deprecated. Please pass format to the standard registrations_path method instead.. (called from _run_erb_app47views47registrations47index46html46erb at /Users/runebergO/Documents/rails-apps/neurodag7/app/views/registrations/index.html.erb:75)
+Rendered shared/_javascripts (0.4ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+Rendered shared/_topmenu (3.1ms)
+  [4;36;1mPage Load (1.1ms)[0m   [0;1mSELECT * FROM `pages` WHERE (`pages`.conference_id = 1) [0m
+  [4;35;1mPage Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT count(*) AS count_all FROM `users` INNER JOIN `registrations` ON `users`.id = `registrations`.user_id WHERE ((`registrations`.conference_id = 1)) [0m
+  [4;35;1mPoster Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `posters`[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT count(*) AS count_all FROM `posters` WHERE (`posters`.conference_id = 1) [0m
+Rendered shared/_active_conf_menu (22.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `registrations` WHERE (`registrations`.`user_id` = 38 AND `registrations`.`conference_id` = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `registrations` WHERE (`registrations`.`user_id` = 38 AND `registrations`.`conference_id` = 1) LIMIT 1[0m
+Rendered shared/_conf_registration_menu (1.7ms)
+Rendered shared/_sidebar (24.3ms)
+  [4;36;1mPoster Load (0.4ms)[0m   [0;1mSELECT * FROM `posters` ORDER BY updated_at DESC LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 16) [0m
+  [4;36;1mPoster Load (1.9ms)[0m   [0;1mSELECT * FROM `posters` ORDER BY updated_at DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `posters` ORDER BY updated_at DESC LIMIT 3[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mUser Load (0.6ms)[0m   [0mSELECT * FROM `users` ORDER BY created_at DESC LIMIT 3[0m
+  [4;36;1mRegistration Load (0.9ms)[0m   [0;1mSELECT * FROM `registrations` ORDER BY updated_at DESC LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 11) [0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM `users` ORDER BY created_at DESC LIMIT 1[0m
+Rendered shared/_nonrandom (12.3ms)
+Rendered shared/_blogs (0.1ms)
+Rendered shared/_archives (0.1ms)
+Rendered shared/_sidebar_right (13.1ms)
+Completed in 223ms (View: 66, DB: 106) | 200 OK [http://0.0.0.0/registrations]
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing RegistrationsController#index to pdf (for 127.0.0.1 at 2009-10-06 14:28:03) [GET]
+  [4;35;1mUser Columns (2.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;36;1mBlogPost Load (0.6ms)[0m   [0;1mSELECT * FROM `blog_posts` ORDER BY updated_at DESC LIMIT 3[0m
+  [4;35;1mConference Load (1.0ms)[0m   [0mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 3[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mConference Load (0.4ms)[0m   [0mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 1[0m
+  [4;36;1mRegistration Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `registrations`[0m
+  [4;35;1mConference Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `conferences`[0m
+  [4;36;1mRegistration Load (0.5ms)[0m   [0;1mSELECT * FROM `registrations` WHERE (`registrations`.`user_id` = 38 AND `registrations`.`conference_id` = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;36;1mTalk Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `talks`[0m
+  [4;35;1mTalk Load (0.5ms)[0m   [0mSELECT * FROM `talks` WHERE (`talks`.`user_id` = 38 AND `talks`.`conference_id` = 1) LIMIT 1[0m
+PROTECT
+LOGGED IN
+  [4;36;1mRegistration Load Including Associations (2.5ms)[0m   [0;1mSELECT `registrations`.`id` AS t0_r0, `registrations`.`type` AS t0_r1, `registrations`.`user_id` AS t0_r2, `registrations`.`conference_id` AS t0_r3, `registrations`.`created_at` AS t0_r4, `registrations`.`updated_at` AS t0_r5, `registrations`.`participate_competition` AS t0_r6, `registrations`.`selected_for_competition` AS t0_r7, `registrations`.`bringing_posters` AS t0_r8, `registrations`.`plenary_speaker` AS t0_r9, `registrations`.`payment_status` AS t0_r10, `users`.`id` AS t1_r0, `users`.`screen_name` AS t1_r1, `users`.`email` AS t1_r2, `users`.`created_at` AS t1_r3, `users`.`updated_at` AS t1_r4, `users`.`authorization_token` AS t1_r5, `users`.`role` AS t1_r6, `users`.`first_name` AS t1_r7, `users`.`middle_name` AS t1_r8, `users`.`last_name` AS t1_r9, `users`.`occupation` AS t1_r10, `users`.`phone_no` AS t1_r11, `users`.`title` AS t1_r12, `users`.`city` AS t1_r13, `users`.`hide_contact_info` AS t1_r14, `users`.`crypted_password` AS t1_r15, `users`.`avatar_file_name` AS t1_r16, `users`.`avatar_content_type` AS t1_r17, `users`.`avatar_file_size` AS t1_r18, `users`.`avatar_updated_at` AS t1_r19 FROM `registrations` LEFT OUTER JOIN `users` ON `users`.id = `registrations`.user_id WHERE (user_id IS NOT NULL) AND (`registrations`.`conference_id` = 1) ORDER BY users.last_name ASC LIMIT 0, 8[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT count(*) AS count_all FROM `registrations` WHERE (user_id IS NOT NULL) AND (`registrations`.`conference_id` = 1) [0m
+  [4;36;1mRegistration Load Including Associations (2.5ms)[0m   [0;1mSELECT `registrations`.`id` AS t0_r0, `registrations`.`type` AS t0_r1, `registrations`.`user_id` AS t0_r2, `registrations`.`conference_id` AS t0_r3, `registrations`.`created_at` AS t0_r4, `registrations`.`updated_at` AS t0_r5, `registrations`.`participate_competition` AS t0_r6, `registrations`.`selected_for_competition` AS t0_r7, `registrations`.`bringing_posters` AS t0_r8, `registrations`.`plenary_speaker` AS t0_r9, `registrations`.`payment_status` AS t0_r10, `users`.`id` AS t1_r0, `users`.`screen_name` AS t1_r1, `users`.`email` AS t1_r2, `users`.`created_at` AS t1_r3, `users`.`updated_at` AS t1_r4, `users`.`authorization_token` AS t1_r5, `users`.`role` AS t1_r6, `users`.`first_name` AS t1_r7, `users`.`middle_name` AS t1_r8, `users`.`last_name` AS t1_r9, `users`.`occupation` AS t1_r10, `users`.`phone_no` AS t1_r11, `users`.`title` AS t1_r12, `users`.`city` AS t1_r13, `users`.`hide_contact_info` AS t1_r14, `users`.`crypted_password` AS t1_r15, `users`.`avatar_file_name` AS t1_r16, `users`.`avatar_content_type` AS t1_r17, `users`.`avatar_file_size` AS t1_r18, `users`.`avatar_updated_at` AS t1_r19 FROM `registrations` LEFT OUTER JOIN `users` ON `users`.id = `registrations`.user_id WHERE (registrations.conference_id = 1 AND registrations.user_id = users.id) ORDER BY users.last_name ASC[0m
+  [4;35;1mRegistration Load (0.6ms)[0m   [0mSELECT * FROM `registrations` ORDER BY updated_at DESC LIMIT 3[0m
+Rendering registrations/index
+http://neurodag.heroku.com/img/neuro_logo_pet.jpg
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `registrations` ORDER BY updated_at DESC LIMIT 3[0m
+Rendered registrations/_pdf_registrations (7.1ms)
+
+ActionView::TemplateError (unrecognized entity "aelig" at 8 -> "ge, phd studerende"...) on line #23 of app/views/registrations/index.pdf.prawn:
+20: pdf.font "#{Prawn::BASEDIR}/data/fonts/DejaVuSans.ttf"
+21: 
+22: # use default render options
+23: Prawn::Assist::Generate.pdf(pdf, html)
+
+    /Library/Ruby/Gems/1.8/gems/prawn-layout-0.2.1/lib/prawn/table.rb:198:in `calculate_column_widths'
+    /Library/Ruby/Gems/1.8/gems/prawn-layout-0.2.1/lib/prawn/table.rb:197:in `map'
+    /Library/Ruby/Gems/1.8/gems/prawn-layout-0.2.1/lib/prawn/table.rb:197:in `calculate_column_widths'
+    /Library/Ruby/Gems/1.8/gems/prawn-layout-0.2.1/lib/prawn/table.rb:195:in `each'
+    /Library/Ruby/Gems/1.8/gems/prawn-layout-0.2.1/lib/prawn/table.rb:195:in `each_with_index'
+    /Library/Ruby/Gems/1.8/gems/prawn-layout-0.2.1/lib/prawn/table.rb:195:in `calculate_column_widths'
+    /Library/Ruby/Gems/1.8/gems/prawn-layout-0.2.1/lib/prawn/table.rb:193:in `each'
+    /Library/Ruby/Gems/1.8/gems/prawn-layout-0.2.1/lib/prawn/table.rb:193:in `calculate_column_widths'
+    /Library/Ruby/Gems/1.8/gems/prawn-layout-0.2.1/lib/prawn/table.rb:148:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/prawn-layout-0.2.1/lib/prawn/table.rb:50:in `new'
+    /Library/Ruby/Gems/1.8/gems/prawn-layout-0.2.1/lib/prawn/table.rb:50:in `table'
+    lib/prawn/assist/table.rb:50:in `pdf'
+    lib/prawn/assist/generate.rb:35:in `pdf'
+    lib/prawn/assist/generate.rb:26:in `each'
+    lib/prawn/assist/generate.rb:26:in `pdf'
+    app/views/registrations/index.pdf.prawn:23:in `_run_prawn_app47views47registrations47index46pdf46prawn'
+    app/controllers/registrations_controller.rb:33:in `index'
+    app/controllers/registrations_controller.rb:31:in `index'
+
+Rendered rescues/_trace (118.9ms)
+Rendered rescues/_request_and_response (1.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.3ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#index (for 127.0.0.1 at 2009-10-06 14:28:11) [GET]
+  [4;35;1mUser Columns (2.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.5ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;36;1mBlogPost Load (0.9ms)[0m   [0;1mSELECT * FROM `blog_posts` ORDER BY updated_at DESC LIMIT 3[0m
+  [4;35;1mConference Load (0.5ms)[0m   [0mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 3[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mConference Load (0.4ms)[0m   [0mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 1[0m
+  [4;36;1mRegistration Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `registrations`[0m
+  [4;35;1mConference Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `conferences`[0m
+  [4;36;1mRegistration Load (0.5ms)[0m   [0;1mSELECT * FROM `registrations` WHERE (`registrations`.`user_id` = 38 AND `registrations`.`conference_id` = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;36;1mTalk Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `talks`[0m
+  [4;35;1mTalk Load (0.5ms)[0m   [0mSELECT * FROM `talks` WHERE (`talks`.`user_id` = 38 AND `talks`.`conference_id` = 1) LIMIT 1[0m
+PROTECT
+LOGGED IN
+ORDER 
+  [4;36;1mUser Load (0.8ms)[0m   [0;1mSELECT * FROM `users` ORDER BY created_at DESC LIMIT 0, 10[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSELECT count(*) AS count_all FROM `users` [0m
+Rendering template within layouts/default
+Rendering users/index
+Rendered shared/_title_bar (0.1ms)
+Rendered shared/_notice (0.1ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from truncate_spec at /Users/runebergO/Documents/rails-apps/neurodag7/app/helpers/application_helper.rb:36)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from truncate_spec at /Users/runebergO/Documents/rails-apps/neurodag7/app/helpers/application_helper.rb:36)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from truncate_spec at /Users/runebergO/Documents/rails-apps/neurodag7/app/helpers/application_helper.rb:36)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from truncate_spec at /Users/runebergO/Documents/rails-apps/neurodag7/app/helpers/application_helper.rb:36)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from truncate_spec at /Users/runebergO/Documents/rails-apps/neurodag7/app/helpers/application_helper.rb:36)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from truncate_spec at /Users/runebergO/Documents/rails-apps/neurodag7/app/helpers/application_helper.rb:36)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from truncate_spec at /Users/runebergO/Documents/rails-apps/neurodag7/app/helpers/application_helper.rb:36)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from truncate_spec at /Users/runebergO/Documents/rails-apps/neurodag7/app/helpers/application_helper.rb:36)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from truncate_spec at /Users/runebergO/Documents/rails-apps/neurodag7/app/helpers/application_helper.rb:36)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from truncate_spec at /Users/runebergO/Documents/rails-apps/neurodag7/app/helpers/application_helper.rb:36)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from truncate_spec at /Users/runebergO/Documents/rails-apps/neurodag7/app/helpers/application_helper.rb:36)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from truncate_spec at /Users/runebergO/Documents/rails-apps/neurodag7/app/helpers/application_helper.rb:36)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from truncate_spec at /Users/runebergO/Documents/rails-apps/neurodag7/app/helpers/application_helper.rb:36)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from truncate_spec at /Users/runebergO/Documents/rails-apps/neurodag7/app/helpers/application_helper.rb:36)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from truncate_spec at /Users/runebergO/Documents/rails-apps/neurodag7/app/helpers/application_helper.rb:36)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from truncate_spec at /Users/runebergO/Documents/rails-apps/neurodag7/app/helpers/application_helper.rb:36)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from truncate_spec at /Users/runebergO/Documents/rails-apps/neurodag7/app/helpers/application_helper.rb:36)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from truncate_spec at /Users/runebergO/Documents/rails-apps/neurodag7/app/helpers/application_helper.rb:36)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from truncate_spec at /Users/runebergO/Documents/rails-apps/neurodag7/app/helpers/application_helper.rb:36)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from truncate_spec at /Users/runebergO/Documents/rails-apps/neurodag7/app/helpers/application_helper.rb:36)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from truncate_spec at /Users/runebergO/Documents/rails-apps/neurodag7/app/helpers/application_helper.rb:36)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from truncate_spec at /Users/runebergO/Documents/rails-apps/neurodag7/app/helpers/application_helper.rb:36)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from truncate_spec at /Users/runebergO/Documents/rails-apps/neurodag7/app/helpers/application_helper.rb:36)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from truncate_spec at /Users/runebergO/Documents/rails-apps/neurodag7/app/helpers/application_helper.rb:36)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from truncate_spec at /Users/runebergO/Documents/rails-apps/neurodag7/app/helpers/application_helper.rb:36)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from truncate_spec at /Users/runebergO/Documents/rails-apps/neurodag7/app/helpers/application_helper.rb:36)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from truncate_spec at /Users/runebergO/Documents/rails-apps/neurodag7/app/helpers/application_helper.rb:36)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from truncate_spec at /Users/runebergO/Documents/rails-apps/neurodag7/app/helpers/application_helper.rb:36)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from truncate_spec at /Users/runebergO/Documents/rails-apps/neurodag7/app/helpers/application_helper.rb:36)
+DEPRECATION WARNING: truncate takes an option hash instead of separate length and omission arguments. (called from truncate_spec at /Users/runebergO/Documents/rails-apps/neurodag7/app/helpers/application_helper.rb:36)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+Rendered users/_user_table (15.1ms)
+Rendered shared/_javascripts (0.4ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+Rendered shared/_topmenu (3.1ms)
+  [4;36;1mPage Load (2.7ms)[0m   [0;1mSELECT * FROM `pages` WHERE (`pages`.conference_id = 1) [0m
+  [4;35;1mPage Columns (5.7ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSELECT count(*) AS count_all FROM `users` INNER JOIN `registrations` ON `users`.id = `registrations`.user_id WHERE ((`registrations`.conference_id = 1)) [0m
+  [4;35;1mPoster Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `posters`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM `posters` WHERE (`posters`.conference_id = 1) [0m
+Rendered shared/_active_conf_menu (29.9ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `registrations` WHERE (`registrations`.`user_id` = 38 AND `registrations`.`conference_id` = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 38) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `registrations` WHERE (`registrations`.`user_id` = 38 AND `registrations`.`conference_id` = 1) LIMIT 1[0m
+Rendered shared/_conf_registration_menu (1.7ms)
+Rendered shared/_sidebar (32.1ms)
+  [4;36;1mPoster Load (0.5ms)[0m   [0;1mSELECT * FROM `posters` ORDER BY updated_at DESC LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 16) [0m
+  [4;36;1mPoster Load (0.7ms)[0m   [0;1mSELECT * FROM `posters` ORDER BY updated_at DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `posters` ORDER BY updated_at DESC LIMIT 3[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM `users` ORDER BY created_at DESC LIMIT 3[0m
+  [4;36;1mRegistration Load (1.3ms)[0m   [0;1mSELECT * FROM `registrations` ORDER BY updated_at DESC LIMIT 1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 11) [0m
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM `users` ORDER BY created_at DESC LIMIT 1[0m
+Rendered shared/_nonrandom (12.3ms)
+Rendered shared/_blogs (0.1ms)
+Rendered shared/_archives (0.1ms)
+Rendered shared/_sidebar_right (13.1ms)
+Completed in 199ms (View: 57, DB: 33) | 200 OK [http://0.0.0.0/users]
