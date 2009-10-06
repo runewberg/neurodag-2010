@@ -8,7 +8,7 @@
 		<li>
 			<%= link_to poster1.user.full_name, profile_for(poster1.user) %>
 			<span>
-			Added a <%= link_to "poster", poster_path(poster1) %>  <%= poster1.created_at.to_s(:vshort) %>
+			Added a <%= link_to "poster", poster_path(poster1) %>  <%= poster1.created_at.to_s(:short) %>
 			</span>
 		</li>  
 	<% if Poster.most_recent.second %>
@@ -17,7 +17,7 @@
 		<li>
 			<%= link_to poster2.user.full_name, profile_for(poster2.user) %>
 			<span>
-			Added a <%= link_to "poster", poster_path(poster2) %> <%=poster2.created_at.to_s(:vshort) %>
+			Added a <%= link_to "poster", poster_path(poster2) %> <%=poster2.created_at.to_s(:short) %>
 			</span>
 		</li>  
 		<%end%>
@@ -25,7 +25,7 @@
 	<% user=User.most_recent.second %>
 		<li>
 			<%= link_to user.full_name, profile_for(user) %>
-			<span>New member <%= user.created_at.to_s(:vshort) %></span>
+			<span>New member <%= user.created_at.to_s(:short) %></span>
 		</li>  
 	<% reg=Registration.most_recent.first %>
 		<li>
@@ -35,7 +35,7 @@
 			<% user=User.most_recent.first %>
 		<li>
 			<%= link_to user.full_name, profile_for(user) %>
-			<span>New member <%= user.created_at.to_s(:vshort) %></span>
+			<span>New member <%= user.created_at.to_s(:short) %></span>
 		</li>  
 	</ul>
 </li>
