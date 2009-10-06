@@ -9,9 +9,9 @@
 	<th>Name</th>
 	<th>Title</th>
 	<th>Bring poster</th>
-	<th>Talk</th>
-	<th>Competition</th>
-		<% if is_admin? %><th>Payed reg.</th> <th>ID</th><%end%>
+
+		<% if is_admin? %><th>Talk</th>
+		<th>Competition</th><th>Payed reg.</th> <th>ID</th><%end%>
 		<th> &nbsp; </th>	<th> &nbsp; </th>
 
   </tr>
@@ -31,14 +31,15 @@
 	<% end %>
 	<td align="center">
 		<%= h attendee.bringing_poster %>
-	</td>		
+	</td>
+			<% if is_admin? %>		
 	<td align="center">
 		<%= h attendee.participate_competition %>
 	</td>
 	<td align="center">
 		<%= h attendee.giving_talk %>
 	</td>
-		<% if is_admin? %>
+
 	<td align="center">
 	<%= select_tag 'registration[payment_status]', options_for_select( %w{no yes}, attendee.payment_status_txt), 
 	{ :onchange => remote_function( :updates => 'notify', :url => registration_path(attendee), :method => 'put', :with => 'Form.Element.serialize(this)') } %>
