@@ -64,7 +64,7 @@ tr th.right {
 }
 
 div.title {
-  font-size: 12px;
+  font-size: 14px;
   padding-top: 4px;
   padding-bottom: 4px;
   font-weight: bold;	
@@ -170,7 +170,7 @@ td.text {
 #site-page p,
 #site-page ul li
  {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 #site-page li {
