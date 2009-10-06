@@ -24,7 +24,7 @@
 		<%= link_to  h(attendee.user.full_name), profile_path(attendee.user.screen_name) %>
 	</td>
 	<td align="center">
-		<%= h attendee.user_title %>
+		<%= truncate_spec(attendee.user_title) %>
 	</td>
 	<% else%>
 	<td style="color:red">Attendee has no user!</td><td></td>

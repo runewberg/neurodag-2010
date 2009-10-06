@@ -54,6 +54,7 @@ ActionController::Routing::Routes.draw do |map|
   map.contact 'contact', :controller => 'site', :action => 'contact'    
   map.help 'help', :controller => 'site', :action => 'help'    
   map.how 'how', :controller => 'site', :action => 'how'    
+  map.competitioninfo 'competitioninfo', :controller => 'site', :action => 'competitioninfo'    
   
   # programme_path(:year), fx programme_path(2009)
 #  map.programme 'programme/:year', :controller => 'site', :action => 'programme', :requirements => {:year => /20\d\d/}    
