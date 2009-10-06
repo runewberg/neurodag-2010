@@ -61,7 +61,7 @@ class UsersController < ApplicationController
      @title = "Neurodag Members"
      order = params[:order]
      logger.debug("ORDER #{order}")
-     @users = User.paginate :all, :page => params[:page], :order => 'created_at DESC', :per_page => 10     
+     @users = User.paginate :all, :page => params[:page], :order => 'created_at DESC', :per_page => 13     
    end
 
   def blog_of
@@ -81,7 +81,7 @@ class UsersController < ApplicationController
 
   def blogs
      @title = "Blogs of "
-     @blog_users = User.paginate :all, :page => params[:page], :order => 'blog_posts.updated_at DESC', :per_page => 10,
+     @blog_users = User.paginate :all, :page => params[:page], :order => 'blog_posts.updated_at DESC', :per_page => 13,
                    :conditions => ['users.id = blog_posts.user_id' ], :include => :blog_posts
     
      @blog_users.reject!{|u| u.blog_posts.count == 0}

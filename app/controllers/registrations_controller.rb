@@ -23,7 +23,7 @@ class RegistrationsController < ApplicationController
   def index
     @attendees = Registration.paginate_all_by_conference_id(@active_conference.id, 
                     :conditions => 'user_id IS NOT NULL',
-                    :include => :user, :page => params[:page], :per_page => 8, 
+                    :include => :user, :page => params[:page], :per_page => 14, 
                     :order => 'users.last_name ASC')
      @attendees_all = Registration.all :conditions => ['registrations.conference_id = ? AND registrations.user_id = users.id',       @active_conference.id], :include => :user, :order => 'users.last_name ASC'
      @most_recent_registration = Registration.most_recent[0]

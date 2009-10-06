@@ -3,7 +3,7 @@ class CommunityController < ApplicationController
   before_filter :protect
 
   def index
-     @users = User.paginate :all, :page => params[:page], :order => 'created_at DESC', :per_page => 10
+     @users = User.paginate :all, :page => params[:page], :order => 'created_at DESC', :per_page => 15
   end
   
   

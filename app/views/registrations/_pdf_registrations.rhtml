@@ -25,10 +25,10 @@
 	<% @attendees_all.each_with_index do |attendee,index| %>
 	<tr>
 		<td><%= index+1 %></td>
-		<td><%= h(CGI.escapeHTML(attendee.user.full_name)) %></td>
-		<td><%= h(CGI.escapeHTML(attendee.user.title)) %></td>
-		<td><%= h(CGI.escapeHTML(attendee.user.occupation)) %></td>
-		<td><%= h(CGI.escapeHTML(attendee.user.city)) %></td>
+		<td><%= h attendee.user.full_name %></td>
+		<td><%= truncate_spec(attendee.user_title) %></td>
+		<td><%= truncate_spec(attendee.user.occupation) %></td>
+		<td><%= truncate_spec(attendee.user.city) %></td>
 		<td><%= h attendee.user.email %></td>
 		<td><%= h attendee.bringing_poster %></td>
 		<td><%= h attendee.payment_status_txt %></td>

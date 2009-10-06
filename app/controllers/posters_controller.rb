@@ -27,7 +27,7 @@ class PostersController < ApplicationController
 
     def index
       #@posters = Poster.find(:all)
-      @posters = Poster.paginate :page => params[:page], :per_page => 10, :order => 'id DESC'
+      @posters = Poster.paginate :page => params[:page], :per_page => 15, :order => 'id DESC'
       @posters_all = Poster.all :conditions => ['posters.conference_id = ? AND posters.user_id = users.id',       @active_conference.id], :include => :user, :order => 'users.last_name ASC'
       most_recent_poster = Poster.most_recent[0]
 
