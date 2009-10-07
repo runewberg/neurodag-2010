@@ -4,8 +4,9 @@ module ApplicationHelper
 
   @@site_name = 'Neurodag'
   @@years = 2005..2009
-  @@competition_deadline = 'October 16th, 2009'
+  @@competition_deadline = 'October 21st, 2009'
   @@conferenceregistration_deadline = 'October 30th, 2009'
+  @@poster_deadline = 'November 5th, 2009'
 
   def app_root
     "http://" + APP_CONFIG['app_root']
@@ -87,6 +88,10 @@ module ApplicationHelper
           
   def conferenceregistration_deadline
     @@conferenceregistration_deadline
+  end        
+
+  def poster_deadline
+    @@poster_deadline
   end        
 
   def competition_deadline
