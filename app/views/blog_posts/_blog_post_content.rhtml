@@ -2,7 +2,7 @@
 <h2><%= h blog_post.title %></h2>
 <%end%>
 Blog post submitted by 
-<%= link_to(blog_post.author_name, blog_post) if blog_post.author %> 
+<%= link_to(blog_post.author_name, profile_path(blog_post.author.name)) if blog_post.author %> 
 	on <%= h blog_post.updated_at.to_s(:article) %>
 </p>
 <br>
