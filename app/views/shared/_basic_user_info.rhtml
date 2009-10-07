@@ -26,10 +26,10 @@
           <td class="label">Email</td>
           <td></td>
         </tr>
-		<tr> <td colspan=2><%= @user.email %><%= " (hidden)" if @user.hide_contact_info %></td> </tr>
+		<tr> <td colspan=2><%if @user.hide_contact_info %> <%=" (hidden)" %> <%else%> <%=@user.email %> <%end%> </td> </tr>
         <tr>
           <td class="label">Phone</td>
-          <td><%= @user.phone_no %><%= " (hidden)" if @user.hide_contact_info %></td>
+          <td><%if @user.hide_contact_info%> <%=" (hidden)"%> <%else%> <%= @user.phone_no %><%end%></td>
         </tr>
 <% if @user == current_user%>
         <tr>
