@@ -1,0 +1,22 @@
+<% @users.each_with_index do |user, index| %>
+<div class="<%= cycle('odd', 'even') %>">
+	<div class="thumbnail">
+	</div>
+	<div class="person-details">		
+	  <<%= link_to user.full_name, profile_for(user) %><br>
+	  <%= truncate_spec(user.title)  %> |
+	  <%= truncate_spec(user.occupation) %> |
+	  <%= truncate_spec(user.city) %> | 
+	  <%= user.created_at.to_s(:short) %>
+	<% if logged_in? && is_admin? && current_user != user %>
+		<%= select_tag 'user[role]', options_for_select( %w{user referee admin}, user.role), 
+		{ :onchange => remote_function( :url => user_path(user), :method => 'put', :with => 'Form.Element.serialize(this)') } %></td>
+		<span id="user_role_<%= user.id %>" style="display:none"></span> 
+		<span> <%= user.id  %></span>	
+		<span><%= check_box_tag 'del_user[]', user.id %></span>
+	<% else %>
+		<span id="user_role_<%= user.id %>"><%= user.role%></span> 
+	<% end %>
+	</div>
+</div>
+<% end %>

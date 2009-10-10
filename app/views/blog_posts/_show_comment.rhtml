@@ -1,0 +1,6 @@
+<div class="myWrapper" style="background-color: #FAFAFF">
+	<h2> Comment</h2>
+Posted by <%= link_to show_comment.user.full_name, profile_path(show_comment.user.name) %> on 	<%= show_comment.created_at.to_s(:article) %><br/><br/>
+
+		<%= sanitize show_comment.body %> 
+</div>
