@@ -7,9 +7,8 @@ Posted by <%= link_to show_comment.user.full_name, profile_path(show_comment.use
 <br/><br/>
 
 	<% if blog_post.author == current_user || show_comment.user == current_user %>
-			<%= link_to_remote 'Destroy', :url => comment_path(show_comment.id), :confirm => 'Are you sure?', :method => :delete %> Comment id number: <%= show_comment.id %> <br/>
-	<%else%>
-			Comment id number: <%= show_comment.id %> <br/>
+			<%= link_to_remote 'Destroy', :url => comment_path(show_comment.id), :confirm => 'Are you sure?', :method => :delete %>
+
 	<% end %>
 
 
