@@ -14,19 +14,14 @@ class CommentsController < ApplicationController
   
   def create 
     @comment = Comment.new(params[:comment]) 
-    @comment.user = User.find(session[:user_id]) 
-    @comment.post = @post 
+    @comment.user = current_user
 
-    #return if !request.post?
+    # add comment to comments list for blog_post
+    @blog_post.comments << @comment
 
+    # always redirect back to show page for blog_post (display errors or blog_post with new comment)
     respond_to do |format| 
-      if @comment.duplicate? or @post.comments << @comment
-        format.html { redirect_to profile_for(@post.blog.user) }
-        format.js # create.rjs 
-      else 
-        format.html { redirect_to new_blog_post_comment_url(@post.blog, @post) } 
-        format.js { render :nothing => true } 
-      end 
+      format.html { redirect_to blog_post_path(@blog_post) }
     end 
   end
   
@@ -49,6 +44,6 @@ class CommentsController < ApplicationController
   private 
 
   def load_post 
-    @post = Post.find(params[:post_id]) 
+    @blog_post = BlogPost.find(params[:post_id]) 
   end 
 end

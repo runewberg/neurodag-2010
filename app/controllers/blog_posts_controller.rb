@@ -26,7 +26,8 @@ class BlogPostsController < ApplicationController
 
   def show
     @blog_post = BlogPost.find(params[:id])
-    @title = @blog_post.title    
+    @title = @blog_post.title 
+    @comment = Comment.new   
     respond_to do |format|
       format.html # show.rhtml
       format.xml  { render :xml => @post.to_xml }

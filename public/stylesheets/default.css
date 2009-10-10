@@ -22,6 +22,15 @@
   background-image: url(/images/ajaxful_rating/stars-5.png);
 }
 
+.comment {
+	width: 540px;
+	padding: 5px;
+	background: white;
+	border: 1px gray solid;
+  	-moz-border-radius: 5px;
+  	-webkit-border-radius: 5px;			
+}
+
 table {
 	padding: 0px;
 	margin: 2px;

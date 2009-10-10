@@ -37,19 +37,10 @@
 		<%= @active_conference.poster_count %>	</td>
 	</tr>
 	
-  <tr class="<%= cycle('odd', 'even') %>">
-		<td align="left">
-			<%= link_to 'All talks book with index in pdf-format', formatted_talks_path(:pdf) %>
-		</td>
-		<td align="center">
-		
-		  
-				<%= @active_conference.talk_count %>		</td>		
-	</tr>
 
   <tr class="<%= cycle('odd', 'even') %>">
 		<td align="left">
-			<%= link_to 'Submitted talks - pending your rating', referee_talks_path %>
+			<%= link_to "Submitted talks - pending rating by #{current_user.full_name}", referee_talks_path %>
 		</td>
 		<td align="center">
 
@@ -66,11 +57,21 @@
 	</tr>	
   <tr class="<%= cycle('odd', 'even') %>">
 		<td align="left">
-			<%= link_to 'Submitted talks average ratings by all referees', referee_avg_rated_talks_users_path %>
+			<%= link_to 'average ratings by all referees', referee_avg_rated_talks_users_path %>
 		</td>
 		<td align="center">
 				<%= @active_conference.talk_count %>		</td>		
-	</tr>	
+	</tr>
+	<tr class="<%= cycle('odd', 'even') %>">
+		<td align="left">
+			<%= link_to 'All talks book with index in pdf-format', formatted_talks_path(:pdf) %>
+		</td>
+		<td align="center">
+
+
+				<%= @active_conference.talk_count %>		</td>		
+	</tr>
+  	
   </tbody>	
 </table>
 </div>

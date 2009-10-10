@@ -13,11 +13,12 @@
 
 <div class="myWrapper">
 	<span class="header"> Registration closes on November 6th, 2009</span>
-	<br>
+	<br></br>
 	<% if @registration %>
 		<% form_for(@registration) do |form| %>
 			<%= render :partial => "form", :locals => {:form => form} %>
-			<br>
+			<br></br>
+			<h1> <%= current_user.full_name || 'Hello' %>: If you bring a poster please submit title and abstract by clicking "manage posters" on left after clicking "OK"!</h1>
 			<%= submit_tag "OK"%>
 		<% end %>
 	<% end %>

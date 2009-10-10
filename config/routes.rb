@@ -2,9 +2,12 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :albums
   map.resources :s3_uploads
   map.resources :pictures, :member => {:publish => :get}
+
+  map.resources :comments
   map.resources :blog_posts,  :collection => {:your => :get}
   map.resources :pages
   map.resources :conferences
+
   map.resources :posters, :member => {:rate => :post}, :collection => {:your => :get, :pdf => :get, :do_prawn => :get}
   map.resources :talks, :member => {:rate => :post}, :collection => {:referee => :get, :all_ref_rated => :get, :pdf => :get}
   map.resources :registrations, :collection => {:pdf => :get}

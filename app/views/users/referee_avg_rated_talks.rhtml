@@ -2,7 +2,7 @@
 <%= render :partial => '/shared/notice' %>
 
 <div class="myWrapper">
-  
+  <% if @ref_talks_research && @ref_talks_research.size > 0 %>
   <div class="title">Talk ratings :: research</div>
    <table cellpadding="1" cellspacing="0" width="100%" style="border: 1px solid gray" class="index">
         <tr>         
@@ -19,7 +19,14 @@
         </tr>
     <% end %>
     </table>
+	<% else %>
+	<ul>
+		<li>None of the talks have been rated on 'research' dimension by all referees
+	</li>
+	</ul>
+	<% end %>
 
+  	<% if @ref_talks_presentation_style && @ref_talks_presentation_style.size > 0 %>
     <div class="title after-first">Talk ratings :: Presentational style</div>
     <table cellpadding="1" cellspacing="0" width="100%" style="border: 1px solid gray">
         <tr>
@@ -36,7 +43,15 @@
       </tr>
     <% end %>
     </table>
+	<% else %>
+	<ul>
+	<li>	None of the talks have been rated on 'presentation style' dimension by all referees
+	</li>
+	</ul>
+	<% end %>
     
+  	<% if @ref_talks_organization && @ref_talks_organization.size > 0 %>
+
     <div class="title after-first">Talk ratings :: Organization</div>
     <table cellpadding="1" cellspacing="0" width="100%" style="border: 1px solid gray">
         <tr>
@@ -53,4 +68,11 @@
       </tr>
     <% end %>
     </table>
+	<% else %>
+	
+		<ul>
+			<li>	None of the talks have been rated on 'organization' dimension by all referees </li>
+		</ul>
+	<% end %>
+
 </div>

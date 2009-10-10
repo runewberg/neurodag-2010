@@ -4,10 +4,7 @@
 	</td>
 
 	<td>
-		<%#= h truncate(talk.authors,20) %>
-	</td>	
-	<td>
-		<%if talk.owner %><%= h talk.owner.full_name %> <%else%> Talk has no owner! <%end%>
+		<%if talk.owner %><%=  link_to talk.owner.full_name, profile_path(talk.owner.screen_name) %> <%else%> Talk has no owner! <%end%>
 	</td>	
 
 	<% if  is_admin? %>

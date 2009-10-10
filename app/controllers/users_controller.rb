@@ -29,14 +29,20 @@ class UsersController < ApplicationController
   end
 
   def referee_avg_rated_talks
+    logger.debug "!!! referee_avg_rated_talks"
     @title ="Referees:: Average for rated talks "  
+    
+    # get all talks
     @ref_talks = Talk.all
     
+    # get all referees
     referees = User.all :order => 'created_at DESC', :conditions => "users.role = 'referee' "    
     
+    # reject talk if bot rated by all referees
     @ref_talks.reject!{|talk| talk.raters.size != referees.size}    
     @ref_talks.compact!
 
+    logger.debug @ref_talks_research
     @ref_talks_research = @ref_talks.sort do |t2, t1|
       t1.rate_average(false, :research)  <=> t2.rate_average(false, :research)
     end

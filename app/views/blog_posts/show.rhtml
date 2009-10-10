@@ -5,6 +5,14 @@
 <div class="myWrapper">
 	<%= render :partial => 'blog_post_content', :locals => {:blog_post => @blog_post } %>
 </div>
+
+<%= render :partial => 'show_comment', :collection => @blog_post.comments %>		
+
+<br>
+<div class="new_comment">
+	<%= render :partial => 'new_comment', :locals => {:blog_post => @blog_post } %>		
+</div>	
+<br>
 <% end %>
 
 <% if current_user && (@blog_post.author == current_user) %>
