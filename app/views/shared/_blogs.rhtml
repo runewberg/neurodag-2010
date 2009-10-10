@@ -5,7 +5,7 @@
  	<ul>
 		<% @recent_blog_entries.each do |post| %>
       	<li>
-		    <%= link_to post.title, blog_post_path(post)%> (<%#= @blog_post.comments.size%>) 
+		    <%= link_to post.title, blog_post_path(post)%> (<%= @blog_post.comments.size if @blog_post.comments%>) 
 			<span>Written <%= h post.updated_at.to_s(:short) || 'unknown date' %></span>
 		</li>
 		<% end %>
