@@ -7,6 +7,10 @@ class Comment < ActiveRecord::Base
   # Prevent duplicate comments.
   validates_uniqueness_of :body, :scope => [:blog_post_id, :user_id]
 
+  def comments_count
+    comments.size
+  end   
+
   # Return true for a duplicate comment (same user and body).
   def duplicate?
     c = Comment.find_by_blog_post_id_and_user_id_and_body(post, user, body)
