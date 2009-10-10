@@ -1,1 +1,8 @@
-Write comment
+<% form_for(@comment) do |form| %> 
+  <b>Write your Comment</b><br> 
+  <%= hidden_field_tag 'post_id', blog_post.id %>
+  <%= form.text_area :body, :rows => 3, :cols => 74, :style => 'width:450px' %> 
+  <br>
+  <%= submit_tag "Create" %> 
+  <br>
+<% end %>
