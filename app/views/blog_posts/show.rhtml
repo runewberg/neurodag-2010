@@ -6,7 +6,7 @@
 		<%= render :partial => 'blog_post_content', :locals => {:blog_post => @blog_post } %>
 	</div>
 	<% if @blog_post.comments && @blog_post.comments.size > 0 %>
-		<%= render :partial => 'show_comment', :collection => @blog_post.comments %>		
+		<%= render :partial => 'show_comment', :collection => @blog_post.comments,:locals => {:blog_post => @blog_post } %>		
 	<% end %>
 	<br>
 	<% if @comment %>

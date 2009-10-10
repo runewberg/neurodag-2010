@@ -1,7 +1,8 @@
 class CommentsController < ApplicationController 
   helper :profile
   include ProfileHelper 
-  before_filter :protect, :load_post 
+  before_filter :protect 
+  before_filter :load_post, :except => :destroy
   
   def new 
     @comment = Comment.new 
@@ -26,18 +27,15 @@ class CommentsController < ApplicationController
   end
   
   def destroy 
-    @comment = Comment.find(params[:id]) 
-    user = User.find(session[:user_id]) 
-    
-    if @comment.authorized?(user) 
-      @comment.destroy 
-    else 
-      redirect_to hub_url 
-      return 
-    end 
-  
-    respond_to do |format| 
-      format.js # destroy.rjs 
+    begin
+      @comment = Comment.find(params[:id])     
+    rescue
+      redirect_to blog_post_path(@blog_post)
+    else
+      @comment.destroy   
+      respond_to do |format| 
+        format.js # destroy.js
+      end
     end
   end
 
