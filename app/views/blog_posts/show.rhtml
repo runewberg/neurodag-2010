@@ -9,6 +9,12 @@
 		<%= render :partial => 'show_comment', :collection => @blog_post.comments %>		
 	<% end %>
 	<br>
+	<% if @comment %>
+		<div class="new_comment">
+			<%= render :partial => 'new_comment', :locals => {:blog_post => @blog_post } %>		
+		</div>	
+		<br>
+	<% end %>
 	
 	<% if current_user && (@blog_post.author == current_user) %>
 			<%= link_to 'Destroy', @blog_post, :confirm => 'Are you sure?', :method => :delete %> |
