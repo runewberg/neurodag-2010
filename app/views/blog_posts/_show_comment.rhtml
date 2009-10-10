@@ -6,7 +6,7 @@ Posted by <%= link_to show_comment.user.full_name, profile_path(show_comment.use
 		<%= sanitize show_comment.body %> 
 <br/>
 	<% if blog_post.author == current_user || show_comment.user == current_user %>
-			<%= link_to_remote 'Destroy', :url => comment_path(show_comment.id), :method => :delete %>
+			<%= link_to_remote 'Destroy', :url => comment_path(show_comment.id), :confirm => 'Are you sure?', :method => :delete %>
 	<% end %>
 
 
