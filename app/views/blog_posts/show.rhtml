@@ -1,5 +1,13 @@
 <%= render :partial => '/shared/title_bar', :locals => {:title => h(@title || "Blog post") } %>
 <%= render :partial => '/shared/notice' %>
 
-
+<% if @blog_post %>
+	<div class="myWrapper">
+		<%= render :partial => 'blog_post_content', :locals => {:blog_post => @blog_post } %>
+	</div>
+	<% if @blog_post.comments && @blog_post.comments.size > 0 %>
+		<%#= render :partial => 'show_comment', :collection => @blog_post.comments %>		
+	<% end %>
+	<br>
+<% end %>
 
