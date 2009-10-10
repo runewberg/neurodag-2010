@@ -25,16 +25,22 @@ class BlogPostsController < ApplicationController
 
 
   def show
-    @blog_post = BlogPost.find(params[:id])
-    if @blog_post
-      @title = @blog_post.title 
-      @comment = Comment.new   
-      respond_to do |format|
-        format.html # show.rhtml
-        format.xml  { render :xml => @post.to_xml }
-      end
-    else
+    begin
+      @blog_post = BlogPost.find(params[:id])
+    rescue
+      @blog_post = nil
       redirect_to blog_posts_path
+    else
+      if @blog_post
+        @title = @blog_post.title 
+        @comment = Comment.new   
+        respond_to do |format|
+          format.html # show.rhtml
+          format.xml  { render :xml => @post.to_xml }
+        end
+      else
+        redirect_to blog_posts_path
+      end
     end
   end
 
