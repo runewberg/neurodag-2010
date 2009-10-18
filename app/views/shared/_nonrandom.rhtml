@@ -29,7 +29,9 @@
 		</li>  
 	<% reg=Registration.most_recent.first %>
 		<li>
-			<%= link_to reg.user.full_name, profile_for(reg.user) %>
+		<% if reg.user %>	
+			<%= link_to reg.user.full_name, profile_for(reg.user)%> 
+		<%end%>
 			<span>Is coming to Neurodag!</span>
 		</li>             
 			<% user=User.most_recent.first %>
