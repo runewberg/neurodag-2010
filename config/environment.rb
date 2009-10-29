@@ -92,4 +92,6 @@ Time::DATE_FORMATS[:no_weekday] = "%B %d, %Y"
 #APP_CONFIG = YAML::load(File.open(settings_file)  
 
 APP_CONFIG = { 'app_root' => "neurodag.heroku.com"}
-  
+ 
+#require 'string_extensions'  
+require "prawn/assist/include"

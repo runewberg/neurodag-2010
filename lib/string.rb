@@ -1,3 +1,4 @@
+require 'htmlentities'
 class String
   # Return an alternate string if blank.
   def or_else(alternate)
@@ -55,6 +56,14 @@ class String
     self.gsub!(/<#{tag}[^>]*\/>/i, replace_str)
   end
 
+   def decodeHtml
+     coder = HTMLEntities.new
+     coder.decode(self)
+   end
+
+  # def decodeHtml2
+  #   puts 'decodeHtml2'
+  # end
   # encure matches newlines (any white-space!) between tag markers 
   def replace_tags_marker!(tag, marker)
     sep = ":#:"

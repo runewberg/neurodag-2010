@@ -6,3 +6,4 @@ sentry
 nokogiri
 prawn
 aws-s3
+htmlentities
