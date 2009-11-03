@@ -18,7 +18,7 @@ module Prawn
           ypos += total_height
 
           if img[:title]
-            pdf.text img[:title]
+            pdf.text img[:title].decode
             ypos += break_height             
           end
 

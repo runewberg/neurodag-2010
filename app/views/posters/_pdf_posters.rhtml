@@ -18,18 +18,20 @@
 		<th>Title</th>
 	</tr>				
 	<% @posters_all.each_with_index do |poster,index| %>
-	<tr>
-		<td><%= index+1 %></td>
-		<td><%= h (poster.user.full_name) %></td>
-		<td><%#= h(poster.title) %> </td>
-	</tr>
-	<%end%>
+		<tr>
+			<td><%= index+1 %></td>
+			<td><%= h (poster.user.full_name) %></td>
+			<td><%= h(poster.title) %> </td>
+		</tr>
+		<%end%>
 </table>
 <hr/>
 <% @posters_all.each_with_index do |poster,index| %>
-  <h2><indent_h2/><%= index+1 %>.</h2><p>		
-	<%= render :partial => 'poster_content', :locals => {:poster => poster } %>	
-	<% if index < @posters_all.size-1 %>
-	<hr/>
-	<% end %>
+
+	    <h2><indent_h2/><%= index+1 %>.</h2><p>		
+		<%= render :partial => 'poster_content', :locals => {:poster => poster } %>	
+		<% if index < @posters_all.size-1 %>
+		<hr/>
+		<% end %>
+
 <%end%>

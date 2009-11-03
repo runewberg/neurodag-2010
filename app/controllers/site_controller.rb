@@ -12,6 +12,11 @@ class SiteController < ApplicationController
     @title = "Contact #{@@site_name}" 
   end
 
+  def posters
+    respond_to do |format|
+       format.pdf { render :file   => File.join(Rails.root, 'public', 'posters1.pdf')    } # index.pdf.prawn
+     end     
+  end
 
   def help
     @title = "#{@@site_name} Help"

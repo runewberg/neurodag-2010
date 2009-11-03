@@ -32,7 +32,7 @@ module Prawn
       # list.each do |item|
       #   pdf.move_down(12)
       #   logger.debug(item)
-      #   pdf.text item
+      #   pdf.text item.decode
       # end
 
       def self.html(html, options = {})

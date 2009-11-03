@@ -16,7 +16,7 @@ parse_options = {:erase_tags => ['legend'], :strip_tags => ['dl', 'dd', 'dt', 'd
 options[:parse_options] = parse_options
 
 html = render :partial => 'pdf_posters'
-
+pdf.font_size = 8
 pdf.font "#{Prawn::BASEDIR}/data/fonts/DejaVuSans.ttf"
 
 # use default render options

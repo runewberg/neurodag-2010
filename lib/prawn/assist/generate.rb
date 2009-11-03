@@ -60,7 +60,10 @@ module Prawn
               ypos = start_page_ypos if !ypos 
               ypos += (breaks * break_height)
               puts item
-              pdf.text(item) if !item.blank?
+              # item.gsub!(/</, '&lt;')              
+              item.gsub!(/&lt;/, ' less than ')
+              item.gsub!(/&amp;/, 'and')
+              pdf.text(item.decode) if !item.blank?
           end
         end        
         end # pdf            

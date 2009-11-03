@@ -1,8 +1,8 @@
 <% if poster.title %>
-<h2><%= h poster.title %></h2>
+<h2><%= h poster.title.decode %></h2>
 <%end%>
 <% if poster.authors %>
-	<p>Authors: <%= h poster.authors %></p>
+	<p>Authors: <%= h poster.authors.decode %></p>
 <% end %>
 <p>
 Poster submitted by 
@@ -10,13 +10,16 @@ Poster submitted by
 	on <%= h poster.updated_at.to_s(:article) %>
 </p>
 <% if poster.affiliations %>
-	<p>Affiliations: <%= h poster.affiliations %></p>
+	<p>Affiliations: <%= h poster.affiliations.decode %></p>
 <% end %>
 <p> 
   <h3>Abstract</h3>
 </p>
 <p>
-<%= h poster.abstract if poster.abstract %>
+<% puts "==============" %>
+<% puts "#{poster.id} : #{poster.owner.full_name} , #{poster.title}" %>
+<% puts "==============" %>
+<%= h(poster.abstract.decode) if poster.abstract %>
 </p>
 <br>
 <% if poster.corresponding_author %>
@@ -24,7 +27,7 @@ Poster submitted by
 	<p>
 	Corresponding author: <br>	<p>	</p>
 	
-	<%= h poster.corresponding_author %>
+	<%= h poster.corresponding_author.decode %>
 	<br/>
 	</p>
 <%end %>

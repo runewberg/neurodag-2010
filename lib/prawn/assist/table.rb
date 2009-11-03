@@ -47,6 +47,13 @@ module Prawn
 
         position = (xpos if xpos > 0) || table_position
 
+        table[:rows].each_with_index do |rows, index|
+          rows.each_with_index do |row, index2|
+            rows[index2] = row.decode
+          end
+          table[:rows][index] = rows
+        end
+
         pdf.table table[:rows], 
            # TODO - use provided style
           :border_style => Prawn::Assist::Table::border_style(table),
@@ -68,7 +75,7 @@ module Prawn
         ypos += total_table_height
 
         if table[:title]
-          pdf.text table[:title]
+          pdf.text table[:title].decode
           if table[:nobreak]
             pdf.move_up break_height
           end
@@ -118,7 +125,7 @@ module Prawn
         text_list = []
         headers.each_with_index do |header, index|
           if header[:title]
-            text_list << (header[:title] || "?")
+            text_list << (header[:title].decode || "?")
           end
         end
         text_list      

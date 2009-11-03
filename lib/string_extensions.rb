@@ -1,8 +1,10 @@
-require 'htmlentities'
-
 class String
-  def decode
-    coder = HTMLEntities.new
-    coder.decode(self)
-  end
+  def decode
+    CODER.decode(self)
+  end
+
+  def decode!
+    self.decode
+  end
+
 end

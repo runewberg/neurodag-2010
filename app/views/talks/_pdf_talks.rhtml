@@ -12,6 +12,7 @@
 
 <p>Talk abstract list (sorted by last name)</p>
 
+
 <table width="530">
 	<tr>
 		<th>No.</th>
@@ -21,16 +22,9 @@
 	<% @talks_all.each_with_index do |talk,index| %>
 	<tr>
 		<td><%= index+1 %></td>
-		<td><%= h(CGI.escapeHTML(talk.user.full_name)) %></td>
-		<td><%= h(CGI.escapeHTML(talk.title)) %> </td>
+		<td><%= h(talk.user.full_name) %></td>
+		<td><%= h(talk.title) %> </td>
 	</tr>
 	<%end%>
 </table>
 <hr/>
-<% @talks_all.each_with_index do |talk,index| %>
-  <h2><indent_h2/> <%= index+1 %>. </h2><p>		
-	<%= render :partial => 'talk_content', :locals => {:talk => talk } %>	
-	<% if index < @talks_all.size-1 %>
-	<hr/>
-	<% end %>
-<%end%>
