@@ -3,7 +3,8 @@
 <%= render :partial => '/shared/notice' %>
 <% if is_special_role? %>
 	<div class="myWrapper">
-		<table width="100%" class="index">
+		<table cellpadding="2" cellspacing="0" width="100%" style="border: 1px solid gray" class="index">
+
 	  	<tr class="<%= cycle('odd', 'even') %>">
 			<th>Title</th>
 			<th>Authors</th>
@@ -21,7 +22,7 @@
 			</td>
 
 			<td>
-				<%#= h truncate(talk.authors,20) %>
+				<%= h talk.owner.full_name %>
 			</td>	
 		<td><%= h talk.owner.name %></td>	
 	

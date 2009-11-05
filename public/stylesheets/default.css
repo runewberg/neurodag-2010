@@ -128,7 +128,7 @@ table#friends th {
 .myWrapper {
 	background: white;
 	border: 1px solid gray;
-	width: 532px;
+	width: 535px;
 	padding: 10px;
 	margin-bottom: 6px;
   	-moz-border-radius: 5px;
@@ -173,8 +173,8 @@ td.text {
 }
 
 #site-page {
-  padding-left: 8px;	
-  padding-right: 8px;	
+  padding-left: 0px;	
+  padding-right: 0px;	
 }
 #site-page p,
 #site-page ul li
@@ -183,7 +183,7 @@ td.text {
 }
 
 #site-page li {
-  padding: 2px;
+  padding: 0px;
 }
 
 

@@ -14,10 +14,11 @@
   
 </p>
 <br></br>
-<p>
-Download the final	<%= link_to 'Poster book', 'poster_book.pdf'%> in pdf. To include the abstracts after deadline please <%= link_to 're-build poster book', formatted_posters_path(:pdf) %> from scratch in PDF. Warning! This may take a while.</p>
-<br/>
-
+	<% if logged_in?%>
+	<p>
+	Download the final	<%= link_to 'Poster book', 'poster_book.pdf'%> in pdf. To include the abstracts after deadline please <%= link_to 're-build poster book', formatted_posters_path(:pdf) %> from scratch in PDF. Warning! This may take a while.</p>
+	<br/>
+<%end%>
 <h1>This years selected contestants for the oral presentation competition are:</h1>
 
 	<table cellpadding="2" cellspacing="0" width="100%" style="border: 1px solid gray; font-size: 10px">	
