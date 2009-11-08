@@ -13258,3 +13258,405 @@ Rendered shared/_blogs (11.8ms)
 Rendered shared/_archives (0.1ms)
 Rendered shared/_sidebar_right (26.4ms)
 Completed in 126ms (View: 41, DB: 40) | 200 OK [http://0.0.0.0/home]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SiteController#index (for 127.0.0.1 at 2009-11-08 17:12:16) [GET]
+  Parameters: {"id"=>nil}
+  [4;36;1mBlogPost Load (1.1ms)[0m   [0;1mSELECT * FROM `blog_posts` ORDER BY updated_at DESC LIMIT 3[0m
+  [4;35;1mConference Load (1.2ms)[0m   [0mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 3[0m
+  [4;36;1mConference Load (0.9ms)[0m   [0;1mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 1[0m
+  [4;35;1mRegistration Columns (2.9ms)[0m   [0mSHOW FIELDS FROM `registrations`[0m
+  [4;36;1mConference Columns (3.1ms)[0m   [0;1mSHOW FIELDS FROM `conferences`[0m
+  [4;35;1mRegistration Load (1.9ms)[0m   [0mSELECT * FROM `registrations` WHERE (`registrations`.`user_id` IS NULL AND `registrations`.`conference_id` = 1) LIMIT 1[0m
+  [4;36;1mTalk Columns (2.9ms)[0m   [0;1mSHOW FIELDS FROM `talks`[0m
+  [4;35;1mTalk Load (1.5ms)[0m   [0mSELECT * FROM `talks` WHERE (`talks`.`user_id` IS NULL AND `talks`.`conference_id` = 1) LIMIT 1[0m
+Rendering template within layouts/default
+Rendering site/index
+Rendered shared/_title_bar (1.1ms)
+Rendered shared/_notice (19.7ms)
+Rendered shared/_javascripts (14.4ms)
+Rendered shared/_topmenu (16.7ms)
+  [4;36;1mPage Load (1.6ms)[0m   [0;1mSELECT * FROM `pages` WHERE (`pages`.conference_id = 1) [0m
+  [4;35;1mPage Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+  [4;36;1mUser Columns (30.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (5.3ms)[0m   [0mSELECT count(*) AS count_all FROM `users` INNER JOIN `registrations` ON `users`.id = `registrations`.user_id WHERE ((`registrations`.conference_id = 1)) [0m
+  [4;36;1mPoster Columns (3.5ms)[0m   [0;1mSHOW FIELDS FROM `posters`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM `posters` WHERE (`posters`.conference_id = 1) [0m
+Rendered shared/_active_conf_menu (190.0ms)
+Rendered shared/_conf_registration_menu (24.2ms)
+Rendered shared/_sidebar (229.9ms)
+Rendered shared/_archives (1.4ms)
+Rendered shared/_sidebar_right (6.4ms)
+Completed in 616ms (View: 321, DB: 114) | 200 OK [http://0.0.0.0/]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SiteController#index (for 127.0.0.1 at 2009-11-08 17:13:56) [GET]
+  Parameters: {"id"=>nil}
+  [4;36;1mBlogPost Load (0.6ms)[0m   [0;1mSELECT * FROM `blog_posts` ORDER BY updated_at DESC LIMIT 3[0m
+  [4;35;1mConference Load (0.6ms)[0m   [0mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 3[0m
+  [4;36;1mConference Load (0.5ms)[0m   [0;1mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 1[0m
+  [4;35;1mRegistration Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `registrations`[0m
+  [4;36;1mConference Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `conferences`[0m
+  [4;35;1mRegistration Load (0.9ms)[0m   [0mSELECT * FROM `registrations` WHERE (`registrations`.`user_id` IS NULL AND `registrations`.`conference_id` = 1) LIMIT 1[0m
+  [4;36;1mTalk Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `talks`[0m
+  [4;35;1mTalk Load (1.1ms)[0m   [0mSELECT * FROM `talks` WHERE (`talks`.`user_id` IS NULL AND `talks`.`conference_id` = 1) LIMIT 1[0m
+Rendering template within layouts/default
+Rendering site/index
+Rendered shared/_title_bar (0.1ms)
+Rendered shared/_notice (0.1ms)
+Rendered shared/_javascripts (0.5ms)
+Rendered shared/_topmenu (0.2ms)
+  [4;36;1mPage Load (1.1ms)[0m   [0;1mSELECT * FROM `pages` WHERE (`pages`.conference_id = 1) [0m
+  [4;35;1mPage Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+  [4;36;1mUser Columns (3.3ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (2.7ms)[0m   [0mSELECT count(*) AS count_all FROM `users` INNER JOIN `registrations` ON `users`.id = `registrations`.user_id WHERE ((`registrations`.conference_id = 1)) [0m
+  [4;36;1mPoster Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `posters`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSELECT count(*) AS count_all FROM `posters` WHERE (`posters`.conference_id = 1) [0m
+Rendered shared/_active_conf_menu (87.6ms)
+Rendered shared/_conf_registration_menu (0.1ms)
+Rendered shared/_sidebar (88.1ms)
+Rendered shared/_archives (0.1ms)
+Rendered shared/_sidebar_right (0.3ms)
+Completed in 133ms (View: 83, DB: 24) | 200 OK [http://0.0.0.0/]
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SiteController#index (for 127.0.0.1 at 2009-11-08 17:13:57) [GET]
+  Parameters: {"id"=>nil}
+  [4;36;1mBlogPost Load (0.5ms)[0m   [0;1mSELECT * FROM `blog_posts` ORDER BY updated_at DESC LIMIT 3[0m
+  [4;35;1mConference Load (0.5ms)[0m   [0mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 3[0m
+  [4;36;1mConference Load (0.5ms)[0m   [0;1mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 1[0m
+  [4;35;1mRegistration Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `registrations`[0m
+  [4;36;1mConference Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `conferences`[0m
+  [4;35;1mRegistration Load (0.9ms)[0m   [0mSELECT * FROM `registrations` WHERE (`registrations`.`user_id` IS NULL AND `registrations`.`conference_id` = 1) LIMIT 1[0m
+  [4;36;1mTalk Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `talks`[0m
+  [4;35;1mTalk Load (1.9ms)[0m   [0mSELECT * FROM `talks` WHERE (`talks`.`user_id` IS NULL AND `talks`.`conference_id` = 1) LIMIT 1[0m
+Rendering template within layouts/default
+Rendering site/index
+Rendered shared/_title_bar (0.1ms)
+Rendered shared/_notice (0.1ms)
+Rendered shared/_javascripts (0.4ms)
+Rendered shared/_topmenu (0.2ms)
+  [4;36;1mPage Load (1.0ms)[0m   [0;1mSELECT * FROM `pages` WHERE (`pages`.conference_id = 1) [0m
+  [4;35;1mPage Columns (2.8ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+  [4;36;1mUser Columns (4.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mSELECT count(*) AS count_all FROM `users` INNER JOIN `registrations` ON `users`.id = `registrations`.user_id WHERE ((`registrations`.conference_id = 1)) [0m
+  [4;36;1mPoster Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `posters`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM `posters` WHERE (`posters`.conference_id = 1) [0m
+Rendered shared/_active_conf_menu (152.6ms)
+Rendered shared/_conf_registration_menu (0.1ms)
+Rendered shared/_sidebar (153.1ms)
+Rendered shared/_archives (0.1ms)
+Rendered shared/_sidebar_right (0.3ms)
+Completed in 196ms (View: 142, DB: 27) | 200 OK [http://0.0.0.0/]
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SiteController#index (for 127.0.0.1 at 2009-11-08 17:15:34) [GET]
+  Parameters: {"id"=>nil}
+  [4;36;1mBlogPost Load (0.5ms)[0m   [0;1mSELECT * FROM `blog_posts` ORDER BY updated_at DESC LIMIT 3[0m
+  [4;35;1mConference Load (0.5ms)[0m   [0mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 3[0m
+  [4;36;1mConference Load (0.4ms)[0m   [0;1mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 1[0m
+  [4;35;1mRegistration Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `registrations`[0m
+  [4;36;1mConference Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `conferences`[0m
+  [4;35;1mRegistration Load (1.0ms)[0m   [0mSELECT * FROM `registrations` WHERE (`registrations`.`user_id` IS NULL AND `registrations`.`conference_id` = 1) LIMIT 1[0m
+  [4;36;1mTalk Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `talks`[0m
+  [4;35;1mTalk Load (1.1ms)[0m   [0mSELECT * FROM `talks` WHERE (`talks`.`user_id` IS NULL AND `talks`.`conference_id` = 1) LIMIT 1[0m
+Rendering template within layouts/default
+Rendering site/index
+Rendered shared/_title_bar (0.1ms)
+Rendered shared/_notice (0.1ms)
+Rendered shared/_javascripts (0.4ms)
+Rendered shared/_topmenu (0.2ms)
+  [4;36;1mPage Load (1.1ms)[0m   [0;1mSELECT * FROM `pages` WHERE (`pages`.conference_id = 1) [0m
+  [4;35;1mPage Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+  [4;36;1mUser Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (3.7ms)[0m   [0mSELECT count(*) AS count_all FROM `users` INNER JOIN `registrations` ON `users`.id = `registrations`.user_id WHERE ((`registrations`.conference_id = 1)) [0m
+  [4;36;1mPoster Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `posters`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSELECT count(*) AS count_all FROM `posters` WHERE (`posters`.conference_id = 1) [0m
+Rendered shared/_active_conf_menu (47.8ms)
+Rendered shared/_conf_registration_menu (0.1ms)
+Rendered shared/_sidebar (48.4ms)
+Rendered shared/_archives (0.1ms)
+Rendered shared/_sidebar_right (0.3ms)
+Completed in 157ms (View: 42, DB: 26) | 200 OK [http://0.0.0.0/]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SiteController#index (for 127.0.0.1 at 2009-11-08 17:15:53) [GET]
+  Parameters: {"id"=>nil}
+  [4;36;1mBlogPost Load (0.6ms)[0m   [0;1mSELECT * FROM `blog_posts` ORDER BY updated_at DESC LIMIT 3[0m
+  [4;35;1mConference Load (0.5ms)[0m   [0mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 3[0m
+  [4;36;1mConference Load (0.5ms)[0m   [0;1mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 1[0m
+  [4;35;1mRegistration Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `registrations`[0m
+  [4;36;1mConference Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `conferences`[0m
+  [4;35;1mRegistration Load (0.9ms)[0m   [0mSELECT * FROM `registrations` WHERE (`registrations`.`user_id` IS NULL AND `registrations`.`conference_id` = 1) LIMIT 1[0m
+  [4;36;1mTalk Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `talks`[0m
+  [4;35;1mTalk Load (1.5ms)[0m   [0mSELECT * FROM `talks` WHERE (`talks`.`user_id` IS NULL AND `talks`.`conference_id` = 1) LIMIT 1[0m
+Rendering template within layouts/default
+Rendering site/index
+Rendered shared/_title_bar (0.1ms)
+Rendered shared/_notice (0.1ms)
+Rendered shared/_javascripts (0.4ms)
+Rendered shared/_topmenu (0.2ms)
+  [4;36;1mPage Load (1.1ms)[0m   [0;1mSELECT * FROM `pages` WHERE (`pages`.conference_id = 1) [0m
+  [4;35;1mPage Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+  [4;36;1mUser Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (3.0ms)[0m   [0mSELECT count(*) AS count_all FROM `users` INNER JOIN `registrations` ON `users`.id = `registrations`.user_id WHERE ((`registrations`.conference_id = 1)) [0m
+  [4;36;1mPoster Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `posters`[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSELECT count(*) AS count_all FROM `posters` WHERE (`posters`.conference_id = 1) [0m
+Rendered shared/_active_conf_menu (90.0ms)
+Rendered shared/_conf_registration_menu (0.1ms)
+Rendered shared/_sidebar (90.5ms)
+Rendered shared/_archives (0.1ms)
+Rendered shared/_sidebar_right (0.3ms)
+Completed in 137ms (View: 85, DB: 25) | 200 OK [http://0.0.0.0/]
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SiteController#index (for 127.0.0.1 at 2009-11-08 17:16:21) [GET]
+  Parameters: {"id"=>nil}
+  [4;36;1mBlogPost Load (0.6ms)[0m   [0;1mSELECT * FROM `blog_posts` ORDER BY updated_at DESC LIMIT 3[0m
+  [4;35;1mConference Load (0.5ms)[0m   [0mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 3[0m
+  [4;36;1mConference Load (1.2ms)[0m   [0;1mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 1[0m
+  [4;35;1mRegistration Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `registrations`[0m
+  [4;36;1mConference Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `conferences`[0m
+  [4;35;1mRegistration Load (1.3ms)[0m   [0mSELECT * FROM `registrations` WHERE (`registrations`.`user_id` IS NULL AND `registrations`.`conference_id` = 1) LIMIT 1[0m
+  [4;36;1mTalk Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `talks`[0m
+  [4;35;1mTalk Load (1.1ms)[0m   [0mSELECT * FROM `talks` WHERE (`talks`.`user_id` IS NULL AND `talks`.`conference_id` = 1) LIMIT 1[0m
+Rendering template within layouts/default
+Rendering site/index
+Rendered shared/_title_bar (0.1ms)
+Rendered shared/_notice (0.1ms)
+Rendered shared/_javascripts (0.4ms)
+Rendered shared/_topmenu (0.2ms)
+  [4;36;1mPage Load (1.1ms)[0m   [0;1mSELECT * FROM `pages` WHERE (`pages`.conference_id = 1) [0m
+  [4;35;1mPage Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+  [4;36;1mUser Columns (3.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mSQL (2.8ms)[0m   [0mSELECT count(*) AS count_all FROM `users` INNER JOIN `registrations` ON `users`.id = `registrations`.user_id WHERE ((`registrations`.conference_id = 1)) [0m
+  [4;36;1mPoster Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `posters`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM `posters` WHERE (`posters`.conference_id = 1) [0m
+Rendered shared/_active_conf_menu (111.5ms)
+Rendered shared/_conf_registration_menu (0.1ms)
+Rendered shared/_sidebar (112.1ms)
+Rendered shared/_archives (0.1ms)
+Rendered shared/_sidebar_right (0.3ms)
+Completed in 158ms (View: 106, DB: 26) | 200 OK [http://0.0.0.0/]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-11-08 17:16:26) [GET]
+  [4;36;1mBlogPost Load (0.5ms)[0m   [0;1mSELECT * FROM `blog_posts` ORDER BY updated_at DESC LIMIT 3[0m
+  [4;35;1mConference Load (0.9ms)[0m   [0mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 3[0m
+  [4;36;1mConference Load (0.5ms)[0m   [0;1mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 1[0m
+  [4;35;1mRegistration Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `registrations`[0m
+  [4;36;1mConference Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `conferences`[0m
+  [4;35;1mRegistration Load (0.9ms)[0m   [0mSELECT * FROM `registrations` WHERE (`registrations`.`user_id` IS NULL AND `registrations`.`conference_id` = 1) LIMIT 1[0m
+  [4;36;1mTalk Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `talks`[0m
+  [4;35;1mTalk Load (1.1ms)[0m   [0mSELECT * FROM `talks` WHERE (`talks`.`user_id` IS NULL AND `talks`.`conference_id` = 1) LIMIT 1[0m
+  [4;36;1mUser Columns (2.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+Rendering template within layouts/default
+Rendering users/login
+Rendered shared/_title_bar (0.1ms)
+Rendered shared/_notice (0.1ms)
+Rendered shared/_javascripts (0.4ms)
+Rendered shared/_topmenu (0.2ms)
+  [4;35;1mPage Load (1.2ms)[0m   [0mSELECT * FROM `pages` WHERE (`pages`.conference_id = 1) [0m
+  [4;36;1mPage Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `pages`[0m
+  [4;35;1mSQL (2.4ms)[0m   [0mSELECT count(*) AS count_all FROM `users` INNER JOIN `registrations` ON `users`.id = `registrations`.user_id WHERE ((`registrations`.conference_id = 1)) [0m
+  [4;36;1mPoster Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `posters`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSELECT count(*) AS count_all FROM `posters` WHERE (`posters`.conference_id = 1) [0m
+Rendered shared/_active_conf_menu (22.2ms)
+Rendered shared/_conf_registration_menu (0.1ms)
+Rendered shared/_sidebar (22.7ms)
+Rendered shared/_archives (0.1ms)
+Rendered shared/_sidebar_right (0.3ms)
+Completed in 260ms (View: 135, DB: 24) | 200 OK [http://0.0.0.0/login]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#login (for 127.0.0.1 at 2009-11-08 17:16:31) [POST]
+  Parameters: {"user"=>{"screen_name"=>"rune", "password"=>"mfrt03!", "remember_me"=>"0"}, "commit"=>"OK", "authenticity_token"=>"Ijsx8yiuuVjj/EdIJYmvmbUCBY8IfnwOpnRHJ4RItRg="}
+  [4;36;1mBlogPost Load (0.6ms)[0m   [0;1mSELECT * FROM `blog_posts` ORDER BY updated_at DESC LIMIT 3[0m
+  [4;35;1mConference Load (0.5ms)[0m   [0mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 3[0m
+  [4;36;1mConference Load (0.4ms)[0m   [0;1mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 1[0m
+  [4;35;1mRegistration Columns (3.8ms)[0m   [0mSHOW FIELDS FROM `registrations`[0m
+  [4;36;1mConference Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `conferences`[0m
+  [4;35;1mRegistration Load (0.9ms)[0m   [0mSELECT * FROM `registrations` WHERE (`registrations`.`user_id` IS NULL AND `registrations`.`conference_id` = 1) LIMIT 1[0m
+  [4;36;1mTalk Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `talks`[0m
+  [4;35;1mTalk Load (1.1ms)[0m   [0mSELECT * FROM `talks` WHERE (`talks`.`user_id` IS NULL AND `talks`.`conference_id` = 1) LIMIT 1[0m
+  [4;36;1mUser Columns (3.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`screen_name` = 'rune') LIMIT 1[0m
+Redirected to http://0.0.0.0:3000/users/show
+Completed in 114ms (DB: 17) | 302 Found [http://0.0.0.0/login]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing UsersController#show (for 127.0.0.1 at 2009-11-08 17:16:31) [GET]
+  Parameters: {"id"=>"show"}
+  [4;36;1mUser Columns (2.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mBlogPost Load (0.6ms)[0m   [0mSELECT * FROM `blog_posts` ORDER BY updated_at DESC LIMIT 3[0m
+  [4;36;1mConference Load (0.5ms)[0m   [0;1mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mConference Load (0.4ms)[0m   [0;1mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 1[0m
+  [4;35;1mRegistration Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `registrations`[0m
+  [4;36;1mConference Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `conferences`[0m
+  [4;35;1mRegistration Load (0.5ms)[0m   [0mSELECT * FROM `registrations` WHERE (`registrations`.`user_id` = 1 AND `registrations`.`conference_id` = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mTalk Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `talks`[0m
+  [4;36;1mTalk Load (1.4ms)[0m   [0;1mSELECT * FROM `talks` WHERE (`talks`.`user_id` = 1 AND `talks`.`conference_id` = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mFaq Load (1.0ms)[0m   [0;1mSELECT * FROM `faqs` WHERE (`faqs`.user_id = 1) LIMIT 1[0m
+Rendering template within layouts/default
+Rendering users/show
+Rendered shared/_title_bar (0.1ms)
+Rendered shared/_notice (0.3ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered shared/_basic_user_info (30.2ms)
+  [4;35;1mFaq Columns (2.5ms)[0m   [0mSHOW FIELDS FROM `faqs`[0m
+Rendered shared/_sidebar_box_basic (44.0ms)
+  [4;36;1mSQL (14.9ms)[0m   [0;1mSELECT count(*) AS count_all FROM `users` INNER JOIN `friendships` ON `users`.id = `friendships`.friend_id WHERE ((`friendships`.user_id = 1) AND ((status = 'accepted'))) [0m
+  [4;35;1mUser Load (2.0ms)[0m   [0mSELECT `users`.* FROM `users` INNER JOIN `friendships` ON `users`.id = `friendships`.friend_id WHERE ((`friendships`.user_id = 1) AND ((status = 'accepted'))) ORDER BY screen_name[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSELECT count(*) AS count_all FROM `users` INNER JOIN `friendships` ON `users`.id = `friendships`.friend_id WHERE ((`friendships`.user_id = 1) AND ((status = 'requested'))) [0m
+  [4;35;1mSQL (0.7ms)[0m   [0mSELECT count(*) AS count_all FROM `users` INNER JOIN `friendships` ON `users`.id = `friendships`.friend_id WHERE ((`friendships`.user_id = 1) AND ((status = 'pending'))) [0m
+Rendered friendship/_friends (103.9ms)
+Rendered shared/_main_content (225.3ms)
+Rendered avatar/_sidebar_box (566.6ms)
+Rendered faq/_sidebar_box (21.6ms)
+Rendered faq/_sidebar_box (0.2ms)
+Rendered faq/_sidebar_box (0.3ms)
+Rendered faq/_sidebar_box (0.4ms)
+Rendered faq/_sidebar_box (1.0ms)
+Rendered shared/_javascripts (0.4ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered shared/_topmenu (3.6ms)
+  [4;36;1mPage Load (1.2ms)[0m   [0;1mSELECT * FROM `pages` WHERE (`pages`.conference_id = 1) [0m
+  [4;35;1mPage Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `pages`[0m
+  [4;36;1mSQL (2.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM `users` INNER JOIN `registrations` ON `users`.id = `registrations`.user_id WHERE ((`registrations`.conference_id = 1)) [0m
+  [4;35;1mPoster Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `posters`[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM `posters` WHERE (`posters`.conference_id = 1) [0m
+Rendered shared/_active_conf_menu (24.5ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `registrations` WHERE (`registrations`.`user_id` = 1 AND `registrations`.`conference_id` = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `registrations` WHERE (`registrations`.`user_id` = 1 AND `registrations`.`conference_id` = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `registrations` WHERE (`registrations`.`user_id` = 1 AND `registrations`.`conference_id` = 1) LIMIT 1[0m
+Rendered shared/_conf_registration_menu (4.2ms)
+Rendered shared/_sidebar (29.1ms)
+  [4;36;1mPoster Load (1.1ms)[0m   [0;1mSELECT * FROM `posters` ORDER BY updated_at DESC LIMIT 1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 243) [0m
+  [4;36;1mPoster Load (0.8ms)[0m   [0;1mSELECT * FROM `posters` ORDER BY updated_at DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `posters` ORDER BY updated_at DESC LIMIT 3[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 213) [0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` ORDER BY created_at DESC LIMIT 3[0m
+  [4;36;1mRegistration Load (1.3ms)[0m   [0;1mSELECT * FROM `registrations` ORDER BY updated_at DESC LIMIT 1[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 254) [0m
+  [4;36;1mUser Load (0.9ms)[0m   [0;1mSELECT * FROM `users` ORDER BY created_at DESC LIMIT 1[0m
+Rendered shared/_nonrandom (28.0ms)
+  [4;35;1mBlogPost Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `blog_posts`[0m
+  [4;36;1mComment Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSELECT count(*) AS count_all FROM `comments` WHERE (`comments`.blog_post_id = 2) [0m
+Rendered shared/_blogs (49.1ms)
+Rendered shared/_archives (0.1ms)
+Rendered shared/_sidebar_right (81.8ms)
+Completed in 1212ms (View: 994, DB: 58) | 200 OK [http://0.0.0.0/users/show]
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing SiteController#index (for 127.0.0.1 at 2009-11-08 17:16:35) [GET]
+  [4;36;1mUser Columns (2.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mBlogPost Load (0.6ms)[0m   [0mSELECT * FROM `blog_posts` ORDER BY updated_at DESC LIMIT 3[0m
+  [4;36;1mConference Load (1.1ms)[0m   [0;1mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 3[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mConference Load (0.7ms)[0m   [0;1mSELECT * FROM `conferences` ORDER BY year DESC LIMIT 1[0m
+  [4;35;1mRegistration Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `registrations`[0m
+  [4;36;1mConference Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `conferences`[0m
+  [4;35;1mRegistration Load (0.5ms)[0m   [0mSELECT * FROM `registrations` WHERE (`registrations`.`user_id` = 1 AND `registrations`.`conference_id` = 1) LIMIT 1[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mTalk Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `talks`[0m
+  [4;36;1mTalk Load (1.3ms)[0m   [0;1mSELECT * FROM `talks` WHERE (`talks`.`user_id` = 1 AND `talks`.`conference_id` = 1) LIMIT 1[0m
+Rendering template within layouts/default
+Rendering site/index
+Rendered shared/_title_bar (0.1ms)
+Rendered shared/_notice (0.1ms)
+DEPRECATION WARNING: formatted_posters_path() has been deprecated. Please pass format to the standard posters_path method instead.. (called from _run_rhtml_app47views47site47index46rhtml at /Users/runebergO/Documents/rails-apps/neurodag7/app/views/site/index.rhtml:18)
+Rendered shared/_javascripts (0.6ms)
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+Rendered shared/_topmenu (3.5ms)
+  [4;35;1mPage Load (1.1ms)[0m   [0mSELECT * FROM `pages` WHERE (`pages`.conference_id = 1) [0m
+  [4;36;1mPage Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `pages`[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mSELECT count(*) AS count_all FROM `users` INNER JOIN `registrations` ON `users`.id = `registrations`.user_id WHERE ((`registrations`.conference_id = 1)) [0m
+  [4;36;1mPoster Columns (2.8ms)[0m   [0;1mSHOW FIELDS FROM `posters`[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSELECT count(*) AS count_all FROM `posters` WHERE (`posters`.conference_id = 1) [0m
+Rendered shared/_active_conf_menu (27.9ms)
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `registrations` WHERE (`registrations`.`user_id` = 1 AND `registrations`.`conference_id` = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `registrations` WHERE (`registrations`.`user_id` = 1 AND `registrations`.`conference_id` = 1) LIMIT 1[0m
+  [4;35;1mCACHE (0.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 1) [0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `registrations` WHERE (`registrations`.`user_id` = 1 AND `registrations`.`conference_id` = 1) LIMIT 1[0m
+Rendered shared/_conf_registration_menu (4.2ms)
+Rendered shared/_sidebar (32.6ms)
+  [4;35;1mPoster Load (1.1ms)[0m   [0mSELECT * FROM `posters` ORDER BY updated_at DESC LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 243) [0m
+  [4;35;1mPoster Load (1.0ms)[0m   [0mSELECT * FROM `posters` ORDER BY updated_at DESC LIMIT 3[0m
+  [4;36;1mCACHE (0.0ms)[0m   [0;1mSELECT * FROM `posters` ORDER BY updated_at DESC LIMIT 3[0m
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`id` = 213) [0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` ORDER BY created_at DESC LIMIT 3[0m
+  [4;35;1mRegistration Load (1.4ms)[0m   [0mSELECT * FROM `registrations` ORDER BY updated_at DESC LIMIT 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = 254) [0m
+  [4;35;1mUser Load (0.9ms)[0m   [0mSELECT * FROM `users` ORDER BY created_at DESC LIMIT 1[0m
+Rendered shared/_nonrandom (13.9ms)
+  [4;36;1mBlogPost Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `blog_posts`[0m
+  [4;35;1mComment Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT count(*) AS count_all FROM `comments` WHERE (`comments`.blog_post_id = 2) [0m
+Rendered shared/_blogs (10.8ms)
+Rendered shared/_archives (0.1ms)
+Rendered shared/_sidebar_right (25.5ms)
+Completed in 192ms (View: 44, DB: 37) | 200 OK [http://0.0.0.0/home]
