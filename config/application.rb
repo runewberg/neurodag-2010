@@ -39,13 +39,13 @@ module Neurodag2010
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
     
-    config.action_mailer.smtp_settings = {
-      :address        => "smtp.gmail.com",
-      :port           => 587,
-      :domain         => "neurodag.rberg@gmail.com",
-      :authentication => :plain,
-      :user_name      => "neurodag.rberg",
-      :password       => "eyrzfp4yuspxeyrzfp4yuspx" 
-    }
+    # config.action_mailer.smtp_settings = {
+    #   :address        => "smtp.gmail.com",
+    #   :port           => 587,
+    #   :domain         => "neurodag.rberg@gmail.com",
+    #   :authentication => :plain,
+    #   :user_name      => "neurodag.rberg",
+    #   :password       => "eyrzfp4yuspxeyrzfp4yuspx" 
+    # }
   end
 end
